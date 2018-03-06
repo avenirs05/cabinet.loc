@@ -1,0 +1,74 @@
+@font-face {
+		font-family: 'Open Sans Condensed', sans-serif;
+		src: url("/fonts/OpenSansCondensed-Light.ttf");
+}
+
+@font-face {
+		font-family: 'Open Sans Condensed', sans-serif;
+		src: url("/fonts/OpenSansCondensed-Bold.ttf");
+}
+
+ul, li, span {
+		margin: 0;
+		padding: 0;
+}
+
+a {
+		text-decoration: none;	
+}
+
+.red {
+    color: red;
+}
+
+.form-enter {
+  	background-color: #f5f5f5;
+  	padding: 20px;
+  	border-radius: 7px;
+  	margin-top: 100px;
+}
+
+.form-enter button {
+		width: 100%;
+		margin-top: 10px;
+}
+
+.form-enter button img {
+		vertical-align: baseline;
+}
+
+.form-enter label {
+		font-weight: bold;
+}
+
+.form-enter button span {
+		font-size: 18px;
+}
+
+.footer {
+		color: #fff;
+}
+
+@media screen and (max-device-width: 991px) { }
+
+@media screen and (min-device-width: 320px)
+							and (max-device-width: 767px) { }
+
+@media screen and (min-device-width: 360px) { }
+
+@media screen and (min-device-width: 480px) 
+							and (max-device-width: 767px) { }
+
+@media screen and (min-device-width: 576px) 
+							and (max-device-width: 767px) { }
+
+@media screen and (min-device-width: 768px) 
+							and (max-device-width: 991px) and (orientation:landscape) { }
+
+@media screen and (min-device-width: 768px) 
+							and (max-device-width: 991px) and (orientation:portrait) { }
+
+@media screen and (min-device-width: 992px) { }
+
+@media screen and (min-device-width: 1200px) { }
+
