@@ -15,6 +15,29 @@
 	</div>
 </div>
 
+<div class="container-fluid reports-wrap">
+	<div class="row">
+		<div class="col">
+			<ul class="nav nav-pills nav-fill">
+			  <li class="nav-item">
+			    <a class="nav-link active" href="#">Доходы собственника</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Расходы собственника</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Общие расходы</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Денежные взаиморасчеты</a>
+			  </li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
 <?php include ROOT . '/views/layouts/footer.php'; ?>
 
 

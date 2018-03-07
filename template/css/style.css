@@ -54,14 +54,46 @@ a:hover {
 }
 
 .profile-wrap img {
-	vertical-align: baseline;
+		vertical-align: baseline;
 }
 
 .footer {
 		color: #fff;
 }
 
-@media screen and (max-device-width: 991px) { }
+.profile-wrap {
+		margin-top: 10px;
+}
+
+.reports-wrap {
+		margin-top: 20px;
+}
+
+.reports-wrap .nav-item {
+		background-color: #f3f3f3;
+		margin-right: 10px;
+		border-radius: .25rem;
+		font-size: 18px;		
+}
+
+.reports-wrap .nav-item:last-child {
+		margin-right: 0;
+}
+
+.reports-wrap .nav-item a.nav-link {
+		font-weight: 500;	
+}
+
+@media screen and (max-device-width: 991px) {
+	.reports-wrap .nav-item {
+			margin-right: 0;
+			margin-bottom: 20px;
+	}
+
+	.reports-wrap .nav-item:last-child {
+			margin-right: 0;
+	}
+}
 
 @media screen and (min-device-width: 320px)
 							and (max-device-width: 767px) { }
