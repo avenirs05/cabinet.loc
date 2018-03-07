@@ -11,11 +11,12 @@ class CabinetController
     */
     public function actionIndex($userId) {
 	 User::enterAsUser();
-     //d($userId);
+     
      // Получаем информацию о пользователе из БД
      $user = User::getUserById($userId);
-	 //d($user);
-     // Подключаем вид
+	 $realties = Realty::getRealtiesOfUser($userId);
+     //d($realty);
+	 // Подключаем вид
      require_once(ROOT . '/views/cabinet/index.php');
      return true;
     }
