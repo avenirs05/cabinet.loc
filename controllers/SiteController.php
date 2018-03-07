@@ -23,11 +23,11 @@ class SiteController
                     header("location: /admin");
                 } else {
                   $_SESSION['role'] = 'user';
-                  header("location: /cabinet");
+                  header("location: /cabinet/$userId");
                 }      
             } else $errors[] = 'Неверные данные для входа на сайт';        
          }
-
+		 //d($userId);
          // Подключаем вид
          require_once(ROOT . '/views/site/index.php');
          return true;

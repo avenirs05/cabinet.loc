@@ -2,7 +2,7 @@
 
 return array(
 
-    'cabinet' => 'cabinet/index',
+    'cabinet/([0-9]+)' => 'cabinet/index/$1',
     'admin' => 'admin/index',
     'login' => 'user/login',
     
