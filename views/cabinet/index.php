@@ -36,21 +36,21 @@
 	</div>
 </div>
 
-<div class="container-fluid reports-menu-wrap">
+<div class="container-fluid report-menu-wrap">
 	<div class="row">
 		<div class="col">
 			<ul class="nav nav-pills nav-fill">
 			  <li class="nav-item">
-			    <a id="incomes" class="nav-link active" href="/incomes">Доходы собственника</a>
+			    <a id="incomes" class="nav-link active" href="/incomes/all">Доходы собственника</a>
 			  </li>
 			  <li class="nav-item">
-			    <a class="nav-link" href="#">Расходы собственника</a>
+			    <a id="expenses-owner" class="nav-link" href="/expenses-owner/all">Расходы собственника</a>
 			  </li>
 			  <li class="nav-item">
-			    <a class="nav-link" href="#">Общие расходы</a>
+			    <a id="expenses-gen" class="nav-link" href="/expenses-gen/all">Общие расходы</a>
 			  </li>
 			  <li class="nav-item">
-			    <a class="nav-link" href="#">Денежные взаиморасчеты</a>
+			    <a id="money" class="nav-link" href="/money/all">Денежные взаиморасчеты</a>
 			  </li>
 			</ul>
 		</div>
@@ -60,7 +60,7 @@
 <div class="container-fluid report-wrap">
 	<div class="row">
 		<div class="col">
-			<h3 class="text-center">Доходы собственника по объекту: все.</h3>
+			<h3 class="text-center">Доходы по всем объектам недвижимости</h3>
 		</div>
 	</div>
 	<div class="row">
@@ -94,9 +94,6 @@
 		</div>
 	</div>
 </div>
-
-
-
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>
 
