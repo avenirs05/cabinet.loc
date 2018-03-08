@@ -29,7 +29,7 @@ class SiteController
                 }      
             } else $errors[] = 'Неверные данные для входа на сайт';        
          }
-		 //d($_SESSION);
+	
          // Подключаем вид
          require_once(ROOT . '/views/site/index.php');
          return true;
