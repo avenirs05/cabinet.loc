@@ -25,7 +25,6 @@ class Expense
 					$expenseList[$i]['price'] = $row['price'];
 					$expenseList[$i]['sum'] = $row['sum'];
 					$expenseList[$i]['source'] = $row['source'];
-					$expenseList[$i]['comment'] = $row['comment'];
 					$expenseList[$i]['report'] = $row['report'];
 					$expenseList[$i]['comment'] = $row['comment'];
 					$i++;

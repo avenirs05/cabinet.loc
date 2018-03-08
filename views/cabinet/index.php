@@ -63,7 +63,7 @@
 			<h3 class="text-center">Доходы по всем объектам недвижимости</h3>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row table-wrap">
 		<div class="col">
 			<table class="table table-bordered table-striped">
 			  <thead>

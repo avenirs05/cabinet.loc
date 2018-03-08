@@ -29,7 +29,7 @@ jQuery(document).ready(function () {
 	$('#incomes').click(function(e) {
 			e.preventDefault();
 			
-			$('table tbody').remove();
+			$('.table-wrap').remove();
 
 			if ( $('#incomes').attr('href') == '/incomes/all' ) {
 				     $('.report-wrap h3').text('Доходы по всем объектам недвижимости');
@@ -39,10 +39,9 @@ jQuery(document).ready(function () {
 
 			$.ajax({
 			  url: $('#incomes').attr('href'),
-
 			  type: 'post',
 			  success: function(data) {
-			  		$('table').append(data);
+			  		$('.report-wrap').append(data);
 			  }
 			});
 	});
@@ -51,7 +50,7 @@ jQuery(document).ready(function () {
 	$('#expenses-owner').click(function(e) {
 			e.preventDefault();
 			
-			$('table tbody').remove();
+			$('.table-wrap').remove();
 
 			if ( $('#expenses-owner').attr('href') == '/expenses-owner/all' ) {
 				     $('.report-wrap h3').text('Расходы собственника по всем объектам недвижимости');
@@ -62,12 +61,9 @@ jQuery(document).ready(function () {
 			
 			$.ajax({
 			  url: $('#expenses-owner').attr('href'),
-
 			  type: 'post',
 			  success: function(data) {
-
-			  		//console.log(data)
-			  		$('table').append(data);
+			  		$('.report-wrap').append(data);
 			  }
 			});
 	});
