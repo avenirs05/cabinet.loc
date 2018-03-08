@@ -13,8 +13,9 @@ class Realty
         
         $i = 0;
         while ($row = $result->fetch()) {
-            $realtiesList[$i]['name'] = $row['name'];
-            $i++;
+            $realtiesList[$i]['id'] = $row['id'];
+			$realtiesList[$i]['name'] = $row['name'];
+			$i++;
         }
         
         return $realtiesList;

@@ -7,7 +7,7 @@
 					<span>
 						<img src="/template/imgs/person.svg" width="11" height="11" alt="">   
 						<a href="/cabinet/"><?php echo $user['name']; ?></a>&nbsp;&nbsp;
-						  <a href="/user/logout/">
+						  <a href="/logout">
 							<img src="/template/imgs/account-logout.svg" width="11" height="11" alt=""> 
 					  	<span>Выход</span></a>
 					</span>
@@ -23,10 +23,12 @@
 			  <div class="input-group-prepend">
 			    <label class="input-group-text" for="inputGroupSelect01">Объект недвижимости</label>
 			  </div>
-			  <select class="custom-select" id="inputGroupSelect01">
-			    <option selected>Все</option>
+			  <select class="custom-select">
+			    <option>Все</option>
 			    <?php foreach ($realties as $realty): ?>
-					<option><?php echo $realty['name']; ?></option>
+					<option value="<?php echo $realty['id']; ?>">
+					  <?php echo $realty['name']; ?>
+					</option>
 				<?php endforeach; ?>
 			  </select>
 			</div>
@@ -39,7 +41,7 @@
 		<div class="col">
 			<ul class="nav nav-pills nav-fill">
 			  <li class="nav-item">
-			    <a class="nav-link active" href="#">Доходы собственника</a>
+			    <a id="incomes" class="nav-link active" href="/incomes">Доходы собственника</a>
 			  </li>
 			  <li class="nav-item">
 			    <a class="nav-link" href="#">Расходы собственника</a>

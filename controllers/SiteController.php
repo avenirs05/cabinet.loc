@@ -20,14 +20,16 @@ class SiteController
                 $user = User::getUserById($userId);
                 if ($user['role'] == 'admin') {
                     $_SESSION['role'] = 'admin';
+					$_SESSION['adminId'] = $userId;
                     header("location: /admin");
                 } else {
                   $_SESSION['role'] = 'user';
+				  $_SESSION['userId'] = $userId;
                   header("location: /cabinet/$userId");
                 }      
             } else $errors[] = 'Неверные данные для входа на сайт';        
          }
-		 //d($userId);
+		 //d($_SESSION);
          // Подключаем вид
          require_once(ROOT . '/views/site/index.php');
          return true;

@@ -10,7 +10,7 @@ class CabinetController
     * Action для страницы "Кабинет пользователя"
     */
     public function actionIndex($userId) {
-	 User::enterAsUser();    
+	 User::enterAsUser($userId);    
 
      $user = User::getUserById($userId);	 
 	 $realties = Realty::getRealtiesOfUser($userId);

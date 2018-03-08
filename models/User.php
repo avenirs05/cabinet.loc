@@ -55,13 +55,30 @@ class User
     }
 	
 	
-	public static function enterAsUser() {
-		if (isset($_SESSION['role'])) {
-			if ($_SESSION['role'] != 'user') {
-				 header('Location: /');
-			}			  
-		}	
-    }  
+	public static function logout() {
+        unset($_SESSION["role"]);
+		
+		if (isset($_SESSION["idAdmin"])) {
+			  unset($_SESSION["idAdmin"]);
+		}
+		
+	    if (isset($_SESSION["idUser"])) {
+			  unset($_SESSION["idUser"]);
+	    }
+
+        header("Location: /");
+    }
+	
+	
+	public static function enterAsUser($userId) {
+		if (!isset($_SESSION['role'])) {
+			  header('Location: /');
+		} elseif ($_SESSION['role'] != 'user') {
+			  header('Location: /');		  
+		} elseif ($_SESSION['userId'] != $userId) {
+			  header('Location: /');		  
+		}
+	}
 	
 	  
 	public static function enterAsAdmin() {

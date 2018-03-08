@@ -10,10 +10,6 @@ class UserController
      */
     public function actionLogout()
     {        
-        // Удаляем информацию о пользователе из сессии
-        unset($_SESSION["role"]);
-        
-        // Перенаправляем пользователя на главную страницу
-        header("Location: /");
-    }
+		User::logout();
+	}
 }
