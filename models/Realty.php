@@ -1,13 +1,14 @@
 <?php
 
-class Realty {
+class Realty 
+{  
   public static function getRealtiesOfUser($userId) {
         // Соединение с БД
         $db = Db::getConnection();
         
         // Получение и возврат результатов
         $result = $db->query('SELECT * FROM realty WHERE user_id=' . $userId);
-		//d($result);
+		
 		$realtiesList = array();
         
         $i = 0;

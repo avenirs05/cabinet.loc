@@ -66,6 +66,7 @@
 			<table class="table table-bordered table-striped">
 			  <thead>
 			    <tr>
+				  <th scope="col">Объект</th>
 			      <th scope="col">Заезд</th>
 			      <th scope="col">Выезд</th>
 			      <th scope="col">Цена</th>
@@ -75,86 +76,17 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>			      
-			      <td>26.12.2017</td>
-			      <td>01.14.2018</td>
-			      <td>100</td>
-			      <td>15</td>
-			      <td>1500</td>
-			      <td>Все засрали, обблевали, ебались</td>
-			    </tr>
-			    <tr>			      
-			      <td>26.12.2017</td>
-			      <td>01.14.2018</td>
-			      <td>100</td>
-			      <td>15</td>
-			      <td>1500</td>
-			      <td>Все засрали, обблевали, ебались</td>
-			    </tr>
-			    <tr>			      
-			      <td>26.12.2017</td>
-			      <td>01.14.2018</td>
-			      <td>100</td>
-			      <td>15</td>
-			      <td>1500</td>
-			      <td>Все засрали, обблевали, ебались</td>
-			    </tr>
-			    <tr>			      
-			      <td>26.12.2017</td>
-			      <td>01.14.2018</td>
-			      <td>100</td>
-			      <td>15</td>
-			      <td>1500</td>
-			      <td>Все засрали, обблевали, ебались</td>
-			    </tr>
-			    <tr>			      
-			      <td>26.12.2017</td>
-			      <td>01.14.2018</td>
-			      <td>100</td>
-			      <td>15</td>
-			      <td>1500</td>
-			      <td>Все засрали, обблевали, ебались</td>
-			    </tr>
-			    <tr>			      
-			      <td>26.12.2017</td>
-			      <td>01.14.2018</td>
-			      <td>100</td>
-			      <td>15</td>
-			      <td>1500</td>
-			      <td>Все засрали, обблевали, ебались</td>
-			    </tr>
-			    <tr>			      
-			      <td>26.12.2017</td>
-			      <td>01.14.2018</td>
-			      <td>100</td>
-			      <td>15</td>
-			      <td>1500</td>
-			      <td>Все засрали, обблевали, ебались</td>
-			    </tr>
-			    <tr>			      
-			      <td>26.12.2017</td>
-			      <td>01.14.2018</td>
-			      <td>100</td>
-			      <td>15</td>
-			      <td>1500</td>
-			      <td>Все засрали, обблевали, ебались</td>
-			    </tr>
-			    <tr>			      
-			      <td>26.12.2017</td>
-			      <td>01.14.2018</td>
-			      <td>100</td>
-			      <td>15</td>
-			      <td>1500</td>
-			      <td>Все засрали, обблевали, ебались</td>
-			    </tr>
-			    <tr>			      
-			      <td>26.12.2017</td>
-			      <td>01.14.2018</td>
-			      <td>100</td>
-			      <td>15</td>
-			      <td>1500</td>
-			      <td>Все засрали, обблевали, ебались</td>
-			    </tr>
+				  <?php foreach ($incomes as $item): ?>
+					  <tr>	
+						  <td><?php echo $item['name']; ?></td>
+						  <td><?php echo $item['date_arr']; ?></td>
+						  <td><?php echo $item['date_dep']; ?></td>
+						  <td><?php echo $item['price']; ?></td>
+						  <td><?php echo $item['days']; ?></td>
+						  <td><?php echo $item['sum']; ?></td>
+						  <td><?php echo $item['comment']; ?></td>
+					  </tr>					
+				  <?php endforeach; ?>
 			  </tbody>
 			</table>
 		</div>
