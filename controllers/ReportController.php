@@ -36,14 +36,46 @@ class ReportController
 
 
 		public function actionExpensesOwnerOne($realtyId) {
-				// $userId = $_SESSION['userId'];
+				$userId = $_SESSION['userId'];
 
-				// $realties = Realty::getRealtiesOfUser($userId);
-				// $incomes = Income::getIncomeOneRealty($userId, $realtyId);	    
+				$expenses = Expense::getExpenseOwnerOneRealty($userId, $realtyId);	    
 
-				// // Подключаем вид
-				// require_once(ROOT . '/views/cabinet/expenses_gen/one.php');
-				// return true;
+				// Подключаем вид
+				require_once(ROOT . '/views/cabinet/expenses_owner/one.php');
+				return true;
+		}
+
+
+		public function actionExpensesGenAll() {
+				$userId = $_SESSION['userId'];
+				
+				$expenses = Expense::getExpenseGenAllRealties($userId);
+				
+				// Подключаем вид
+				require_once(ROOT . '/views/cabinet/expenses_gen/all.php');
+				return true;
+		}
+
+
+		public function actionExpensesGenOne($realtyId) {
+				$userId = $_SESSION['userId'];
+
+				$expenses = Expense::getExpenseGenOneRealty($userId, $realtyId);	    
+
+				// Подключаем вид
+				require_once(ROOT . '/views/cabinet/expenses_gen/one.php');
+				return true;
+		}
+
+
+		public function actionMoneyIndex() {
+				$userId = $_SESSION['userId'];
+				
+				$money = Money::getTransactions($userId);
+				
+				// Подключаем вид
+				require_once(ROOT . '/views/cabinet/money/index.php');
+				return true;
 		}
 
 }

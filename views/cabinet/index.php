@@ -50,7 +50,7 @@
 			    <a id="expenses-gen" class="nav-link" href="/expenses-gen/all">Общие расходы</a>
 			  </li>
 			  <li class="nav-item">
-			    <a id="money" class="nav-link" href="/money/all">Денежные взаиморасчеты</a>
+			    <a id="money" class="nav-link" href="/money">Денежные взаиморасчеты</a>
 			  </li>
 			</ul>
 		</div>

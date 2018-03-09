@@ -1,1 +1,35 @@
-exp-owner-one
+<div class="row table-wrap">
+	<div class="col">
+		<table class="table table-bordered table-striped">
+		  <thead>
+		    <tr>
+			    <th scope="col">Дата</th>
+		      <th scope="col">Объект</th>
+		      <th scope="col">Товар (услуга)</th>
+		      <th scope="col">Количество</th>
+		      <th scope="col">Цена</th>
+		      <th scope="col">Сумма</th>
+		      <th scope="col">Источник</th>
+		      <th scope="col">Отчет</th>
+		      <th scope="col">Комментарий</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+			  <?php foreach ($expenses as $item): ?>
+		  	  <tr>	
+		  		  <td><?php echo $item['date']; ?></td>
+		  		  <td><?php echo $item['realty_name']; ?></td>
+		  		  <td><?php echo $item['name']; ?></td>
+		  		  <td><?php echo $item['quantity']; ?></td>
+		  		  <td><?php echo $item['price']; ?></td>
+		  		  <td><?php echo $item['sum']; ?></td>
+		  		  <td><?php echo $item['source']; ?></td>
+		  		  <td><?php echo $item['report']; ?></td>
+		  		  <td><?php echo $item['comment']; ?></td>
+		  	  </tr>					
+			  <?php endforeach; ?>
+		  </tbody>
+		</table>
+	</div>
+</div>
+
