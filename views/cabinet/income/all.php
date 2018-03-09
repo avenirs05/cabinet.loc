@@ -14,16 +14,23 @@
 		  </thead>
 		  <tbody>
 		    <?php foreach ($incomes as $item): ?>
-		  	  <tr>	
-		  		  <td><?php echo $item['name']; ?></td>
-		  		  <td><?php echo $item['date_arr']; ?></td>
-		  		  <td><?php echo $item['date_dep']; ?></td>
-		  		  <td><?php echo $item['price']; ?></td>
-		  		  <td><?php echo $item['days']; ?></td>
-		  		  <td><?php echo $item['sum']; ?></td>
-		  		  <td><?php echo $item['comment']; ?></td>
-		  	  </tr>					
+			  	  <tr>	
+			  		  <td><?php echo $item['name']; ?></td>
+			  		  <td><?php echo $item['date_arr']; ?></td>
+			  		  <td><?php echo $item['date_dep']; ?></td>
+			  		  <td><?php echo $item['price']; ?></td>
+			  		  <td><?php echo $item['days']; ?></td>
+			  		  <td><?php echo $item['sum']; ?></td>
+			  		  <td><?php echo $item['comment']; ?></td>
+			  	  </tr>					
 		    <?php endforeach; ?>
+	    	    	<tr>	
+	    	    		<td colspan="3" class="final-text text-right"><i>Итого:</i></td>
+	    	    		<td class="final-text"><?php echo $finals['avg_price']; ?></td>
+	    	    		<td class="final-text"><?php echo $finals['sum_days']; ?></td>
+	    	    		<td class="final-text"><?php echo $finals['sum_sum']; ?></td>
+	    	    		<td></td>
+	        	  </tr>
 		  </tbody>
 		</table>
 	</div>

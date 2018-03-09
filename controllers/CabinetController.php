@@ -14,7 +14,8 @@ class CabinetController
 
 				$user = User::getUserById($userId);	 
 				$realties = Realty::getRealtiesOfUser($userId);
-				$incomes = Income::getIncomeAllRealties($userId);     
+				$incomes = Income::getIncomeAllRealties($userId); 
+				$finals = Income::getFinalsAllRealties($userId);    
 	 
 				// Подключаем вид
 					require_once(ROOT . '/views/cabinet/index.php');

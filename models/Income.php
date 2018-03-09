@@ -55,4 +55,22 @@ class Income
 				return $incomeList;
 		}
 
+
+    public static function getFinalsAllRealties($userId) {
+				$db = Db::getConnection();
+
+				$result = $db->query("SELECT ROUND(AVG(price), 2) as avg_price, SUM(days) as sum_days, SUM(sum) as sum_sum from income where income.realty_id IN (select realty.id from realty where realty.user_id=$userId)");				
+			
+				return $result->fetch();
+		}
+
+
+    public static function getFinalsOneRealty($userId, $realtyId) {
+				$db = Db::getConnection();
+
+				$result = $db->query("SELECT ROUND(AVG(price), 2) as avg_price, SUM(days) as sum_days, SUM(sum) as sum_sum from income where income.realty_id IN (select realty.id from realty where realty.user_id=$userId and income.realty_id=$realtyId)");				
+			
+				return $result->fetch();
+		}
+
 }

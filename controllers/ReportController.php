@@ -5,8 +5,8 @@ class ReportController
 		public function actionIncomesAll() {
 				$userId = $_SESSION['userId'];
 
-				$realties = Realty::getRealtiesOfUser($userId);
-				$incomes = Income::getIncomeAllRealties($userId);     
+				$incomes = Income::getIncomeAllRealties($userId);
+				$finals = Income::getFinalsAllRealties($userId);      
 
 				// Подключаем вид
 				require_once(ROOT . '/views/cabinet/income/all.php');
@@ -17,7 +17,8 @@ class ReportController
 		public function actionIncomesOne($realtyId) {
 				$userId = $_SESSION['userId'];
 
-				$incomes = Income::getIncomeOneRealty($userId, $realtyId);	    
+				$incomes = Income::getIncomeOneRealty($userId, $realtyId);	
+				$finals = Income::getFinalsOneRealty($userId, $realtyId);     
 
 				// Подключаем вид
 				require_once(ROOT . '/views/cabinet/income/one.php');
