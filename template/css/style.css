@@ -108,11 +108,16 @@ a:hover {
 
 .table .final-text {
 		font-weight: bold;
+		/*font-style: italic;*/
 }
 
 .text-itogo {
 		font-weight: italic;
-		color: green;
+		/*color: green;*/
+}
+
+.table-wrap .table tr {
+	  font-weight: 500;
 }
 
 @media screen and (max-device-width: 991px) {
@@ -167,18 +172,34 @@ a:hover {
 		.report-wrap .table td {
 			font-size: 12px;
 		}
+
+
 }
 
 @media screen and (min-device-width: 576px) 
 							and (max-device-width: 767px) { }
 
 @media screen and (min-device-width: 768px) 
-							and (max-device-width: 991px) and (orientation:landscape) { }
+							and (max-device-width: 991px) and (orientation:landscape) { 
+		.report-wrap .table th,
+		.report-wrap .table td {
+			font-size: 12px;
+		}
+}
 
 @media screen and (min-device-width: 768px) 
-							and (max-device-width: 991px) and (orientation:portrait) { }
+							and (max-device-width: 991px) and (orientation:portrait) { 
+		.report-wrap .table th,
+		.report-wrap .table td {
+			font-size: 12px;
+		}
+}
 
-@media screen and (min-device-width: 992px) { }
+@media screen and (min-device-width: 992px) { 
+		.table-wrap .final-row td{
+			  font-size: 18px;
+		}
+}
 
 @media screen and (min-device-width: 1200px) { }
 

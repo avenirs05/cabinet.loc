@@ -28,9 +28,9 @@
 		  		  <td><?php echo $item['comment']; ?></td>
 		  	  </tr>					
 			  <?php endforeach; ?>
-		    	<tr>	
-		    		<td colspan="5" class="final-text text-right text-itogo">Итого:</td>
-		    		<td></td>
+		    	<tr class="final-row">	
+		    		<td colspan="5" class="final-text text-right">Итого:</td>
+		    		<td class="final-text text-danger"><?php echo $finals['sum_sum']; ?></td>
 		    		<td></td>
 		    		<td></td>
 		    		<td></td>

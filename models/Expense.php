@@ -129,4 +129,40 @@ class Expense
 				return $expenseList;
 		}
 
+
+    public static function getFinalsOwnerAllRealties($userId) {
+				$db = Db::getConnection();
+
+				$result = $db->query("SELECT SUM(expense.sum) as sum_sum from expense where expense.realty_id IN (select realty.id from realty where realty.user_id=$userId and expense.exp_type_id=(select exp_type.id from exp_type where exp_type.name='owner'))");				
+			
+				return $result->fetch();
+		}
+
+
+    public static function getFinalsOwnerOneRealty($userId, $realtyId) {
+				$db = Db::getConnection();
+
+				$result = $db->query("SELECT SUM(expense.sum) as sum_sum from expense where expense.realty_id IN (select realty.id from realty where realty.user_id=$userId and expense.exp_type_id=(select exp_type.id from exp_type where exp_type.name='owner')) and realty_id=$realtyId");				
+			
+				return $result->fetch();
+		}
+
+
+    public static function getFinalsGenAllRealties($userId) {
+				$db = Db::getConnection();
+
+				$result = $db->query("SELECT SUM(expense.sum) as sum_sum from expense where expense.realty_id IN (select realty.id from realty where realty.user_id=$userId and expense.exp_type_id=(select exp_type.id from exp_type where exp_type.name='general'))");				
+			
+				return $result->fetch();
+		}
+
+
+    public static function getFinalsGenOneRealty($userId, $realtyId) {
+				$db = Db::getConnection();
+
+				$result = $db->query("SELECT SUM(expense.sum) as sum_sum from expense where expense.realty_id IN (select realty.id from realty where realty.user_id=$userId and expense.exp_type_id=(select exp_type.id from exp_type where exp_type.name='general')) and realty_id=$realtyId");				
+			
+				return $result->fetch();
+		}
+
 }

@@ -24,11 +24,11 @@
 			  		  <td><?php echo $item['comment']; ?></td>
 			  	  </tr>					
 		    <?php endforeach; ?>
-	    	    	<tr>	
+	    	    	<tr class="final-row">	
 	    	    		<td colspan="3" class="final-text text-right text-itogo">Итого:</td>
 	    	    		<td class="final-text"><?php echo $finals['avg_price']; ?></td>
 	    	    		<td class="final-text"><?php echo $finals['sum_days']; ?></td>
-	    	    		<td class="final-text"><?php echo $finals['sum_sum']; ?></td>
+	    	    		<td class="final-text text-success"><?php echo $finals['sum_sum']; ?></td>
 	    	    		<td></td>
 	        	  </tr>
 		  </tbody>

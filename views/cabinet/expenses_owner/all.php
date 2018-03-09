@@ -28,13 +28,13 @@
 		  		  <td><?php echo $item['comment']; ?></td>
 		  	  </tr>					
 			  <?php endforeach; ?>
-			    	<tr>	
-			    		<td colspan="5" class="final-text text-right text-itogo">Итого:</td>
-			    		<td></td>
-			    		<td></td>
-			    		<td></td>
-			    		<td></td>
-		    	  </tr>
+		    	<tr class="final-row">	
+		    		<td colspan="5" class="final-text text-right text-itogo">Итого:</td>
+		    		<td class="final-text text-danger"><?php echo $finals['sum_sum']; ?></td>
+		    		<td></td>
+		    		<td></td>
+		    		<td></td>
+	    	  </tr>
 		  </tbody>
 		</table>
 	</div>

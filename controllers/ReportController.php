@@ -29,6 +29,7 @@ class ReportController
 				$userId = $_SESSION['userId'];
 				
 				$expenses = Expense::getExpenseOwnerAllRealties($userId);
+				$finals = Expense::getFinalsOwnerAllRealties($userId);
 				
 				// Подключаем вид
 				require_once(ROOT . '/views/cabinet/expenses_owner/all.php');
@@ -40,6 +41,7 @@ class ReportController
 				$userId = $_SESSION['userId'];
 
 				$expenses = Expense::getExpenseOwnerOneRealty($userId, $realtyId);	    
+				$finals = Expense::getFinalsOwnerOneRealty($userId, $realtyId);
 
 				// Подключаем вид
 				require_once(ROOT . '/views/cabinet/expenses_owner/one.php');
@@ -51,6 +53,7 @@ class ReportController
 				$userId = $_SESSION['userId'];
 				
 				$expenses = Expense::getExpenseGenAllRealties($userId);
+				$finals = Expense::getFinalsGenAllRealties($userId);
 				
 				// Подключаем вид
 				require_once(ROOT . '/views/cabinet/expenses_gen/all.php');
@@ -61,7 +64,8 @@ class ReportController
 		public function actionExpensesGenOne($realtyId) {
 				$userId = $_SESSION['userId'];
 
-				$expenses = Expense::getExpenseGenOneRealty($userId, $realtyId);	    
+				$expenses = Expense::getExpenseGenOneRealty($userId, $realtyId);	  
+				$finals = Expense::getFinalsGenOneRealty($userId, $realtyId);
 
 				// Подключаем вид
 				require_once(ROOT . '/views/cabinet/expenses_gen/one.php');
@@ -73,6 +77,7 @@ class ReportController
 				$userId = $_SESSION['userId'];
 				
 				$money = Money::getTransactions($userId);
+				$finals = Money::getFinals($userId);
 				
 				// Подключаем вид
 				require_once(ROOT . '/views/cabinet/money/index.php');

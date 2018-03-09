@@ -13,15 +13,15 @@
 			  <?php foreach ($money as $transaction): ?>
 		  	  <tr>	
 		  		  <td><?php echo $transaction['date']; ?></td>
-		  		  <td><?php echo $transaction['sum_minus']; ?></td>
-		  		  <td><?php echo $transaction['sum_plus']; ?></td>
+		  		  <td class="text-danger"><?php echo $transaction['sum_minus']; ?></td>
+		  		  <td class="text-success"><?php echo $transaction['sum_plus']; ?></td>
 		  		  <td><?php echo $transaction['comment']; ?></td>
 		  	  </tr>					
 			  <?php endforeach; ?>
-			    	<tr>	
-			    		<td class="final-text text-right text-itogo">Итого:</td>
-			    		<td></td>
-			    		<td></td>			    		
+			    	<tr class="final-row">	
+			    		<td class="final-text text-right">Итого:</td>
+			    		<td class="final-text text-danger"><?php echo $finals['sum_minus']; ?></td>
+			    		<td class="final-text text-success"><?php echo $finals['sum_plus']; ?></td>	    		
 			    		<td></td>
 		    	  </tr>
 		  </tbody>
