@@ -28,6 +28,13 @@
 		  		  <td><?php echo $item['comment']; ?></td>
 		  	  </tr>					
 			  <?php endforeach; ?>
+		    	<tr>	
+		    		<td colspan="5" class="final-text text-right text-itogo">Итого:</td>
+		    		<td></td>
+		    		<td></td>
+		    		<td></td>
+		    		<td></td>
+	    	  </tr>
 		  </tbody>
 		</table>
 	</div>

@@ -18,6 +18,12 @@
 		  		  <td><?php echo $transaction['comment']; ?></td>
 		  	  </tr>					
 			  <?php endforeach; ?>
+			    	<tr>	
+			    		<td class="final-text text-right text-itogo">Итого:</td>
+			    		<td></td>
+			    		<td></td>			    		
+			    		<td></td>
+		    	  </tr>
 		  </tbody>
 		</table>
 	</div>

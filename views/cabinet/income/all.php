@@ -25,7 +25,7 @@
 			  	  </tr>					
 		    <?php endforeach; ?>
 	    	    	<tr>	
-	    	    		<td colspan="3" class="final-text text-right"><i>Итого:</i></td>
+	    	    		<td colspan="3" class="final-text text-right text-itogo">Итого:</td>
 	    	    		<td class="final-text"><?php echo $finals['avg_price']; ?></td>
 	    	    		<td class="final-text"><?php echo $finals['sum_days']; ?></td>
 	    	    		<td class="final-text"><?php echo $finals['sum_sum']; ?></td>

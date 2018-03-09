@@ -110,6 +110,11 @@ a:hover {
 		font-weight: bold;
 }
 
+.text-itogo {
+		font-weight: italic;
+		color: green;
+}
+
 @media screen and (max-device-width: 991px) {
 	.table th,
 	.table td {
