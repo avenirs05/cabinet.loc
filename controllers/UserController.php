@@ -10,6 +10,6 @@ class UserController
      */
     public function actionLogout()
     {        
-		User::logout();
-	}
+				User::logout();
+		}
 }

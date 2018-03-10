@@ -23,6 +23,5 @@ class CabinetController
 				// Подключаем вид
 					require_once(ROOT . '/views/cabinet/index.php');
 					return true;
-				}
-	
+				}	
 }

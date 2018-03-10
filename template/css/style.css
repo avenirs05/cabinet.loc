@@ -106,7 +106,6 @@ a:hover {
 
 .text-itogo {
 		font-weight: italic;
-		/*color: green;*/
 }
 
 .table-wrap .table tr {
@@ -138,20 +137,18 @@ a:hover {
 	  font-weight: 500;
 }
 
-/*.report-menu-wrap .nav-item a:hover {
-		color: #fff;
-} */
+.table-wrap .tooltip-info {
+		vertical-align: baseline;
+}
 
-/*.report-menu-wrap .nav-item:active,
-.report-menu-wrap .nav-item a:active {
-		background-color: #dc3545;
-		color: #fff;
-} */
+.smartfox {
+		color: #FF9900;
+		font-weight: 500;
+}
 
-/*#incomes {
-		background-color: #007bff;
-		color: #fff;
-}*/
+.smartfox:hover {
+		color: #FFFF66;
+}
 
 @media screen and (max-device-width: 991px) {
 	.report-menu-wrap .nav-item a:hover {

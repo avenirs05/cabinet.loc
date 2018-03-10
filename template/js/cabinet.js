@@ -1,5 +1,8 @@
 jQuery(document).ready(function () {  
 
+	// Tooltips
+	$('[data-toggle="tooltip"]').tooltip();
+
 	// Кнопки отчетов
 	var bgRepDefault = 'RGB(248, 248, 248)'; 
 	var bgRepClicked = 'RGB(0, 123, 255)'; 
@@ -18,7 +21,7 @@ jQuery(document).ready(function () {
 			if ( $(this).parent().css('background-color') == 'rgb(243, 243, 243)' || 
 					 $(this).parent().css('background-color') == 'rgb(248, 248, 248)') 
 			{
-						$(this).css('color', 'RGB(0, 0, 0)');
+					 $(this).css('color', 'RGB(0, 0, 0)');
 			} 
 	})
 

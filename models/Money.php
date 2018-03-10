@@ -2,7 +2,8 @@
 
 class Money 
 {
-    public static function getTransactions($userId) {
+    public static function getTransactions($userId) 
+    {
 				$db = Db::getConnection();
 
 				$result = $db->query('SELECT * FROM money WHERE money.user_id=' . $userId);		
@@ -22,7 +23,8 @@ class Money
 	}
 	
 
-    public static function getFinals($userId) {
+    public static function getFinals($userId) 
+    {
 				$db = Db::getConnection();
 
 				$result = $db->query("SELECT ROUND(SUM(sum_minus)) as sum_minus, ROUND(SUM(sum_plus)) as sum_plus from money where money.user_id=$userId");				
