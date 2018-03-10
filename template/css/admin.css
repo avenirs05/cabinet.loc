@@ -3,6 +3,6 @@
 		margin-right: 40px;
 }
 
-/*.navbar .navbar-brand:hover {
-		color: red;
-}*/
+.navbar .navbar-brand:first-child {
+		color: rgb(204, 255, 204);
+}

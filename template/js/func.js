@@ -1,3 +1,44 @@
+// Подсвечивает нужным цветом кликнутую (ховерную) ссылку
+function colorClickedHoverEl (selector, colorDefault, colorClicked, colorHover) {
+
+    $(selector).click(function(e) {
+        e.preventDefault();
+
+        $(this).css('color', colorClicked);
+        var textOfThis = $(this).text();
+
+        $(selector).each(function(indx, el) {
+            if ( $(el).text() !== textOfThis ) {
+                  $(el).css('color', colorDefault);
+            }
+        });
+
+    });
+
+
+    $(selector).mouseover(function(e) {
+        e.preventDefault();
+
+        if ( $(this).css('color') == colorDefault ) {
+              $(this).css('color', colorHover);
+        }
+    });
+
+
+    $(selector).mouseout(function(e) {
+        e.preventDefault();
+        
+        if ( $(this).css('color') == colorHover) {
+              $(this).css('color', colorDefault)
+        }
+
+        if ( $(this).css('color') == colorClicked) {
+              $(this).css('color', colorClicked)
+        }
+    });
+}
+
+
 // Подсвечивание суммы "Баланс"
 function whichColorForBalance () {
     var sum = Number( $('#balance-sum-text').text() );
