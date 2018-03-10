@@ -76,11 +76,14 @@ jQuery(document).ready(function () {
 			$('#expenses-owner').css('color', colorRepDefault);
 			$('#expenses-gen').parent().css('background-color', bgRepDefault);
 			$('#expenses-gen').css('color', colorRepDefault);
+
+			$('.select-realty-wrap label').css('background-color', bgRepClicked);
+			$('.select-realty-wrap label').css('color', colorRepClicked);
 	});
 
 
 	// Отчет расходы собственника
-	$('#expenses-owner').click(function(e) {
+	$('#expenses-owner').on('click', function(e) {
 			e.preventDefault();
 
 			$('.table-wrap').remove();
@@ -106,6 +109,9 @@ jQuery(document).ready(function () {
 			$('#incomes').css('color', colorRepDefault);
 			$('#expenses-gen').parent().css('background-color', bgRepDefault);
 			$('#expenses-gen').css('color', colorRepDefault);
+
+			$('.select-realty-wrap label').css('background-color', bgRepClicked);
+			$('.select-realty-wrap label').css('color', colorRepClicked);
 
 	});
 
@@ -137,6 +143,9 @@ jQuery(document).ready(function () {
 			$('#incomes').css('color', colorRepDefault);
 			$('#expenses-owner').parent().css('background-color', bgRepDefault);
 			$('#expenses-owner').css('color', colorRepDefault);
+
+			$('.select-realty-wrap label').css('background-color', bgRepClicked);
+			$('.select-realty-wrap label').css('color', colorRepClicked);
 	});
 
 
@@ -162,6 +171,11 @@ jQuery(document).ready(function () {
 				  }
 			});
 
+			$('.report-menu-wrap .nav-item a').parent().css('background-color', bgRepDefault);
+			$('.report-menu-wrap .nav-item a').css('color', 'RGB(0, 0, 0)');
+
+			$('.select-realty-wrap label').css('background-color', bgRepDefault);
+			$('.select-realty-wrap label').css('color', 'RGB(0, 0, 0)');
 
 
 

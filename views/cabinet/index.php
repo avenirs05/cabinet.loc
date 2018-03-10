@@ -2,17 +2,18 @@
  
 <div class="container-fluid profile-wrap">
 	<div class="row">
-		<div class="col">
-			<span id="balance-text">Баланс: </span>
+		<div class="col balance-wrap">
+			<span id="balance-text"><i>Баланс:</i> </span>
 			<span id="balance-sum-text">0</span>€&nbsp;
 			<a id="money" href="/money">Подробнее</a>
 		</div>
 		<div class="col text-right">
 			<img src="/template/imgs/person.svg" width="11" height="11" alt="">   
-			<a href="/cabinet/"><?php echo $user['name']; ?></a>&nbsp;&nbsp;
+			<span><?php echo $user['name']; ?></>&nbsp;&nbsp;
 			<a href="/logout">
-			<img src="/template/imgs/account-logout.svg" width="11" height="11" alt=""> 
-		  <span>Выход</span></a>		
+				<img src="/template/imgs/account-logout.svg" width="11" height="11" alt=""> 
+			  <span>Выход</span>
+		  </a>		
 		</div>
 	</div>
 </div>

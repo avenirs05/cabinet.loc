@@ -8,9 +8,9 @@ return array(
     'password' => '',
 );
 
-// return array(
-//     'host' => 'u475861.mysql.masterhost.ru',
-//     'dbname' => 'u475861_cabinet',
-//     'user' => 'u475861_2',
-//     'password' => 'i_G4o_6NGs',
-// );
+return array(
+    'host' => 'u475861.mysql.masterhost.ru',
+    'dbname' => 'u475861_cabinet',
+    'user' => 'u475861_2',
+    'password' => 'i_G4o_6NGs',
+);
