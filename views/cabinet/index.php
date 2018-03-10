@@ -3,8 +3,9 @@
 <div class="container-fluid profile-wrap">
 	<div class="row">
 		<div class="col balance-wrap">
-			<span id="balance-text"><i>Баланс:</i> </span>
-			<span id="balance-sum-text">0</span>€&nbsp;
+			<span id="balance-text" class="text-muted"><i>Баланс:</i> </span>
+			<span id="balance-sum-text"><?php echo $finalsMoney['sum_plus'] - $finalsMoney['sum_minus']; ?></span>
+			<span id="sign-evro-text">€</span>&nbsp;
 			<a id="money" href="/money">Подробнее</a>
 		</div>
 		<div class="col text-right">

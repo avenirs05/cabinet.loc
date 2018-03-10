@@ -1,3 +1,33 @@
+// Подсвечивание суммы "Баланс"
+function whichColorForBalance () {
+    var sum = Number( $('#balance-sum-text').text() );
+
+    if (sum < 0) {
+        $('#balance-sum-text, #sign-evro-text').addClass('text-danger');
+    } 
+    
+    if (sum > 0) {
+        $('#balance-sum-text, #sign-evro-text').addClass('text-success');
+    } 
+}
+
+
+// Удаляет -0 и 0 в таблице взаиморасчетов (баланс)
+function delZeroInTable () {
+    $('.gave-money').each(function(indx, el) {
+        if ( $(el).text() === '-0' ) {
+                $(el).text('');
+        }
+    });
+
+    $('.got-money').each(function(indx, el) {
+        if ( $(el).text() === '0' ) {
+                $(el).text('');
+        }
+    });
+}
+
+
 // Возвращает случайное число
 function random () {  
     return Math.floor(Math.random() * 10000000000000);

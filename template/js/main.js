@@ -6,6 +6,8 @@ jQuery(document).ready(function () {
 	var colorRepDefault = 'RGB(0, 0, 0)';
 	var colorRepClicked = 'RGB(255, 255, 255)';
 
+	whichColorForBalance();
+
 	// Hover эффект при наведении на отчет, чтобы текст ссылки нужным цветом был
 	$('.nav-item').mouseover(function() {
 			$(this).children().css('color', 'RGB(255, 255, 255)');
@@ -76,14 +78,13 @@ jQuery(document).ready(function () {
 			$('#expenses-owner').css('color', colorRepDefault);
 			$('#expenses-gen').parent().css('background-color', bgRepDefault);
 			$('#expenses-gen').css('color', colorRepDefault);
-
 			$('.select-realty-wrap label').css('background-color', bgRepClicked);
 			$('.select-realty-wrap label').css('color', colorRepClicked);
 	});
 
 
 	// Отчет расходы собственника
-	$('#expenses-owner').on('click', function(e) {
+	$('#expenses-owner').click(function(e) {
 			e.preventDefault();
 
 			$('.table-wrap').remove();
@@ -109,7 +110,6 @@ jQuery(document).ready(function () {
 			$('#incomes').css('color', colorRepDefault);
 			$('#expenses-gen').parent().css('background-color', bgRepDefault);
 			$('#expenses-gen').css('color', colorRepDefault);
-
 			$('.select-realty-wrap label').css('background-color', bgRepClicked);
 			$('.select-realty-wrap label').css('color', colorRepClicked);
 
@@ -136,14 +136,13 @@ jQuery(document).ready(function () {
 				  }
 			});
 
-			// Подсветка кнопока отчетов при клике
+			// Подсветка кнопок отчетов при клике
 			$(this).parent().css('background-color', bgRepClicked);
 			$(this).css('color', colorRepClicked);
 			$('#incomes').parent().css('background-color', bgRepDefault);
 			$('#incomes').css('color', colorRepDefault);
 			$('#expenses-owner').parent().css('background-color', bgRepDefault);
 			$('#expenses-owner').css('color', colorRepDefault);
-
 			$('.select-realty-wrap label').css('background-color', bgRepClicked);
 			$('.select-realty-wrap label').css('color', colorRepClicked);
 	});
@@ -159,26 +158,23 @@ jQuery(document).ready(function () {
 			$.ajax({
 				  url: $('#money').attr('href'),
 				  type: 'post',
-				  success: function(data) {
-				  	  
+				  success: function(data) {				  	  
 				  		$('.report-wrap').append(data);
 
 				  		var saldo =  Number( $('#final-sum-minus').text() ) + Number($('#final-sum-plus').text() );
-
-				  		if ( saldo >= 0 ) {
+				  		if (saldo >= 0) {
 				  					$('#saldo-plus').text(saldo);
 				  		} else $('#saldo-minus').text(saldo);
+
+				  		delZeroInTable();
 				  }
 			});
 
+			// Подсветка других кнопок
 			$('.report-menu-wrap .nav-item a').parent().css('background-color', bgRepDefault);
 			$('.report-menu-wrap .nav-item a').css('color', 'RGB(0, 0, 0)');
-
 			$('.select-realty-wrap label').css('background-color', bgRepDefault);
 			$('.select-realty-wrap label').css('color', 'RGB(0, 0, 0)');
-
-
-
 	});
 
 
