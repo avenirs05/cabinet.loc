@@ -6,9 +6,9 @@
 			  <th scope="col">Объект</th>
 		      <th scope="col">Заезд</th>
 		      <th scope="col">Выезд</th>
-		      <th scope="col">Цена</th>
+		      <th scope="col">Цена, €</th>
 		      <th scope="col">Дней</th>
-		      <th scope="col">Сумма</th>
+		      <th scope="col">Сумма, €</th>
 		      <th scope="col">Комментарий</th>
 		    </tr>
 		  </thead>
@@ -25,7 +25,7 @@
 			  	  </tr>					
 		    <?php endforeach; ?>
 	    	    	<tr class="final-row">	
-	    	    		<td colspan="3" class="final-text text-right text-itogo">Итого:</td>
+	    	    		<td colspan="3" class="final-text text-right text-itogo">Итого, €:</td>
 	    	    		<td class="final-text"><?php echo $finals['avg_price']; ?></td>
 	    	    		<td class="final-text"><?php echo $finals['sum_days']; ?></td>
 	    	    		<td class="final-text text-success"><?php echo $finals['sum_sum']; ?></td>

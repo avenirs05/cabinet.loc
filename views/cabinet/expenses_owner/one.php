@@ -7,8 +7,8 @@
 		      <th scope="col">Объект</th>
 		      <th scope="col">Товар (услуга)</th>
 		      <th scope="col">Количество</th>
-		      <th scope="col">Цена</th>
-		      <th scope="col">Сумма</th>
+		      <th scope="col">Цена, €</th>
+		      <th scope="col">Сумма, €</th>
 		      <th scope="col">Источник</th>
 		      <th scope="col">Отчет</th>
 		      <th scope="col">Комментарий</th>
@@ -29,7 +29,7 @@
 		  	  </tr>					
 			  <?php endforeach; ?>
 		    	<tr class="final-row">	
-		    		<td colspan="5" class="final-text text-right text-itogo">Итого:</td>
+		    		<td colspan="5" class="final-text text-right text-itogo">Итого, €:</td>
 		    		<td class="final-text text-danger"><?php echo $finals['sum_sum']; ?></td>
 		    		<td></td>
 		    		<td></td>
