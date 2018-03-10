@@ -3,15 +3,16 @@
 <div class="container-fluid profile-wrap">
 	<div class="row">
 		<div class="col">
-			<div class="text-right">
-					<span>
-						<img src="/template/imgs/person.svg" width="11" height="11" alt="">   
-						<a href="/cabinet/"><?php echo $user['name']; ?></a>&nbsp;&nbsp;
-						  <a href="/logout">
-							<img src="/template/imgs/account-logout.svg" width="11" height="11" alt=""> 
-					  	<span>Выход</span></a>
-					</span>
-			</div>
+			<span id="balance-text">Баланс: </span>
+			<span id="balance-sum-text">0</span>€&nbsp;
+			<a id="money" href="/money">Подробнее</a>
+		</div>
+		<div class="col text-right">
+			<img src="/template/imgs/person.svg" width="11" height="11" alt="">   
+			<a href="/cabinet/"><?php echo $user['name']; ?></a>&nbsp;&nbsp;
+			<a href="/logout">
+			<img src="/template/imgs/account-logout.svg" width="11" height="11" alt=""> 
+		  <span>Выход</span></a>		
 		</div>
 	</div>
 </div>
@@ -41,7 +42,7 @@
 		<div class="col">
 			<ul class="nav nav-pills nav-fill">
 			  <li class="nav-item">
-			    <a id="incomes" class="nav-link active" href="/incomes/all">Доходы собственника</a>
+			    <a id="incomes" class="nav-link" href="/incomes/all">Доходы собственника</a>
 			  </li>
 			  <li class="nav-item">
 			    <a id="expenses-owner" class="nav-link" href="/expenses-owner/all">Расходы собственника</a>
@@ -49,9 +50,9 @@
 			  <li class="nav-item">
 			    <a id="expenses-gen" class="nav-link" href="/expenses-gen/all">Общие расходы</a>
 			  </li>
-			  <li class="nav-item">
+<!-- 			  <li class="nav-item">
 			    <a id="money" class="nav-link" href="/money">Денежные взаиморасчеты</a>
-			  </li>
+			  </li> -->
 			</ul>
 		</div>
 	</div>
