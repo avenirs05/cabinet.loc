@@ -13,7 +13,9 @@ return array(
 
     // Отчеты админка
     'incomes-admin/all/all' => 'reportAdmin/incomesAllUsersAndRealties',
-    'incomes-admin/all/([0-9]+)' => 'reportAdmin/incomesAllRealtiesOneUser/$1',
+    'incomes-admin/([0-9]+)/all' => 'reportAdmin/incomesAllRealtiesOneUser/$1',
+    'incomes-admin/([0-9]+)/([0-9]+)' => 'reportAdmin/incomesOneRealtyOneUser/$1/$2',
+
     //'incomes_admin/all/([0-9]+)' => 'reportAdmin/incomesAll',
     //'incomes/([0-9]+)' => 'report/incomesOne/$1',  
 

@@ -42,14 +42,14 @@ class Income
 
 				$i = 0;
 				while ($row = $result->fetch()) {
-				  $incomeList[$i]['name'] = $row['name'];
-				  $incomeList[$i]['date_arr'] = $row['date_arr'];
-				  $incomeList[$i]['date_dep'] = $row['date_dep'];
-				  $incomeList[$i]['price'] = $row['price'];
-				  $incomeList[$i]['days'] = $row['days'];
-				  $incomeList[$i]['sum'] = $row['sum'];
-				  $incomeList[$i]['comment'] = $row['comment'];
-				  $i++;
+							  $incomeList[$i]['name'] = $row['name'];
+							  $incomeList[$i]['date_arr'] = $row['date_arr'];
+							  $incomeList[$i]['date_dep'] = $row['date_dep'];
+							  $incomeList[$i]['price'] = $row['price'];
+							  $incomeList[$i]['days'] = $row['days'];
+							  $incomeList[$i]['sum'] = $row['sum'];
+							  $incomeList[$i]['comment'] = $row['comment'];
+							  $i++;
 				}
 
 				return $incomeList;

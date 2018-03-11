@@ -8,9 +8,10 @@ jQuery(document).ready(function () {
 				$('.table-wrap').remove();
 				
 				var href = $(this).attr('href') + '/' + 
-									 $('#select-realties option:selected').val() + '/' +
-									 $('#select-owners option:selected').val();
-
+									 $('#select-owners option:selected').val() + '/' +
+									 $('#select-realties option:selected').val() + '/';
+									 
+				console.log(href)
 				$.ajax({
 					  url: href,
 					  type: 'post',
@@ -25,11 +26,8 @@ jQuery(document).ready(function () {
 		$('.select-realty-wrap #select-realties').change(function() {
 				$(this).children().each(function(indx, el) {
 						var text = null;
-
 						if ( $(el).prop('selected') ) {
-									text = $(el).text().trim();
-
-									console.log( $('#which-realty').text(text) );										 
+									text = $(el).text().trim();									 
 								  return false;
 						}
 				});			

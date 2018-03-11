@@ -29,4 +29,15 @@ class ReportAdminController {
 				require_once(ROOT . '/views/admin/income/index.php');
 				return true;
 		}
+
+
+		public function actionIncomesOneRealtyOneUser($userId, $realtyId) 
+		{				
+				$incomes = Income::getIncomeOneRealty($userId, $realtyId);	
+				$finals = Income::getFinalsOneRealty($userId, $realtyId);     
+
+				// Подключаем вид
+				require_once(ROOT . '/views/admin/income/index.php');
+				return true;
+		}
 }
