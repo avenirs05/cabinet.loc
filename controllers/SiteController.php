@@ -21,7 +21,7 @@ class SiteController
                 if ($user['role'] == 'admin') {
                     $_SESSION['role'] = 'admin';
 					$_SESSION['adminId'] = $userId;
-                    header("location: /admin");
+                    header("location: /admin/$userId");
                 } else {
                   $_SESSION['role'] = 'user';
 				  $_SESSION['userId'] = $userId;

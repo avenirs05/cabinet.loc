@@ -54,6 +54,26 @@ class User
 
 				return $result->fetch();
     }
+
+
+    public static function getAllUsers() {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Получение и возврат результатов
+        $result = $db->query('SELECT * FROM user');
+
+        $usersList = array();
+
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $usersList[$i]['id'] = $row['id'];
+            $usersList[$i]['name'] = $row['name'];
+            $i++;
+        }
+
+        return $usersList;
+    }
 	
 	
 		public static function logout() {
@@ -82,12 +102,14 @@ class User
 	}
 	
 	  
-	public static function enterAsAdmin() {
-			if (isset($_SESSION['role'])) {
-						if ($_SESSION['role'] != 'admin') {
-						  header('Location: /');
-						}
-			}
+	public static function enterAsAdmin($adminId) {
+				if (!isset($_SESSION['role'])) {
+					  header('Location: /');
+				} elseif ($_SESSION['role'] != 'admin') {
+					  header('Location: /');		  
+				} elseif ($_SESSION['adminId'] != $adminId) {
+					  header('Location: /');		  
+				}
 	}
 	
 }

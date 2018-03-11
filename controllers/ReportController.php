@@ -9,7 +9,7 @@ class ReportController
 				$finals = Income::getFinalsAllRealties($userId);      
 
 				// Подключаем вид
-				require_once(ROOT . '/views/cabinet/income/all.php');
+				require_once(ROOT . '/views/cabinet/income/index.php');
 				return true;
 		}
 		
@@ -21,9 +21,10 @@ class ReportController
 				$finals = Income::getFinalsOneRealty($userId, $realtyId);     
 
 				// Подключаем вид
-				require_once(ROOT . '/views/cabinet/income/one.php');
+				require_once(ROOT . '/views/cabinet/income/index.php');
 				return true;
 	  }
+
 
 		public function actionExpensesOwnerAll() {
 				$userId = $_SESSION['userId'];
@@ -32,7 +33,7 @@ class ReportController
 				$finals = Expense::getFinalsOwnerAllRealties($userId);
 				
 				// Подключаем вид
-				require_once(ROOT . '/views/cabinet/expenses_owner/all.php');
+				require_once(ROOT . '/views/cabinet/expenses/index.php');
 				return true;
 		}
 
@@ -44,7 +45,7 @@ class ReportController
 				$finals = Expense::getFinalsOwnerOneRealty($userId, $realtyId);
 
 				// Подключаем вид
-				require_once(ROOT . '/views/cabinet/expenses_owner/one.php');
+				require_once(ROOT . '/views/cabinet/expenses/index.php');
 				return true;
 		}
 
@@ -56,7 +57,7 @@ class ReportController
 				$finals = Expense::getFinalsGenAllRealties($userId);
 				
 				// Подключаем вид
-				require_once(ROOT . '/views/cabinet/expenses_gen/all.php');
+				require_once(ROOT . '/views/cabinet/expenses/index.php');
 				return true;
 		}
 
@@ -68,7 +69,7 @@ class ReportController
 				$finals = Expense::getFinalsGenOneRealty($userId, $realtyId);
 
 				// Подключаем вид
-				require_once(ROOT . '/views/cabinet/expenses_gen/one.php');
+				require_once(ROOT . '/views/cabinet/expenses/index.php');
 				return true;
 		}
 

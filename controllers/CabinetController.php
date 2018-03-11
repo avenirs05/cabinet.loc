@@ -13,7 +13,7 @@ class CabinetController
 				User::enterAsUser($userId);    
 
 				$user = User::getUserById($userId);	 
-				$realties = Realty::getRealtiesOfUser($userId);
+				$realties = Realty::getAllRealties($userId);
 				$incomes = Income::getIncomeAllRealties($userId); 
 				$finals = Income::getFinalsAllRealties($userId);    
 				

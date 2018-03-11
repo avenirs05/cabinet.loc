@@ -6,3 +6,25 @@
 .navbar .navbar-brand:first-child {
 		color: rgb(204, 255, 204);
 }
+
+.select-realty-wrap label {
+    background-color: rgb(204, 255, 204);
+    color: #000;
+}
+
+.report-wrap h3 {
+		color: green;
+}
+
+.logout-wrap {
+		color: #fff;
+		margin-left: auto;
+}
+
+.logout-wrap:hover {
+		color: rgb(255, 255, 0);
+}
+
+.logout-wrap img {
+		vertical-align: baseline;
+}
