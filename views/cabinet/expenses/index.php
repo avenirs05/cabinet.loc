@@ -24,7 +24,7 @@
 		  		  <td><?php echo $item['price']; ?></td>
 		  		  <td><?php echo $item['sum']; ?></td>
 		  		  <td><?php echo $item['source']; ?></td>
-		  		  <td><?php echo $item['report']; ?></td>
+		  		  <td class="report-email"><?php echo $item['report']; ?></td>
 		  		  <td><?php echo $item['comment']; ?></td>
 		  	  </tr>					
 			  <?php endforeach; ?>

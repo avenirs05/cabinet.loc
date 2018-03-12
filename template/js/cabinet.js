@@ -103,8 +103,11 @@ jQuery(document).ready(function () {
 				  type: 'post',
 				  success: function(data) {
 				  		$('.report-wrap').append(data);
+				  		delZeroInTable();
 				  }
 			});
+
+
 
 			// Подсветка кнопока отчетов при клике
 			$(this).parent().css('background-color', bgRepClicked);
@@ -136,8 +139,11 @@ jQuery(document).ready(function () {
 				  type: 'post',
 				  success: function(data) {
 				  		$('.report-wrap').append(data);
+				  		delZeroInTable();
 				  }
 			});
+
+			
 
 			// Подсветка кнопок отчетов при клике
 			$(this).parent().css('background-color', bgRepClicked);

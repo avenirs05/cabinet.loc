@@ -21,6 +21,7 @@ jQuery(document).ready(function () {
 					  type: 'post',
 					  success: function(data) {
 					  		$('.report-wrap').append(data);
+					  		delZeroInTable();
 					  }
 				});
 		});

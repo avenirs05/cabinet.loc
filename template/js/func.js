@@ -61,6 +61,19 @@ function delZeroInTable () {
                 $(el).text('');
         }
     });
+
+    $('.report-email').each(function(indx, el) {
+        if ( $(el).text() === '0000-00-00' ) {
+                $(el).text('');
+        }
+    });
+
+    // console.log($('.report-email').text())
+    // //console.log('ddd');
+    // if ( $('.report-email').text().trim() == '0000-00-00') {
+    //       $('.report-email').text('');
+    // }
+    
 }
 
 
