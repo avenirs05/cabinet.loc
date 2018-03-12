@@ -16,6 +16,7 @@ jQuery(document).ready(function () {
 			$(this).children().css('color', 'RGB(255, 255, 255)');
 	});
 
+
 	$('.nav-item a').mouseout(function() {
 			//console.log( $(this).parent().css('background-color') == 'rgb(243, 243, 243)' )
 			if ( $(this).parent().css('background-color') == 'rgb(243, 243, 243)' || 
@@ -23,16 +24,19 @@ jQuery(document).ready(function () {
 			{
 					 $(this).css('color', 'RGB(0, 0, 0)');
 			} 
-	})
+	});
+
 
 	// По умолчанию - отчет "Доходы собственника как бы нажат"
 	$('#incomes').parent().css('background-color', bgRepClicked);
 	$('#incomes').css('color', colorRepClicked);
 
+
 	//Прижать футер к низу
 	if ( $(document).height() <= $(window).height() ) {
 	  		$(".footer").addClass("fixed-bottom");
 	}	
+
 
 	// то или иное содержание атрибута href у отчета в зависимости от выбранного селекта
 	// то ли по всем объектам делать отчет, то ли по 1 выбранному

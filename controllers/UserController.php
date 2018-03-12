@@ -12,4 +12,12 @@ class UserController
     {        
 				User::logout();
 		}
+
+		public function actionUsersList() 
+		{		   
+
+				// Подключаем вид
+				require_once(ROOT . '/views/admin/users/index.php');
+				return true;
+		}
 }

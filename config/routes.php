@@ -35,19 +35,9 @@ return array(
     'balance-admin/([0-9]+)/all' => 'reportAdmin/moneyOneUser/$1',
     'balance-admin/([0-9]+)/([0-9]+)' => 'reportAdmin/moneyOneUser/$1',
 
+    'realties-admin' => 'reportAdmin/realtiesList',
+    'owners-admin' => 'user/usersList',    
 
-    
-
-    //'incomes_admin/all/([0-9]+)' => 'reportAdmin/incomesAll',
-    //'incomes/([0-9]+)' => 'report/incomesOne/$1',  
-
-    // 'expenses-owner/all' => 'report/expensesOwnerAll',
-    // 'expenses-owner/([0-9]+)' => 'report/expensesOwnerOne/$1',    
-    
-    // 'expenses-gen/all' => 'report/expensesGenAll',
-    // 'expenses-gen/([0-9]+)' => 'report/expensesGenOne/$1',    
-    
-    // 'money' => 'report/moneyIndex',
 
     // Главная страница после входа в кабинет
     'cabinet/([0-9]+)' => 'cabinet/index/$1',

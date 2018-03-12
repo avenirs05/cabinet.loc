@@ -8,12 +8,14 @@ function hideElemsIfRealtiesOrOwnersClicked() {
     $('#which-realty').text('');
 }
 
+
 function hideElemsIfBalanceClicked() {
     $('.select-realty-content').hide();
     $('#ob-nedv-text').hide();
     $('#zapyataya').hide();             
     $('#which-realty').text('');
 }
+
 
 // Когда нажат отчет, появляются некоторые элементы
 function showElemsIfReportClicked() {

@@ -159,4 +159,12 @@ class ReportAdminController {
 				require_once(ROOT . '/views/admin/money/index.php');
 				return true;
 		}
+
+		public function actionRealtiesList() 
+		{		   
+
+				// Подключаем вид
+				require_once(ROOT . '/views/admin/realties/index.php');
+				return true;
+		}
 }
