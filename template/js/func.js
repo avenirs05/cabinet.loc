@@ -1,3 +1,59 @@
+function hideElemsIfRealtiesOrOwnersClicked() {
+    $('.select-realty-content').hide();
+    $('.select-owner-content').hide();
+    $('#ob-nedv-text').hide();
+    $('#zapyataya').hide();
+    $('#sobstv-text').hide();
+    $('#which-owner').hide();
+    $('#which-realty').text('');
+}
+
+function hideElemsIfBalanceClicked() {
+    $('.select-realty-content').hide();
+    $('#ob-nedv-text').hide();
+    $('#zapyataya').hide();             
+    $('#which-realty').text('');
+}
+
+// Когда нажат отчет, появляются некоторые элементы
+function showElemsIfReportClicked() {
+    $('.select-realty-content, .select-owner-content').show();
+    $('#ob-nedv-text').show();
+    $('#zapyataya').show();
+    $('#sobstv-text').show();
+    $('#which-owner').show();
+}
+
+
+// Формирует заголовок в зависмимотси от выбранного объекта недвижимости
+function getHeaderOfRepIfSelectRealties() {
+    $('.select-realty-wrap #select-realties').children().each(function(indx, el) {
+        var realty = null;            
+
+        if ( $(el).prop('selected') ) { 
+              realty = $(el).text().trim();   
+              $('#which-realty').text(realty);        
+              return false;
+        }   
+    }); 
+}
+
+
+// Формирует заголовок в зависмимотси от выбранного собственника
+function getHeaderOfRepIfSelectOwners() {
+  $('.select-realty-wrap #select-owners').children().each(function(indx, el) {
+      var owner = null;           
+
+      if ( $(el).prop('selected') ) {
+            owner = $(el).text().trim();
+
+            $('#which-owner').text(owner);                     
+            return false;
+      }
+  });  
+}
+
+
 // Подсвечивает нужным цветом кликнутую (ховерную) ссылку
 function colorClickedHoverEl (selector, colorDefault, colorClicked, colorHover, clickedElDefault) {
     var clickedLink = $(clickedElDefault).text();

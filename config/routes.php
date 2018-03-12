@@ -10,11 +10,10 @@ return array(
     'expenses-owner/([0-9]+)' => 'report/expensesOwnerOne/$1',    
     
     'expenses-gen/all' => 'report/expensesGenAll',
-    'expenses-gen/([0-9]+)' => 'report/expensesGenOne/$1',    
+    'expenses-gen/([0-9]+)' => 'report/expensesGenOne/$1',   
+
+    'money' => 'report/moneyIndex', 
     
-    'money' => 'report/moneyIndex',
-
-
     // Отчеты админка
     'incomes-admin/all/all' => 'reportAdmin/incomesAllUsersAndRealties',
     'incomes-admin/([0-9]+)/all' => 'reportAdmin/incomesAllRealtiesOneUser/$1',
@@ -31,6 +30,13 @@ return array(
     'expenses-gen-admin/([0-9]+)/([0-9]+)' => 'reportAdmin/expensesGenOneRealtyOneUser/$1/$2',
     'expenses-gen-admin/all/([0-9]+)' => 'reportAdmin/expensesGenOneRealtyAllUsers/$1',
 
+    'balance-admin/all/all' => 'reportAdmin/moneyAllUsers',
+    'balance-admin/all/([0-9]+)' => 'reportAdmin/moneyAllUsers',
+    'balance-admin/([0-9]+)/all' => 'reportAdmin/moneyOneUser/$1',
+    'balance-admin/([0-9]+)/([0-9]+)' => 'reportAdmin/moneyOneUser/$1',
+
+
+    
 
     //'incomes_admin/all/([0-9]+)' => 'reportAdmin/incomesAll',
     //'incomes/([0-9]+)' => 'report/incomesOne/$1',  

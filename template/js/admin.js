@@ -8,51 +8,37 @@ jQuery(document).ready(function () {
 				var reportText = $(this).text().trim();
 				$('#which-report').text(reportText);
 
-				$('.table-wrap').remove();
-				
+				showElemsIfReportClicked();
+				getHeaderOfRepIfSelectRealties();
+				getHeaderOfRepIfSelectOwners();	
+
+				if ( $(this).attr('id') == 'balance-admin') {
+							hideElemsIfBalanceClicked();
+				}			
+
+				if ( $(this).attr('id') == 'realties-admin' || $(this).attr('id') == 'owners-admin') {
+							hideElemsIfRealtiesOrOwnersClicked();
+				}			
+
+				$('.table-wrap').remove();				
 
 				var href = $(this).attr('href') + '/' + 
 									 $('#select-owners option:selected').val() + '/' +
-									 $('#select-realties option:selected').val() + '/';
-									 
-				console.log(href)
+									 $('#select-realties option:selected').val() + '/';									 
+
 				$.ajax({
 					  url: href,
 					  type: 'post',
 					  success: function(data) {
 					  		$('.report-wrap').append(data);
 					  		delZeroInTable();
+
+					  		var saldo =  Number( $('#final-sum-minus').text() ) + Number($('#final-sum-plus').text() );
+					  		if (saldo >= 0) {
+					  					$('#saldo-plus').text(saldo);
+					  		} else $('#saldo-minus').text(saldo);
 					  }
 				});
 		});
 
-		// то или иное содержание атрибута href у отчета в зависимости от выбранного селекта
-		// то ли по всем объектам и юзерам делать отчет, то ли по выбранным
-		$('.select-realty-wrap #select-realties').change(function() {
-				$(this).children().each(function(indx, el) {
-						var realty = null;						
-
-						if ( $(el).prop('selected') ) {	
-									realty = $(el).text().trim();					
-									
-									$('#which-realty').text(realty);									 
-								  return false;
-						}
-				});			
-		});
-
-		$('.select-realty-wrap #select-owners').change(function() {
-				$(this).children().each(function(indx, el) {
-						var owner = null;						
-
-						if ( $(el).prop('selected') ) {
-									owner = $(el).text().trim();
-
-									$('#which-owner').text(owner);										 
-								  return false;
-						}
-				});					
-
-		});
-			
 });

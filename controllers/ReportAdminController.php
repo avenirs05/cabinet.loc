@@ -139,4 +139,24 @@ class ReportAdminController {
 				require_once(ROOT . '/views/admin/expenses/index.php');
 				return true;
 		}
+
+		
+		public function actionMoneyAllUsers() {			
+				$money = MoneyAdmin::getAllTransactions();
+				$finals = MoneyAdmin::getAllFinals();
+				
+				// Подключаем вид
+				require_once(ROOT . '/views/admin/money/index.php');
+				return true;
+		}
+
+
+		public function actionMoneyOneUser($userId) {			
+				$money = Money::getTransactions($userId);
+				$finals = Money::getFinals($userId);
+				
+				// Подключаем вид
+				require_once(ROOT . '/views/admin/money/index.php');
+				return true;
+		}
 }
