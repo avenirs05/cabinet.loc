@@ -40,4 +40,31 @@ class ReportAdminController {
 				require_once(ROOT . '/views/admin/income/index.php');
 				return true;
 		}
+
+
+		public function actionExpensesOwnerAllUsersAndRealties() 
+		{		
+				$expenses = ExpenseAdmin::getExpensesOwnerAllRealtiesAllUsers(); 				
+				$finals = ExpenseAdmin::getFinalsOwnerAllRealtiesAllUsers();      
+
+				// Подключаем вид
+				require_once(ROOT . '/views/admin/expenses/index.php');
+				return true;
+		}
+
+
+		public function actionExpensesOwnerAllRealtiesOneUser($userId) 
+		{		
+				$expenses = Expense::getExpenseOwnerAllRealties($userId); 				
+				$finals = Expense::getFinalsOwnerAllRealties($userId);      
+
+				// Подключаем вид
+				require_once(ROOT . '/views/admin/expenses/index.php');
+				return true;
+		}
+
+		public function actionExpensesOwnerOneRealtyOneUser() 
+		{		
+
+		}
 }

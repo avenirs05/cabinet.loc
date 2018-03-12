@@ -16,6 +16,10 @@ return array(
     'incomes-admin/([0-9]+)/all' => 'reportAdmin/incomesAllRealtiesOneUser/$1',
     'incomes-admin/([0-9]+)/([0-9]+)' => 'reportAdmin/incomesOneRealtyOneUser/$1/$2',
 
+    'expenses-owner-admin/all/all' => 'reportAdmin/expensesOwnerAllUsersAndRealties',
+    'expenses-owner-admin/([0-9]+)/all' => 'reportAdmin/expensesOwnerAllRealtiesOneUser/$1',
+    'expenses-owner-admin/([0-9]+)/([0-9]+)' => 'reportAdmin/expensesOwnerOneRealtyOneUser/$1/$2',
+
     //'incomes_admin/all/([0-9]+)' => 'reportAdmin/incomesAll',
     //'incomes/([0-9]+)' => 'report/incomesOne/$1',  
 
