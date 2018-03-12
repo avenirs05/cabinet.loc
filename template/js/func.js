@@ -1,8 +1,10 @@
 // Подсвечивает нужным цветом кликнутую (ховерную) ссылку
-function colorClickedHoverEl (selector, colorDefault, colorClicked, colorHover) {
+function colorClickedHoverEl (selector, colorDefault, colorClicked, colorHover, clickedElDefault) {
+    var clickedLink = $(clickedElDefault).text();
 
     $(selector).click(function(e) {
         e.preventDefault();
+        clickedLink = $(this).text();
 
         $(this).css('color', colorClicked);
         var textOfThis = $(this).text();
@@ -18,23 +20,16 @@ function colorClickedHoverEl (selector, colorDefault, colorClicked, colorHover) 
 
     $(selector).mouseover(function(e) {
         e.preventDefault();
-
-        if ( $(this).css('color') == colorDefault ) {
-              $(this).css('color', colorHover);
-        }
+        $(this).css('color', colorHover);
     });
 
 
     $(selector).mouseout(function(e) {
         e.preventDefault();
         
-        if ( $(this).css('color') == colorHover) {
-              $(this).css('color', colorDefault)
-        }
-
-        if ( $(this).css('color') == colorClicked) {
-              $(this).css('color', colorClicked)
-        }
+        if ( $(this).text() == clickedLink ) {
+              $(this).css('color', colorClicked);
+        } else $(this).css('color', colorDefault);
     });
 }
 

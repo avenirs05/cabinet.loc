@@ -12,6 +12,8 @@
 		      <th scope="col">Источник</th>
 		      <th scope="col">Отчет <img class="tooltip-info" width="15" height="15" data-toggle="tooltip" data-placement="top" title="Дата отправки расходного документа на ваш email" src="/template/imgs/info.svg" alt=""></th>
 		      <th scope="col">Комментарий</th>
+		      <th scope="col"></th>
+		      <th scope="col"></th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -26,11 +28,15 @@
 		  		  <td><?php echo $item['source']; ?></td>
 		  		  <td><?php echo $item['report']; ?></td>
 		  		  <td><?php echo $item['comment']; ?></td>
+		  		  <td>Edit</td>
+		  		  <td>Del</td>
 		  	  </tr>					
 			  <?php endforeach; ?>
 		    	<tr class="final-row">	
 		    		<td colspan="5" class="final-text text-right text-itogo">Итого, €:</td>
 		    		<td class="final-text text-danger"><?php echo $finals['sum_sum']; ?></td>
+		    		<td></td>
+		    		<td></td>
 		    		<td></td>
 		    		<td></td>
 		    		<td></td>
