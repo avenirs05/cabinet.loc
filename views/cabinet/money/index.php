@@ -12,7 +12,7 @@
 		  <tbody>
 			  <?php foreach ($money as $transaction): ?>
 		  	  <tr>	
-		  		  <td><?php echo $transaction['date']; ?></td>
+		  		  <td nowrap><?php echo $transaction['date']; ?></td>
 		  		  <td class="text-danger gave-money">-<?php echo $transaction['sum_minus']; ?></td>
 		  		  <td class="text-success got-money"><?php echo $transaction['sum_plus']; ?></td>
 		  		  <td><?php echo $transaction['comment']; ?></td>

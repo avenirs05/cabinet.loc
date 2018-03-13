@@ -18,21 +18,21 @@
 		    <?php foreach ($incomes as $item): ?>
 			  	  <tr id="<?php echo $item['id']; ?>">	
 			  		  <td><?php echo $item['name']; ?></td>
-			  		  <td><?php echo $item['date_arr']; ?></td>
-			  		  <td><?php echo $item['date_dep']; ?></td>
+			  		  <td nowrap><?php echo $item['date_arr']; ?></td>
+			  		  <td nowrap><?php echo $item['date_dep']; ?></td>
 			  		  <td><?php echo $item['price']; ?></td>
 			  		  <td><?php echo $item['days']; ?></td>
 			  		  <td><?php echo $item['sum']; ?></td>
 			  		  <td><?php echo $item['comment']; ?></td>
-			  		  <td>Edit</td>
-			  		  <td>Del</td>
+			  		  <td class="img-del-edit-wrap"><img src="/template/imgs/edit.png" width="20" alt="" class="close"></td>
+			  		  <td class="img-del-edit-wrap"><img src="/template/imgs/close.png" width="20" alt="" class="close"></td>
 			  	  </tr>					
 		    <?php endforeach; ?>
 	    	    	<tr class="final-row">	
 	    	    		<td colspan="3" class="final-text text-right text-itogo">Итого, €:</td>
-	    	    		<td class="final-text"><?php echo $finals['avg_price']; ?></td>
-	    	    		<td class="final-text"><?php echo $finals['sum_days']; ?></td>
-	    	    		<td class="final-text text-success"><?php echo $finals['sum_sum']; ?></td>
+	    	    		<td id="avg-price" class="final-text"></td>
+	    	    		<td id="income-sum-days" class="final-text"><?php echo $finals['sum_days']; ?></td>
+	    	    		<td id="income-sum-amount" class="final-text text-success"><?php echo $finals['sum_sum']; ?></td>
 	    	    		<td></td>
 	    	    		<td></td>
 	    	    		<td></td>

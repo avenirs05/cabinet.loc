@@ -43,18 +43,86 @@
 			  </select>
 			</div>
 			<div class="btns-add-wrap">
-				<button type="button" class="btn btn-outline-primary">+ Доход</button>
-				<button type="button" class="btn btn-outline-secondary">+ Расход собственник</button>
-				<button type="button" class="btn btn-outline-secondary">+ Расход общий</button>
-				<button type="button" class="btn btn-outline-danger">+ Баланс</button>
-				<button type="button" class="btn btn-outline-info">+ Объект</button>
-				<button type="button" class="btn btn-outline-dark">+ Собственник</button>
+				<button id="add-income" type="button" class="btn btn-outline-primary">+ Доход</button>
+				<button id="add-expense-owner" type="button" class="btn btn-outline-secondary">+ Расход собственник</button>
+				<button id="add-expense-gen" type="button" class="btn btn-outline-secondary">+ Расход общий</button>
+				<button id="add-balance" type="button" class="btn btn-outline-danger">+ Баланс</button>
+				<button id="add-realty" type="button" class="btn btn-outline-info">+ Объект</button>
+				<button id="add-owner" type="button" class="btn btn-outline-dark">+ Собственник</button>
 			</div>
 		</div>
 	</div>
 </div>
 
+<div id="add-income-wrap" class="container-fluid add-fields-wrap" style="display: none">
+	<div class="row">
+		<div class="col">
+			поля добавить доход
+<button class="btn btn-outline-primary btn-cancel">Отмена</button>
+		</div>
+	</div>
+</div>
 
+<div id="add-expense-owner-wrap" class="container-fluid add-fields-wrap" style="display: none">
+	<div class="row">
+		<div class="col">
+			поля добавить расход собственник
+<button class="btn btn-outline-secondary btn-cancel">Отмена</button>
+		</div>
+	</div>
+</div>
+
+<div id="add-expense-gen-wrap" class="container-fluid add-fields-wrap" style="display: none">
+	<div class="row">
+		<div class="col">
+			поля добавить расход общий
+<button class="btn btn-outline-secondary btn-cancel">Отмена</button>			
+		</div>
+	</div>
+</div>
+
+<div id="add-balance-wrap" class="container-fluid add-fields-wrap" style="display: none">
+	<div class="row">
+		<div class="col">
+			поля добавить баланс
+<button class="btn btn-outline-danger btn-cancel">Отмена</button>			
+		</div>
+	</div>
+</div>
+
+<div id="add-realty-wrap" class="container-fluid add-fields-wrap" style="display: none">
+	<div class="row">
+		<div class="col">
+			поля добавить объект
+<button class="btn btn-outline-info btn-cancel">Отмена</button>			
+		</div>
+	</div>
+</div>
+
+<div id="add-owner-wrap" class="container-fluid add-fields-wrap" style="display: none">
+	<div class="row">
+		<div class="col">
+			<div class="form-group">
+			  <label>Имя</label>
+			  <input type="text" class="form-control" placeholder="Имя собственника">
+			</div>
+		  <div class="form-group">
+		    <label>Email (логин)</label>
+		    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email - логин от личного кабинета собственника">
+		  </div>
+		  <div class="form-group">
+		    <label>Пароль</label>
+		    <input type="password" class="form-control" placeholder="Пароль от личного кабинета собственника">
+		  </div>
+		  <div class="form-group">
+		    <label>Телефон</label>
+		    <input type="password" class="form-control" placeholder="Телефон собственника">
+		  </div>
+		  <button class="btn btn-primary">Добавить собственника</button>
+		  <button class="btn btn-outline-dark btn-cancel">Отмена</button>				
+		</div>
+	</div>
+</div>
 
 <div class="container-fluid report-wrap">
 	<div class="row">

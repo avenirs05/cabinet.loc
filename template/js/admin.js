@@ -2,6 +2,7 @@ jQuery(document).ready(function () {
 
 		colorClickedHoverEl ('.navbar-brand', 'rgb(255, 255, 255)', 'rgb(204, 255, 204)', 'rgb(255, 255, 0)', '#incomes-admin');
 
+		showAndHideIfAddBtnsClicked();
 
 		// Основные отчеты
 		$('.reports-main').click(function() {
@@ -11,6 +12,7 @@ jQuery(document).ready(function () {
 				showElemsIfReportClicked();
 				getHeaderOfRepIfSelectRealties();
 				getHeaderOfRepIfSelectOwners();	
+				hideAddFields();
 
 				if ( $(this).attr('id') == 'balance-admin') {
 							hideElemsIfBalanceClicked();
@@ -37,6 +39,12 @@ jQuery(document).ready(function () {
 					  		if (saldo >= 0) {
 					  					$('#saldo-plus').text(saldo);
 					  		} else $('#saldo-minus').text(saldo);
+
+					  		// Средняя цена в отчете "Доходы"
+					  		$('#avg-price').text( 
+					  				( $('#income-sum-amount').text().trim() / 
+					  					$('#income-sum-days').text().trim() ).toFixed(2) 
+					  				);
 					  }
 				});
 		});

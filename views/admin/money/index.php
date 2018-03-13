@@ -14,12 +14,12 @@
 		  <tbody>
 			  <?php foreach ($money as $transaction): ?>
 		  	  <tr id="<?php echo $transaction['id']; ?>">	
-		  		  <td><?php echo $transaction['date']; ?></td>
+		  		  <td nowrap><?php echo $transaction['date']; ?></td>
 		  		  <td class="text-success gave-money"><?php echo $transaction['sum_minus']; ?></td>
 		  		  <td class="text-danger got-money">-<?php echo $transaction['sum_plus']; ?></td>
 		  		  <td><?php echo $transaction['comment']; ?></td>
-		  		  <td>Edit</td>
-		  		  <td>Del</td>
+		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/edit.png" width="20" alt="" class="close"></td>
+		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/close.png" width="20" alt="" class="close"></td>
 		  	  </tr>					
 			  <?php endforeach; ?>
 			    	<tr class="final-row">	
@@ -32,8 +32,7 @@
 	  	    	<tr class="final-row">	
 	  	    		<td class="final-text text-right">Сальдо, €:</td>
 	  	    		<td class="final-text text-success" id="saldo-plus"></td>
-	  	    		<td class="final-text text-danger" id="saldo-minus"></td>
-	  	    			    		
+	  	    		<td class="final-text text-danger" id="saldo-minus"></td>	  	    			    		
 	  	    		<td></td>
 	  	    		<td></td>
 	  	    		<td></td>

@@ -19,17 +19,17 @@
 		  <tbody>
 			  <?php foreach ($expenses as $item): ?>
 		  	  <tr id="<?php echo $item['id']; ?>">	
-		  		  <td><?php echo $item['date']; ?></td>
+		  		  <td nowrap><?php echo $item['date']; ?></td>
 		  		  <td><?php echo $item['realty_name']; ?></td>
 		  		  <td><?php echo $item['name']; ?></td>
 		  		  <td><?php echo $item['quantity']; ?></td>
 		  		  <td><?php echo $item['price']; ?></td>
 		  		  <td><?php echo $item['sum']; ?></td>
 		  		  <td><?php echo $item['source']; ?></td>
-		  		  <td class="report-email"><?php echo $item['report']; ?></td>
+		  		  <td nowrap class="report-email"><?php echo $item['report']; ?></td>
 		  		  <td><?php echo $item['comment']; ?></td>
-		  		  <td>Edit</td>
-		  		  <td>Del</td>
+		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/edit.png" width="20" alt="" class="close"></td>
+		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/close.png" width="20" alt="" class="close"></td>
 		  	  </tr>					
 			  <?php endforeach; ?>
 		    	<tr class="final-row">	

@@ -32,3 +32,23 @@
 .btns-add-wrap .btn {
 		font-weight: 600;
 }
+
+.add-fields-wrap {
+		margin-top: 20px;
+}
+
+.add-fields-wrap input{
+		width: 33%;
+}
+
+.add-fields-wrap label {
+		font-weight: 600;
+}
+
+.add-fields-wrap button {
+		font-weight: 600;
+}
+
+.img-del-edit-wrap {
+		width: 20px;
+}

@@ -1,4 +1,73 @@
-function hideElemsIfRealtiesOrOwnersClicked() {
+function hideAddFields () {
+    $('#add-owner-wrap').hide();
+    $('#add-expense-owner-wrap').hide();
+    $('#add-income-wrap').hide();
+    $('#add-expense-gen-wrap').hide();
+    $('#add-balance-wrap').hide();
+    $('#add-realty-wrap').hide();
+}
+
+function showAndHideIfAddBtnsClicked () {
+    $('#add-income').click(function() {
+        $('#add-income-wrap').show();
+        $('#add-expense-owner-wrap').hide();
+        $('#add-expense-gen-wrap').hide();
+        $('#add-balance-wrap').hide();
+        $('#add-realty-wrap').hide();
+        $('#add-owner-wrap').hide();
+    });
+
+    $('#add-expense-owner').click(function() {        
+        $('#add-expense-owner-wrap').show();
+        $('#add-income-wrap').hide();
+        $('#add-expense-gen-wrap').hide();
+        $('#add-balance-wrap').hide();
+        $('#add-realty-wrap').hide();
+        $('#add-owner-wrap').hide();
+    });
+
+    $('#add-expense-gen').click(function() {
+        $('#add-expense-gen-wrap').show();
+        $('#add-expense-owner-wrap').hide();
+        $('#add-income-wrap').hide();       
+        $('#add-balance-wrap').hide();
+        $('#add-realty-wrap').hide();
+        $('#add-owner-wrap').hide();
+    });
+
+    $('#add-balance').click(function() {
+        $('#add-balance-wrap').show();
+        $('#add-expense-owner-wrap').hide();
+        $('#add-income-wrap').hide();
+        $('#add-expense-gen-wrap').hide();
+        $('#add-realty-wrap').hide();
+        $('#add-owner-wrap').hide();
+    });
+
+    $('#add-realty').click(function() {
+        $('#add-realty-wrap').show();
+        $('#add-expense-owner-wrap').hide();
+        $('#add-income-wrap').hide();
+        $('#add-expense-gen-wrap').hide();
+        $('#add-balance-wrap').hide();
+        $('#add-owner-wrap').hide();
+    });
+
+    $('#add-owner').click(function() {
+        $('#add-owner-wrap').show();
+        $('#add-expense-owner-wrap').hide();
+        $('#add-income-wrap').hide();
+        $('#add-expense-gen-wrap').hide();
+        $('#add-balance-wrap').hide();
+        $('#add-realty-wrap').hide();
+    });
+
+    $('.btn-cancel').click(function() {
+        $(this).parent().parent().parent().hide()
+    });
+}
+
+function hideElemsIfRealtiesOrOwnersClicked () {
     $('.select-realty-content').hide();
     $('.select-owner-content').hide();
     $('#ob-nedv-text').hide();

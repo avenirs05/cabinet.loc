@@ -3,6 +3,12 @@ jQuery(document).ready(function () {
 	// Tooltips
 	$('[data-toggle="tooltip"]').tooltip();
 
+	// Средняя цена в отчете "Доходы"
+	$('#avg-price').text( 
+			( $('#income-sum-amount').text().trim() / 
+				$('#income-sum-days').text().trim() ).toFixed(2) 
+			);
+
 	// Кнопки отчетов
 	var bgRepDefault = 'RGB(248, 248, 248)'; 
 	var bgRepClicked = 'RGB(0, 123, 255)'; 
@@ -75,7 +81,14 @@ jQuery(document).ready(function () {
 				  type: 'post',
 				  success: function(data) {
 				  		$('.report-wrap').append(data);
+
+				  		// Средняя цена в отчете "Доходы"
+				  		$('#avg-price').text( 
+				  				( $('#income-sum-amount').text().trim() / 
+				  					$('#income-sum-days').text().trim() ).toFixed(2) 
+				  				);
 				  }
+
 			});
 
 			// Подсветка кнопока отчетов при клике
