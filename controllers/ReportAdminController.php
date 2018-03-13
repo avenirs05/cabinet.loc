@@ -160,8 +160,11 @@ class ReportAdminController {
 				return true;
 		}
 
+
 		public function actionRealtiesList() 
 		{		   
+
+				$realties = RealtyAdmin::getAllRealtiesWithOwners();
 
 				// Подключаем вид
 				require_once(ROOT . '/views/admin/realties/index.php');

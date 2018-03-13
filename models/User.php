@@ -69,13 +69,16 @@ class User
         while ($row = $result->fetch()) {
             $usersList[$i]['id'] = $row['id'];
             $usersList[$i]['name'] = $row['name'];
+            $usersList[$i]['email'] = $row['email'];
+            $usersList[$i]['password'] = $row['password'];
+            $usersList[$i]['phone'] = $row['phone'];
             $i++;
         }
 
         return $usersList;
     }
-	
-	
+
+
 		public static function logout() {
         unset($_SESSION["role"]);
 		

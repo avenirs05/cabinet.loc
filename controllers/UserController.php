@@ -15,6 +15,7 @@ class UserController
 
 		public function actionUsersList() 
 		{		   
+				$users = User::getAllUsers();
 
 				// Подключаем вид
 				require_once(ROOT . '/views/admin/users/index.php');
