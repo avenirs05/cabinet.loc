@@ -28,3 +28,7 @@
 .logout-wrap img {
 		vertical-align: baseline;
 }
+
+.btns-add-wrap .btn {
+		font-weight: 600;
+}

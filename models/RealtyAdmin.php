@@ -26,7 +26,7 @@ class RealtyAdmin
 		    $db = Db::getConnection();
 
 		    // Получение и возврат результатов
-		    $result = $db->query('SELECT realty.name as realty_name, user.name as user_name from realty INNER JOIN user ON realty.user_id=user.id');
+		    $result = $db->query('SELECT realty.id, realty.name as realty_name, user.name as user_name from realty INNER JOIN user ON realty.user_id=user.id');
 
 		    $realtiesList = array();
 
@@ -34,6 +34,7 @@ class RealtyAdmin
 		    while ($row = $result->fetch()) {
 				        $realtiesList[$i]['realty_name'] = $row['realty_name'];
 				        $realtiesList[$i]['user_name'] = $row['user_name'];
+				        $realtiesList[$i]['id'] = $row['id'];
 				        $i++;
 		    }
 

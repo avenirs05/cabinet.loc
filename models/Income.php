@@ -5,7 +5,7 @@ class Income
     public static function getIncomeAllRealties($userId) {
 		$db = Db::getConnection();
 
-		$result = $db->query('SELECT i.date_arr, i.date_dep, i.price, i.days, i.sum, i.comment, r.name, r.user_id  
+		$result = $db->query('SELECT i.id, i.date_arr, i.date_dep, i.price, i.days, i.sum, i.comment, r.name, r.user_id  
 								FROM income i 
 									INNER JOIN realty r 
 										ON i.realty_id=r.id 
@@ -22,6 +22,7 @@ class Income
 					  $incomeList[$i]['days'] = $row['days'];
 					  $incomeList[$i]['sum'] = $row['sum'];
 					  $incomeList[$i]['comment'] = $row['comment'];
+					  $incomeList[$i]['id'] = $row['id'];
 					  $i++;
 		}
 		
@@ -32,7 +33,7 @@ class Income
     public static function getIncomeOneRealty($userId, $realtyId) {
 				$db = Db::getConnection();
 
-				$result = $db->query('SELECT i.date_arr, i.date_dep, i.price, i.days, i.sum, i.comment, r.name, r.user_id  
+				$result = $db->query('SELECT i.id, i.date_arr, i.date_dep, i.price, i.days, i.sum, i.comment, r.name, r.user_id  
 											FROM income i 
 												INNER JOIN realty r 
 													ON i.realty_id=r.id 
@@ -49,6 +50,7 @@ class Income
 							  $incomeList[$i]['days'] = $row['days'];
 							  $incomeList[$i]['sum'] = $row['sum'];
 							  $incomeList[$i]['comment'] = $row['comment'];
+							  $incomeList[$i]['id'] = $row['id'];
 							  $i++;
 				}
 

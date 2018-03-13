@@ -16,7 +16,7 @@
 		  </thead>
 		  <tbody>
 		    <?php foreach ($incomes as $item): ?>
-			  	  <tr>	
+			  	  <tr id="<?php echo $item['id']; ?>">	
 			  		  <td><?php echo $item['name']; ?></td>
 			  		  <td><?php echo $item['date_arr']; ?></td>
 			  		  <td><?php echo $item['date_dep']; ?></td>

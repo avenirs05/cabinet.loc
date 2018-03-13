@@ -13,7 +13,7 @@
 		  </thead>
 		  <tbody>
 		    <?php foreach ($users as $user): ?>
-			  	  <tr>	
+			  	  <tr id="<?php echo $user['id']; ?>">	
 			  		  <td><?php echo $user['name']; ?></td>
 			  		  <td><?php echo $user['email']; ?></td>
 			  		  <td><?php echo $user['password']; ?></td>

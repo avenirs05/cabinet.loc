@@ -16,6 +16,7 @@ class Money
 				  $transList[$i]['sum_minus'] = $row['sum_minus'];
 				  $transList[$i]['sum_plus'] = $row['sum_plus'];
 				  $transList[$i]['comment'] = $row['comment'];
+				  $transList[$i]['id'] = $row['id'];
 				  $i++;
 				}
 				

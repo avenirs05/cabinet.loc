@@ -18,7 +18,7 @@
 		  </thead>
 		  <tbody>
 			  <?php foreach ($expenses as $item): ?>
-		  	  <tr>	
+		  	  <tr id="<?php echo $item['id']; ?>">	
 		  		  <td><?php echo $item['date']; ?></td>
 		  		  <td><?php echo $item['realty_name']; ?></td>
 		  		  <td><?php echo $item['name']; ?></td>

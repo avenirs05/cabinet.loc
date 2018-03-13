@@ -42,9 +42,19 @@
 					<?php endforeach; ?>
 			  </select>
 			</div>
+			<div class="btns-add-wrap">
+				<button type="button" class="btn btn-outline-primary">+ Доход</button>
+				<button type="button" class="btn btn-outline-secondary">+ Расход собственник</button>
+				<button type="button" class="btn btn-outline-secondary">+ Расход общий</button>
+				<button type="button" class="btn btn-outline-danger">+ Баланс</button>
+				<button type="button" class="btn btn-outline-info">+ Объект</button>
+				<button type="button" class="btn btn-outline-dark">+ Собственник</button>
+			</div>
 		</div>
 	</div>
 </div>
+
+
 
 <div class="container-fluid report-wrap">
 	<div class="row">

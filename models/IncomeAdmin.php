@@ -11,7 +11,7 @@ class IncomeAdmin
 		public static function getIncomeAllRealtiesAllUsers() {
 				$db = Db::getConnection();
 
-				$result = $db->query('SELECT i.date_arr, i.date_dep, i.price, i.days, i.sum, i.comment, r.name, r.user_id  
+				$result = $db->query('SELECT i.id, i.date_arr, i.date_dep, i.price, i.days, i.sum, i.comment, r.name, r.user_id  
 										FROM income i 
 											INNER JOIN realty r 
 												ON i.realty_id=r.id order by i.date_dep desc');		
@@ -27,6 +27,7 @@ class IncomeAdmin
 							  $incomeList[$i]['days'] = $row['days'];
 							  $incomeList[$i]['sum'] = $row['sum'];
 							  $incomeList[$i]['comment'] = $row['comment'];
+							  $incomeList[$i]['id'] = $row['id'];
 							  $i++;
 				}
 
@@ -37,7 +38,7 @@ class IncomeAdmin
 		public static function getIncomeOneRealtyAllUsers($realtyId) {
 				$db = Db::getConnection();
 
-				$result = $db->query("SELECT i.date_arr, i.date_dep, i.price, i.days, i.sum, i.comment, r.name, r.user_id  
+				$result = $db->query("SELECT i.id, i.date_arr, i.date_dep, i.price, i.days, i.sum, i.comment, r.name, r.user_id  
 										FROM income i 
 											INNER JOIN realty r 
 												ON i.realty_id=r.id where i.realty_id=$realtyId order by i.date_dep desc");		
@@ -53,6 +54,7 @@ class IncomeAdmin
 							  $incomeList[$i]['days'] = $row['days'];
 							  $incomeList[$i]['sum'] = $row['sum'];
 							  $incomeList[$i]['comment'] = $row['comment'];
+							  $incomeList[$i]['id'] = $row['id'];
 							  $i++;
 				}
 

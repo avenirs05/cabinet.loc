@@ -10,7 +10,7 @@ class ExpenseAdmin
 		public static function getExpensesOwnerAllRealtiesAllUsers() {
 				$db = Db::getConnection();
 
-				$result = $db->query("SELECT expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
+				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
 						FROM expense
 							INNER JOIN exp_type 
 								ON expense.exp_type_id=exp_type.id 
@@ -31,6 +31,7 @@ class ExpenseAdmin
 						$expenseList[$i]['source'] = $row['source'];
 						$expenseList[$i]['report'] = $row['report'];
 						$expenseList[$i]['comment'] = $row['comment'];
+						$expenseList[$i]['id'] = $row['id'];
 						$i++;
 				}
 
@@ -41,7 +42,7 @@ class ExpenseAdmin
 		public static function getExpensesOwnerOneRealtyAllUsers($realtyId) {
 				$db = Db::getConnection();
 
-				$result = $db->query("SELECT expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
+				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
 						FROM expense
 							INNER JOIN exp_type 
 								ON expense.exp_type_id=exp_type.id 
@@ -62,6 +63,7 @@ class ExpenseAdmin
 						$expenseList[$i]['source'] = $row['source'];
 						$expenseList[$i]['report'] = $row['report'];
 						$expenseList[$i]['comment'] = $row['comment'];
+						$expenseList[$i]['id'] = $row['id'];
 						$i++;
 				}
 
@@ -90,7 +92,7 @@ class ExpenseAdmin
 		public static function getExpensesGenAllRealtiesAllUsers() {
 				$db = Db::getConnection();
 
-				$result = $db->query("SELECT expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
+				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
 						FROM expense
 							INNER JOIN exp_type 
 								ON expense.exp_type_id=exp_type.id 
@@ -111,6 +113,7 @@ class ExpenseAdmin
 						$expenseList[$i]['source'] = $row['source'];
 						$expenseList[$i]['report'] = $row['report'];
 						$expenseList[$i]['comment'] = $row['comment'];
+						$expenseList[$i]['id'] = $row['id'];
 						$i++;
 				}
 
@@ -130,7 +133,7 @@ class ExpenseAdmin
 		public static function getExpensesGenOneRealtyAllUsers($realtyId) {
 				$db = Db::getConnection();
 
-				$result = $db->query("SELECT expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
+				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
 						FROM expense
 							INNER JOIN exp_type 
 								ON expense.exp_type_id=exp_type.id 
@@ -151,6 +154,7 @@ class ExpenseAdmin
 						$expenseList[$i]['source'] = $row['source'];
 						$expenseList[$i]['report'] = $row['report'];
 						$expenseList[$i]['comment'] = $row['comment'];
+						$expenseList[$i]['id'] = $row['id'];
 						$i++;
 				}
 
