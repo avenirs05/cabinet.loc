@@ -53,6 +53,10 @@
 		font-weight: 600;
 }
 
+/*.add-fields-wrap select {
+		margin-bottom: 1rem;
+}*/
+
 .img-del-edit-wrap {
 		width: 20px;
 }

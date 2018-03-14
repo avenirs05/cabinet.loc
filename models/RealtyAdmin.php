@@ -40,4 +40,19 @@ class RealtyAdmin
 
 		    return $realtiesList;
 		}
+
+
+		public static function addRealty($realtyName, $userId) 
+		{
+				$db = Db::getConnection();
+
+				$sql = 'INSERT INTO realty (name, user_id) '
+				        . 'VALUES (:realty_name, :user_id)';
+
+				$result = $db->prepare($sql);
+				$result->bindParam(':realty_name', $realtyName, PDO::PARAM_STR);
+				$result->bindParam(':user_id', $userId, PDO::PARAM_STR);
+
+				return $result->execute();
+		}
 }

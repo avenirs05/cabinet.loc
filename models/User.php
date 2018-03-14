@@ -57,6 +57,27 @@ class User
     }
 
 
+    /**
+    * Возвращает пользователя с указанным id
+    * @param integer $id <p>id пользователя</p>
+    * @return array <p>Массив с информацией о пользователе</p>
+    */
+    public static function getUserByName($userName) 
+    {
+				$db = Db::getConnection();
+
+				$sql = 'SELECT * FROM user WHERE name = :name';
+
+				$result = $db->prepare($sql);
+				$result->bindParam(':name', $userName, PDO::PARAM_STR);
+
+				$result->setFetchMode(PDO::FETCH_ASSOC);
+				$result->execute();
+
+				return $result->fetch();
+    }
+
+
     public static function getAllUsers() 
     {
         // Соединение с БД

@@ -28,7 +28,7 @@ class UserController
 				$userPass = $_POST['pass']; 
 				$userPhone = $_POST['phone'];
 
-				$user = User::addUser($userName, $userEmail, $userPass, $userPhone);	
+				User::addUser($userName, $userEmail, $userPass, $userPhone);	
 
 				return true;
 		}

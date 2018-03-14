@@ -44,87 +44,27 @@
 			</div>
 			<div class="btns-add-wrap">
 				<button id="add-income" type="button" class="btn btn-outline-primary">+ Доход</button>
-				<button id="add-expense-owner" type="button" class="btn btn-outline-secondary">+ Расход собственник</button>
-				<button id="add-expense-gen" type="button" class="btn btn-outline-secondary">+ Расход общий</button>
+				<button id="add-expense-owner" type="button" class="btn btn-outline-dark">+ Расход собственник</button>
+				<button id="add-expense-gen" type="button" class="btn btn-outline-dark">+ Расход общий</button>
 				<button id="add-balance" type="button" class="btn btn-outline-danger">+ Баланс</button>
 				<button id="add-realty" type="button" class="btn btn-outline-info">+ Объект</button>
-				<button id="add-owner" type="button" class="btn btn-outline-dark">+ Собственник</button>
+				<button id="add-owner" type="button" class="btn btn-outline-secondary">+ Собственник</button>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div id="add-income-wrap" class="container-fluid add-fields-wrap" style="display: none">
-	<div class="row">
-		<div class="col">
-			поля добавить доход
-<button class="btn btn-outline-primary btn-cancel">Отмена</button>
-		</div>
-	</div>
-</div>
+<?php include ROOT . '/views/admin/layouts/add/balance.php'; ?>
 
-<div id="add-expense-owner-wrap" class="container-fluid add-fields-wrap" style="display: none">
-	<div class="row">
-		<div class="col">
-			поля добавить расход собственник
-<button class="btn btn-outline-secondary btn-cancel">Отмена</button>
-		</div>
-	</div>
-</div>
+<?php include ROOT . '/views/admin/layouts/add/expense-gen.php'; ?>
 
-<div id="add-expense-gen-wrap" class="container-fluid add-fields-wrap" style="display: none">
-	<div class="row">
-		<div class="col">
-			поля добавить расход общий
-<button class="btn btn-outline-secondary btn-cancel">Отмена</button>			
-		</div>
-	</div>
-</div>
+<?php include ROOT . '/views/admin/layouts/add/expense-owner.php'; ?>
 
-<div id="add-balance-wrap" class="container-fluid add-fields-wrap" style="display: none">
-	<div class="row">
-		<div class="col">
-			поля добавить баланс
-<button class="btn btn-outline-danger btn-cancel">Отмена</button>			
-		</div>
-	</div>
-</div>
+<?php include ROOT . '/views/admin/layouts/add/income.php'; ?>
 
-<div id="add-realty-wrap" class="container-fluid add-fields-wrap" style="display: none">
-	<div class="row">
-		<div class="col">
-			поля добавить объект
-<button class="btn btn-outline-info btn-cancel">Отмена</button>			
-		</div>
-	</div>
-</div>
+<?php include ROOT . '/views/admin/layouts/add/realty.php'; ?>
 
-<div id="add-owner-wrap" class="container-fluid add-fields-wrap" style="display: none">
-	<div class="row">
-		<div class="col">
-			<form class="fields-content">
-				<div class="form-group">
-				  <label>Имя</label>
-				  <input id="user-name" type="text" class="form-control" placeholder="Имя собственника" required>
-				</div>
-			  <div class="form-group">
-			    <label>Email (логин)</label>
-			    <input id="user-email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email - логин от личного кабинета собственника" required>
-			  </div>
-			  <div class="form-group">
-			    <label>Пароль</label>
-			    <input id="user-pass" type="password" class="form-control" placeholder="Пароль от личного кабинета собственника" required>
-			  </div>
-			  <div class="form-group">
-			    <label>Телефон</label>
-			    <input id="user-phone" type="password" class="form-control" placeholder="Телефон собственника" required>
-			  </div>
-			  <button type="button" id="add-owner-send" class="btn btn-primary">Добавить собственника</button>
-			  <button type="button" class="btn btn-outline-dark btn-cancel">Отмена</button>		
-			</form>
-		</div>
-	</div>
-</div>
+<?php include ROOT . '/views/admin/layouts/add/user.php'; ?>
 
 <div class="container-fluid report-wrap">
 	<div class="row">

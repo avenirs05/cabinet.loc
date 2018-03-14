@@ -51,15 +51,16 @@ jQuery(document).ready(function () {
 
 
 		// Запись в бд
+		// Добавление собственника (пользователя)
 		$('#add-owner-send').click(function(e) {	
 				e.preventDefault();			
 
 				$.ajax({
 					  url: '/add-owner',
-					  data: 'name=' + $('#user-name').val() + '&' +
-					  			'email=' + $('#user-email').val() +	'&' +
-					  			'pass=' + $('#user-pass').val() + '&' +
-					  			'phone=' + $('#user-phone').val(),
+					  data: 'name=' + $('#user-name').val().trim() + '&' +
+					  			'email=' + $('#user-email').val().trim() +	'&' +
+					  			'pass=' + $('#user-pass').val().trim() + '&' +
+					  			'phone=' + $('#user-phone').val().trim(),
 					  type: 'post',
 					  success: function(data) {
 					  		$('#user-name').val('');
@@ -67,6 +68,38 @@ jQuery(document).ready(function () {
 					  		$('#user-pass').val('');
 					  		$('#user-phone').val('');
 					  		$('#owners-admin').click();
+					  }
+				});
+		});
+
+		// Добавление объекта
+		$('#add-realty-send').click(function(e) {	
+				e.preventDefault();			
+
+				$.ajax({
+					  url: '/add-realty',
+					  data: 'name=' + $('#realty-name').val().trim() + '&' +
+					  			'userName=' + $('#select-users option:selected').text().trim(),
+					  type: 'post',
+					  success: function(data) {
+					  		$('#realty-name').val('');
+					  		$('#realties-admin').click();
+					  }
+				});
+		});
+
+		// Добавление баланса
+		$('#add-balance-send').click(function(e) {	
+				e.preventDefault();			
+
+				$.ajax({
+					  url: '/add-balance',
+					  data: 'name=' + $('#realty-name').val().trim() + '&' +
+					  			'userName=' + $('#select-users option:selected').text().trim(),
+					  type: 'post',
+					  success: function(data) {
+					  		$('#realty-name').val('');
+					  		$('#realties-admin').click();
 					  }
 				});
 		});
