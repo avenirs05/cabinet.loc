@@ -10,7 +10,7 @@
 		      <th scope="col">Цена, €</th>
 		      <th scope="col">Сумма, €</th>
 		      <th scope="col">Источник</th>
-		      <th scope="col">Отчет <img class="tooltip-info" width="15" height="15" data-toggle="tooltip" data-placement="top" title="Дата отправки расходного документа на ваш email" src="/template/imgs/info.svg" alt=""></th>
+		      <th scope="col">Отчет <img class="tooltip-info" width="15" height="15" data-toggle="tooltip" data-placement="top" title="Дата отправки расходного документа на email собственника" src="/template/imgs/info.svg" alt=""></th>
 		      <th scope="col">Комментарий</th>
 		      <th scope="col"></th>
 		      <th scope="col"></th>

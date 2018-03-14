@@ -11,8 +11,8 @@ class User
     * @param string $password <p>Пароль</p>
     * @return mixed : integer user id or false
     */
-    public static function checkUserData($email, $password) {
-				// Соединение с БД
+    public static function checkUserData($email, $password) 
+    {
 				$db = Db::getConnection();
 
 				// Текст запроса к БД
@@ -41,7 +41,8 @@ class User
     * @param integer $id <p>id пользователя</p>
     * @return array <p>Массив с информацией о пользователе</p>
     */
-    public static function getUserById($id) {
+    public static function getUserById($id) 
+    {
 				$db = Db::getConnection();
 
 				$sql = 'SELECT * FROM user WHERE id = :id';
@@ -56,7 +57,8 @@ class User
     }
 
 
-    public static function getAllUsers() {
+    public static function getAllUsers() 
+    {
         // Соединение с БД
         $db = Db::getConnection();
 
@@ -79,7 +81,8 @@ class User
     }
 
 
-		public static function logout() {
+		public static function logout() 
+		{
         unset($_SESSION["role"]);
 		
 				if (isset($_SESSION["idAdmin"])) {
@@ -94,7 +97,8 @@ class User
 	  }
 	
 	
-	public static function enterAsUser($userId) {
+	public static function enterAsUser($userId) 
+	{
 				if (!isset($_SESSION['role'])) {
 					  header('Location: /');
 				} elseif ($_SESSION['role'] != 'user') {
@@ -105,7 +109,8 @@ class User
 	}
 	
 	  
-	public static function enterAsAdmin($adminId) {
+	public static function enterAsAdmin($adminId) 
+	{
 				if (!isset($_SESSION['role'])) {
 					  header('Location: /');
 				} elseif ($_SESSION['role'] != 'admin') {
@@ -113,6 +118,23 @@ class User
 				} elseif ($_SESSION['adminId'] != $adminId) {
 					  header('Location: /');		  
 				}
+	}
+
+
+	public static function addUser($userName, $userEmail, $userPass, $userPhone) 
+	{
+			$db = Db::getConnection();
+
+			$sql = 'INSERT INTO user (name, email, password, phone) '
+			        . 'VALUES (:user_name, :user_email, :user_pass, :user_phone)';
+
+			$result = $db->prepare($sql);
+			$result->bindParam(':user_name', $userName, PDO::PARAM_STR);
+			$result->bindParam(':user_email', $userEmail, PDO::PARAM_STR);
+			$result->bindParam(':user_pass', $userPass, PDO::PARAM_STR);
+			$result->bindParam(':user_phone', $userPhone, PDO::PARAM_STR);
+
+			return $result->execute();
 	}
 	
 }

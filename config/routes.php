@@ -38,6 +38,9 @@ return array(
     'realties-admin' => 'reportAdmin/realtiesList',
     'owners-admin' => 'user/usersList',    
 
+    // Добавление записей
+    'add-owner' => 'user/addUser',
+
 
     // Главная страница после входа в кабинет
     'cabinet/([0-9]+)' => 'cabinet/index/$1',

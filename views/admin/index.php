@@ -1,6 +1,6 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <a id="incomes-admin" class="navbar-brand reports-main" href="/incomes-admin">Доходы</a>
   <a id="expenses-owner-admin" class="navbar-brand reports-main" href="/expenses-owner-admin">Расходы собственника</a>
   <a id="expenses-gen-admin" class="navbar-brand reports-main" href="/expenses-gen-admin">Расходы общие</a>
@@ -102,24 +102,26 @@
 <div id="add-owner-wrap" class="container-fluid add-fields-wrap" style="display: none">
 	<div class="row">
 		<div class="col">
-			<div class="form-group">
-			  <label>Имя</label>
-			  <input type="text" class="form-control" placeholder="Имя собственника">
-			</div>
-		  <div class="form-group">
-		    <label>Email (логин)</label>
-		    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email - логин от личного кабинета собственника">
-		  </div>
-		  <div class="form-group">
-		    <label>Пароль</label>
-		    <input type="password" class="form-control" placeholder="Пароль от личного кабинета собственника">
-		  </div>
-		  <div class="form-group">
-		    <label>Телефон</label>
-		    <input type="password" class="form-control" placeholder="Телефон собственника">
-		  </div>
-		  <button class="btn btn-primary">Добавить собственника</button>
-		  <button class="btn btn-outline-dark btn-cancel">Отмена</button>				
+			<form class="fields-content">
+				<div class="form-group">
+				  <label>Имя</label>
+				  <input id="user-name" type="text" class="form-control" placeholder="Имя собственника" required>
+				</div>
+			  <div class="form-group">
+			    <label>Email (логин)</label>
+			    <input id="user-email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email - логин от личного кабинета собственника" required>
+			  </div>
+			  <div class="form-group">
+			    <label>Пароль</label>
+			    <input id="user-pass" type="password" class="form-control" placeholder="Пароль от личного кабинета собственника" required>
+			  </div>
+			  <div class="form-group">
+			    <label>Телефон</label>
+			    <input id="user-phone" type="password" class="form-control" placeholder="Телефон собственника" required>
+			  </div>
+			  <button type="button" id="add-owner-send" class="btn btn-primary">Добавить собственника</button>
+			  <button type="button" class="btn btn-outline-dark btn-cancel">Отмена</button>		
+			</form>
 		</div>
 	</div>
 </div>

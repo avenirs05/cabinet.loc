@@ -37,8 +37,12 @@
 		margin-top: 20px;
 }
 
-.add-fields-wrap input{
-		width: 33%;
+.add-fields-wrap form.fields-content {
+		width: 35%;
+		background: #F3f3fe;
+		border: 1px solid #999999;
+		padding: 20px;
+		border-radius: 5px;
 }
 
 .add-fields-wrap label {
@@ -52,3 +56,4 @@
 .img-del-edit-wrap {
 		width: 20px;
 }
+

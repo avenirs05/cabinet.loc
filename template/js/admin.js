@@ -2,9 +2,9 @@ jQuery(document).ready(function () {
 
 		colorClickedHoverEl ('.navbar-brand', 'rgb(255, 255, 255)', 'rgb(204, 255, 204)', 'rgb(255, 255, 0)', '#incomes-admin');
 
-		showAndHideIfAddBtnsClicked();
+		IfAddBtnsClicked();
 
-		// Основные отчеты
+		// Основные отчеты. Операция read из бд
 		$('.reports-main').click(function() {
 				var reportText = $(this).text().trim();
 				$('#which-report').text(reportText);
@@ -45,6 +45,28 @@ jQuery(document).ready(function () {
 					  				( $('#income-sum-amount').text().trim() / 
 					  					$('#income-sum-days').text().trim() ).toFixed(2) 
 					  				);
+					  }
+				});
+		});
+
+
+		// Запись в бд
+		$('#add-owner-send').click(function(e) {	
+				e.preventDefault();			
+
+				$.ajax({
+					  url: '/add-owner',
+					  data: 'name=' + $('#user-name').val() + '&' +
+					  			'email=' + $('#user-email').val() +	'&' +
+					  			'pass=' + $('#user-pass').val() + '&' +
+					  			'phone=' + $('#user-phone').val(),
+					  type: 'post',
+					  success: function(data) {
+					  		$('#user-name').val('');
+					  		$('#user-email').val('');
+					  		$('#user-pass').val('');
+					  		$('#user-phone').val('');
+					  		$('#owners-admin').click();
 					  }
 				});
 		});

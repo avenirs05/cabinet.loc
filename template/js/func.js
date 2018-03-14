@@ -7,7 +7,8 @@ function hideAddFields () {
     $('#add-realty-wrap').hide();
 }
 
-function showAndHideIfAddBtnsClicked () {
+function IfAddBtnsClicked () {
+
     $('#add-income').click(function() {
         $('#add-income-wrap').show();
         $('#add-expense-owner-wrap').hide();
@@ -63,7 +64,7 @@ function showAndHideIfAddBtnsClicked () {
     });
 
     $('.btn-cancel').click(function() {
-        $(this).parent().parent().parent().hide()
+        $(this).parent().parent().parent().parent().hide()
     });
 }
 

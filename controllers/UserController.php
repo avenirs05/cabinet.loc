@@ -5,13 +5,11 @@
  */
 class UserController
 {   
-    /**
-     * Удаляем данные о пользователе из сессии
-     */
     public function actionLogout()
     {        
 				User::logout();
 		}
+
 
 		public function actionUsersList() 
 		{		   
@@ -19,6 +17,19 @@ class UserController
 
 				// Подключаем вид
 				require_once(ROOT . '/views/admin/users/index.php');
+				return true;
+		}
+
+
+		public function actionAddUser() 
+		{		   
+				$userName = $_POST['name']; 
+				$userEmail = $_POST['email']; 
+				$userPass = $_POST['pass']; 
+				$userPhone = $_POST['phone'];
+
+				$user = User::addUser($userName, $userEmail, $userPass, $userPhone);	
+
 				return true;
 		}
 }
