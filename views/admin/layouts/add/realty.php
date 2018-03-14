@@ -6,9 +6,9 @@
 				  <label>Название объекта</label>
 				  <input id="realty-name" type="text" class="form-control" placeholder="Введите название объекта недвижимости" required>
 				</div>
-				<div class="form-group">
+				<div class="form-group select-user-content">
 					<label>Собственник</label>
-					<select id="select-users" class="custom-select">
+					<select class="custom-select select-user">
 						<option value="">Выберите собственника</option>
 					  <?php foreach ($users as $user): ?>
 	  					<option value="<?php echo $user['id']; ?>">

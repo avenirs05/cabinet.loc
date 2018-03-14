@@ -28,8 +28,17 @@ class UserController
 				$userPass = $_POST['pass']; 
 				$userPhone = $_POST['phone'];
 
-				User::addUser($userName, $userEmail, $userPass, $userPhone);	
+				User::addUser($userName, $userEmail, $userPass, $userPhone);					
 
+				return true;
+		}
+
+
+		public function actionGetUsersForSelect() 
+		{		   
+				$users = User::getAllUsers();				
+				//d($users);
+				require_once(ROOT . '/views/admin/users/for-select.php');
 				return true;
 		}
 }

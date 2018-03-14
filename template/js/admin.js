@@ -2,7 +2,7 @@ jQuery(document).ready(function () {
 
 		colorClickedHoverEl ('.navbar-brand', 'rgb(255, 255, 255)', 'rgb(204, 255, 204)', 'rgb(255, 255, 0)', '#incomes-admin');
 
-		IfAddBtnsClicked();
+		ifAddBtnsClicked();
 
 		// Основные отчеты. Операция read из бд
 		$('.reports-main').click(function() {
@@ -32,8 +32,7 @@ jQuery(document).ready(function () {
 					  url: href,
 					  type: 'post',
 					  success: function(data) {
-					  		$('.report-wrap').append(data);
-					  		delZeroInTable();
+					  		$('.report-wrap').append(data);					  		
 
 					  		var saldo =  Number( $('#final-sum-minus').text() ) + Number($('#final-sum-plus').text() );
 					  		if (saldo >= 0) {
@@ -45,6 +44,8 @@ jQuery(document).ready(function () {
 					  				( $('#income-sum-amount').text().trim() / 
 					  					$('#income-sum-days').text().trim() ).toFixed(2) 
 					  				);
+
+					  		delZeroInTable();
 					  }
 				});
 		});
@@ -79,7 +80,7 @@ jQuery(document).ready(function () {
 				$.ajax({
 					  url: '/add-realty',
 					  data: 'name=' + $('#realty-name').val().trim() + '&' +
-					  			'userName=' + $('#select-users option:selected').text().trim(),
+					  			'userName=' + $('#add-realty-wrap .select-user option:selected').text().trim(),
 					  type: 'post',
 					  success: function(data) {
 					  		$('#realty-name').val('');
@@ -94,12 +95,18 @@ jQuery(document).ready(function () {
 
 				$.ajax({
 					  url: '/add-balance',
-					  data: 'name=' + $('#realty-name').val().trim() + '&' +
-					  			'userName=' + $('#select-users option:selected').text().trim(),
+					  data: 'date=' + $('#date-trans-admin').val().trim() + '&' +
+					  			'gotMoneyAdmin=' + $('#got-money-admin').val().trim() + '&' +
+					  			'gaveMoneyAdmin=' + $('#gave-money-admin').val().trim() + '&' +
+					  			'userName=' + $('#add-balance-wrap .select-user option:selected').text().trim() + '&' +
+					  			'comment=' + $('#comment-money-admin').val().trim(),
 					  type: 'post',
 					  success: function(data) {
-					  		$('#realty-name').val('');
-					  		$('#realties-admin').click();
+					  		//console.log(data);
+					  		$('#got-money-admin').val('');
+					  		$('#gave-money-admin').val('');
+					  		$('#comment-money-admin').val('');
+					  		$('#balance-admin').click();
 					  }
 				});
 		});

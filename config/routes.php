@@ -43,6 +43,8 @@ return array(
     'add-realty' => 'realtyAdmin/addRealty',
     'add-balance' => 'moneyAdmin/addMoney',
 
+    'get-users-for-select' => 'user/getUsersForSelect', 
+
     // Главная страница после входа в кабинет
     'cabinet/([0-9]+)' => 'cabinet/index/$1',
 

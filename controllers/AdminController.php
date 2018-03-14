@@ -21,5 +21,4 @@ class AdminController
 				require_once(ROOT . '/views/admin/index.php');
 				return true;
 		}
-
 }

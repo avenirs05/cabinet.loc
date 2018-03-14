@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of RealtyMoney
- *
- * @author Lenovo_note
- */
 class MoneyAdmin
 {
 		public static function getAllTransactions() 
@@ -39,19 +34,20 @@ class MoneyAdmin
 		}
 
 
-		public static function addMoney() 
+		public static function addMoney($date, $gotMoneyAdmin, $gaveMoneyAdmin, $userId, $comment) 
 		{
-		  	// $db = Db::getConnection();
+		  	$db = Db::getConnection();
 
-		  	// $sql = 'INSERT INTO user (name, email, password, phone) '
-		  	//         . 'VALUES (:user_name, :user_email, :user_pass, :user_phone)';
+		  	$sql = 'INSERT INTO money (date, sum_minus, sum_plus, comment, user_id) '
+		  	        . 'VALUES (:date, :sum_minus, :sum_plus, :comment, :user_id)';
 
-		  	// $result = $db->prepare($sql);
-		  	// $result->bindParam(':user_name', $userName, PDO::PARAM_STR);
-		  	// $result->bindParam(':user_email', $userEmail, PDO::PARAM_STR);
-		  	// $result->bindParam(':user_pass', $userPass, PDO::PARAM_STR);
-		  	// $result->bindParam(':user_phone', $userPhone, PDO::PARAM_STR);
+		  	$result = $db->prepare($sql);
+		  	$result->bindParam(':date', $date, PDO::PARAM_STR);
+		  	$result->bindParam(':sum_minus', $gotMoneyAdmin, PDO::PARAM_STR);
+		  	$result->bindParam(':sum_plus', $gaveMoneyAdmin, PDO::PARAM_STR);
+		  	$result->bindParam(':user_id', $userId, PDO::PARAM_STR);
+		  	$result->bindParam(':comment', $comment, PDO::PARAM_STR);
 
-		  	// return $result->execute();
+		  	return $result->execute();
 		}
 }

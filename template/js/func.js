@@ -7,7 +7,7 @@ function hideAddFields () {
     $('#add-realty-wrap').hide();
 }
 
-function IfAddBtnsClicked () {
+function ifAddBtnsClicked () {
 
     $('#add-income').click(function() {
         $('#add-income-wrap').show();
@@ -16,6 +16,7 @@ function IfAddBtnsClicked () {
         $('#add-balance-wrap').hide();
         $('#add-realty-wrap').hide();
         $('#add-owner-wrap').hide();
+
     });
 
     $('#add-expense-owner').click(function() {        
@@ -38,20 +39,42 @@ function IfAddBtnsClicked () {
 
     $('#add-balance').click(function() {
         $('#add-balance-wrap').show();
+        $('#add-balance-wrap .select-user-content').remove();
+
         $('#add-expense-owner-wrap').hide();
         $('#add-income-wrap').hide();
         $('#add-expense-gen-wrap').hide();
         $('#add-realty-wrap').hide();
         $('#add-owner-wrap').hide();
+
+        $.ajax({
+            url: '/get-users-for-select',
+            type: 'post',
+            success: function(data) {
+                $('#add-balance-wrap .comment-content').before(data);
+            }
+        });
     });
 
     $('#add-realty').click(function() {
+
         $('#add-realty-wrap').show();
+        $('#add-realty-wrap .select-user-content').remove();
+
         $('#add-expense-owner-wrap').hide();
         $('#add-income-wrap').hide();
         $('#add-expense-gen-wrap').hide();
         $('#add-balance-wrap').hide();
         $('#add-owner-wrap').hide();
+
+        $.ajax({
+            url: '/get-users-for-select',
+            type: 'post',
+            success: function(data) {
+                $('#add-realty-wrap #add-realty-send').before(data);
+            }
+        });
+
     });
 
     $('#add-owner').click(function() {
@@ -184,8 +207,20 @@ function delZeroInTable () {
         }
     });
 
+    $('.gave-money').each(function(indx, el) {
+        if ( $(el).text() === '0' ) {
+                $(el).text('');
+        }
+    });
+
     $('.got-money').each(function(indx, el) {
         if ( $(el).text() === '0' ) {
+                $(el).text('');
+        }
+    });
+
+    $('.got-money').each(function(indx, el) {
+        if ( $(el).text() === '-0' ) {
                 $(el).text('');
         }
     });
