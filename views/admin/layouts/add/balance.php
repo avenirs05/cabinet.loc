@@ -4,7 +4,7 @@
 			<form class="fields-content">
 				<div class="form-group">
 				  <label>Дата <small>(YYYY-MM-DD)</small></label>
-				  <input id="date-trans-admin" type="text" class="form-control" placeholder="" value="2017-" required>
+				  <input id="date-trans-admin" type="text" class="form-control" placeholder="" value="2018-" required>
 				</div>
 				<div class="form-group">
 				  <label>Получил, €</label>

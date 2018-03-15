@@ -171,4 +171,26 @@ class ExpenseAdmin
 		}
 
 
+    public static function addExpenseGen($date, $good, $quantity, $price, $sum, $source, $repEmail, $comment, $realtyId) {
+    		$db = Db::getConnection();
+
+    		$exp_type_id = 1;
+
+    		$sql = 'INSERT INTO expense (date, name, quantity, price, sum, source, comment, report, realty_id, exp_type_id) '
+    		        . 'VALUES (:date, :name, :quantity, :price, :sum, :source, :comment, :report, :realty_id, :exp_type_id)';    		
+
+    		$result = $db->prepare($sql);
+    		$result->bindParam(':date', $date, PDO::PARAM_STR);
+    		$result->bindParam(':name', $good, PDO::PARAM_STR);
+    		$result->bindParam(':quantity', $quantity, PDO::PARAM_STR);
+    		$result->bindParam(':price', $price, PDO::PARAM_STR);
+    		$result->bindParam(':sum', $sum, PDO::PARAM_STR);
+    		$result->bindParam(':source', $source, PDO::PARAM_STR);
+    		$result->bindParam(':comment', $comment, PDO::PARAM_STR);
+    		$result->bindParam(':report', $repEmail, PDO::PARAM_STR);
+    		$result->bindParam(':realty_id', $realtyId, PDO::PARAM_STR);
+    		$result->bindParam(':exp_type_id', $exp_type_id, PDO::PARAM_STR);
+
+    		return $result->execute();
+		}
 }

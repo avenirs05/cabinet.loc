@@ -55,4 +55,20 @@ class RealtyAdmin
 
 				return $result->execute();
 		}
+
+
+		public static function getRealtyByName($realtyName) 
+		{
+				$db = Db::getConnection();
+
+				$sql = 'SELECT * FROM realty WHERE name = :name';
+
+				$result = $db->prepare($sql);
+				$result->bindParam(':name', $realtyName, PDO::PARAM_STR);
+
+				$result->setFetchMode(PDO::FETCH_ASSOC);
+				$result->execute();
+
+				return $result->fetch();
+		}
 }

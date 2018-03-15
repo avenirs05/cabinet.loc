@@ -111,4 +111,33 @@ jQuery(document).ready(function () {
 				});
 		});
 
+		// Добавление баланса
+		$('#add-expense-gen-send').click(function(e) {	
+				e.preventDefault();			
+
+				$.ajax({
+					  url: '/add-expense-gen',
+					  data: 'date=' + $('#date-exp-gen').val().trim() + '&' +
+					  			'good=' + $('#good-exp-gen').val().trim() + '&' +
+					  			'quantity=' + $('#quantity-exp-gen').val().trim() + '&' +
+					  			'price=' + $('#price-exp-gen').val().trim() + '&' +
+					  			'sum=' + $('#sum-exp-gen').val().trim() + '&' +
+					  			'source=' + $('#source-exp-gen').val().trim() + '&' +
+					  			'repEmail=' + $('#rep-email-exp-gen').val().trim() + '&' +
+					  			'comment=' + $('#comment-exp-gen').val().trim() + '&' +
+					  			'realtyName=' + $('#add-expense-gen-wrap .select-realties option:selected').text().trim(),
+					  type: 'post',
+					  success: function(data) {
+					  		console.log(data);
+					  		$('#good-exp-gen').val('');
+					  		$('#price-exp-gen').val('');
+					  		$('#sum-exp-gen').val('');
+					  		$('#source-exp-gen').val('');
+					  		$('#rep-email-exp-gen').val('');
+					  		$('#comment-exp-gen').val('');
+					  		$('#expenses-gen-admin').click();
+					  }
+				});
+		});
+
 });

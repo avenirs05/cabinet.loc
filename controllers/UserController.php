@@ -37,7 +37,7 @@ class UserController
 		public function actionGetUsersForSelect() 
 		{		   
 				$users = User::getAllUsers();				
-				//d($users);
+				
 				require_once(ROOT . '/views/admin/users/for-select.php');
 				return true;
 		}

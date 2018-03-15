@@ -170,4 +170,5 @@ class ReportAdminController {
 				require_once(ROOT . '/views/admin/realties/index.php');
 				return true;
 		}
+
 }

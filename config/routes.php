@@ -42,6 +42,7 @@ return array(
     'add-owner' => 'user/addUser',
     'add-realty' => 'realtyAdmin/addRealty',
     'add-balance' => 'moneyAdmin/addMoney',
+    'add-expense-gen' => 'expenseAdmin/addExpenseGen',
 
     'get-users-for-select' => 'user/getUsersForSelect', 
 
