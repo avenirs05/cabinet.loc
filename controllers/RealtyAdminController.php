@@ -11,6 +11,15 @@ class RealtyAdminController
 				RealtyAdmin::addRealty($realtyName, $user['id']);
 
 				return true;
-	}
+		}
+
+
+		public function actionGetRealtiesForSelect() 
+		{		   
+				$realties = RealtyAdmin::getAllRealties();				
+				
+				require_once(ROOT . '/views/admin/realties/for-select.php');
+				return true;
+		}
 
 }

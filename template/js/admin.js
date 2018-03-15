@@ -111,7 +111,7 @@ jQuery(document).ready(function () {
 				});
 		});
 
-		// Добавление баланса
+		// Добавление общего расхода
 		$('#add-expense-gen-send').click(function(e) {	
 				e.preventDefault();			
 
@@ -128,7 +128,6 @@ jQuery(document).ready(function () {
 					  			'realtyName=' + $('#add-expense-gen-wrap .select-realties option:selected').text().trim(),
 					  type: 'post',
 					  success: function(data) {
-					  		console.log(data);
 					  		$('#good-exp-gen').val('');
 					  		$('#price-exp-gen').val('');
 					  		$('#sum-exp-gen').val('');
@@ -136,6 +135,35 @@ jQuery(document).ready(function () {
 					  		$('#rep-email-exp-gen').val('');
 					  		$('#comment-exp-gen').val('');
 					  		$('#expenses-gen-admin').click();
+					  }
+				});
+		});
+
+
+		// Добавление расхода собственника
+		$('#add-expense-owner-send').click(function(e) {	
+				e.preventDefault();			
+
+				$.ajax({
+					  url: '/add-expense-owner',
+					  data: 'date=' + $('#date-exp-owner').val().trim() + '&' +
+					  			'good=' + $('#good-exp-owner').val().trim() + '&' +
+					  			'quantity=' + $('#quantity-exp-owner').val().trim() + '&' +
+					  			'price=' + $('#price-exp-owner').val().trim() + '&' +
+					  			'sum=' + $('#sum-exp-owner').val().trim() + '&' +
+					  			'source=' + $('#source-exp-owner').val().trim() + '&' +
+					  			'repEmail=' + $('#rep-email-exp-owner').val().trim() + '&' +
+					  			'comment=' + $('#comment-exp-owner').val().trim() + '&' +
+					  			'realtyName=' + $('#add-expense-owner-wrap .select-realties option:selected').text().trim(),
+					  type: 'post',
+					  success: function(data) {
+					  		$('#good-exp-owner').val('');
+					  		$('#price-exp-owner').val('');
+					  		$('#sum-exp-owner').val('');
+					  		$('#source-exp-owner').val('');
+					  		$('#rep-email-exp-owner').val('');
+					  		$('#comment-exp-owner').val('');
+					  		$('#expenses-owner-admin').click();
 					  }
 				});
 		});

@@ -21,20 +21,40 @@ function ifAddBtnsClicked () {
 
     $('#add-expense-owner').click(function() {        
         $('#add-expense-owner-wrap').show();
+        $('#add-expense-owner-wrap .select-realties-content').remove();
+
         $('#add-income-wrap').hide();
         $('#add-expense-gen-wrap').hide();
         $('#add-balance-wrap').hide();
         $('#add-realty-wrap').hide();
         $('#add-owner-wrap').hide();
+
+        $.ajax({
+            url: '/get-realties-for-select',
+            type: 'post',
+            success: function(data) {
+                $('#add-expense-owner-wrap form').prepend(data);
+            }
+        });
     });
 
     $('#add-expense-gen').click(function() {
         $('#add-expense-gen-wrap').show();
+        $('#add-expense-gen-wrap .select-realties-content').remove();
+
         $('#add-expense-owner-wrap').hide();
         $('#add-income-wrap').hide();       
         $('#add-balance-wrap').hide();
         $('#add-realty-wrap').hide();
         $('#add-owner-wrap').hide();
+
+        $.ajax({
+            url: '/get-realties-for-select',
+            type: 'post',
+            success: function(data) {
+                $('#add-expense-gen-wrap form').prepend(data);
+            }
+        });
     });
 
     $('#add-balance').click(function() {

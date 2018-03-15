@@ -43,8 +43,10 @@ return array(
     'add-realty' => 'realtyAdmin/addRealty',
     'add-balance' => 'moneyAdmin/addMoney',
     'add-expense-gen' => 'expenseAdmin/addExpenseGen',
+    'add-expense-owner' => 'expenseAdmin/addExpenseOwner',
 
     'get-users-for-select' => 'user/getUsersForSelect', 
+    'get-realties-for-select' => 'realtyAdmin/getRealtiesForSelect',
 
     // Главная страница после входа в кабинет
     'cabinet/([0-9]+)' => 'cabinet/index/$1',
