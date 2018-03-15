@@ -16,7 +16,7 @@ class ExpenseAdmin
 								ON expense.exp_type_id=exp_type.id 
 									INNER JOIN realty
 										ON expense.realty_id=realty.id 
-											WHERE exp_type.name='owner'");
+											WHERE exp_type.name='owner' order by expense.date");
 
 				$expenseList = array();
 
@@ -48,7 +48,7 @@ class ExpenseAdmin
 								ON expense.exp_type_id=exp_type.id 
 									INNER JOIN realty
 										ON expense.realty_id=realty.id 
-											WHERE exp_type.name='owner' and expense.realty_id=$realtyId");
+											WHERE exp_type.name='owner' and expense.realty_id=$realtyId order by expense.date");
 
 				$expenseList = array();
 
@@ -98,7 +98,7 @@ class ExpenseAdmin
 								ON expense.exp_type_id=exp_type.id 
 									INNER JOIN realty
 										ON expense.realty_id=realty.id 
-											WHERE exp_type.name='general'");
+											WHERE exp_type.name='general' order by expense.date");
 
 				$expenseList = array();
 
@@ -139,7 +139,7 @@ class ExpenseAdmin
 								ON expense.exp_type_id=exp_type.id 
 									INNER JOIN realty
 										ON expense.realty_id=realty.id 
-											WHERE exp_type.name='general' and expense.realty_id=$realtyId");
+											WHERE exp_type.name='general' and expense.realty_id=$realtyId order by expense.date");
 
 				$expenseList = array();
 

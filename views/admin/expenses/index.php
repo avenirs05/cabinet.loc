@@ -22,7 +22,7 @@
 		  	  <tr id="<?php echo $item['id']; ?>">	
 		  	  	<td nowrap><?php echo $item['id']; ?></td>
 		  		  <td nowrap><?php echo $item['date']; ?></td>
-		  		  <td><?php echo $item['realty_name']; ?></td>
+		  		  <td nowrap><?php echo $item['realty_name']; ?></td>
 		  		  <td><?php echo $item['name']; ?></td>
 		  		  <td><?php echo $item['quantity']; ?></td>
 		  		  <td><?php echo $item['price']; ?></td>

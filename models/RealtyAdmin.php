@@ -7,7 +7,7 @@ class RealtyAdmin
 		    $db = Db::getConnection();
 
 		    // Получение и возврат результатов
-		    $result = $db->query('SELECT * FROM realty');
+		    $result = $db->query('SELECT * FROM realty order by realty.name');
 
 		    $realtiesList = array();
 
@@ -26,7 +26,7 @@ class RealtyAdmin
 		    $db = Db::getConnection();
 
 		    // Получение и возврат результатов
-		    $result = $db->query('SELECT realty.id, realty.name as realty_name, user.name as user_name from realty INNER JOIN user ON realty.user_id=user.id');
+		    $result = $db->query('SELECT realty.id, realty.name as realty_name, user.name as user_name from realty INNER JOIN user ON realty.user_id=user.id order by realty.name');
 
 		    $realtiesList = array();
 

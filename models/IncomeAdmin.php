@@ -14,7 +14,7 @@ class IncomeAdmin
 				$result = $db->query('SELECT i.id, i.date_arr, i.date_dep, i.price, i.days, i.sum, i.comment, r.name, r.user_id  
 										FROM income i 
 											INNER JOIN realty r 
-												ON i.realty_id=r.id order by i.date_dep desc');		
+												ON i.realty_id=r.id order by i.date_arr');		
 
 				$incomeList = array();
 
@@ -41,7 +41,7 @@ class IncomeAdmin
 				$result = $db->query("SELECT i.id, i.date_arr, i.date_dep, i.price, i.days, i.sum, i.comment, r.name, r.user_id  
 										FROM income i 
 											INNER JOIN realty r 
-												ON i.realty_id=r.id where i.realty_id=$realtyId order by i.date_dep desc");		
+												ON i.realty_id=r.id where i.realty_id=$realtyId order by i.date_arr");		
 
 				$incomeList = array();
 

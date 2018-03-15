@@ -6,7 +6,7 @@ class MoneyAdmin
 		{
 				$db = Db::getConnection();
 
-				$result = $db->query('SELECT * FROM money');		
+				$result = $db->query('SELECT * FROM money order by money.date');		
 				
 				$transList = array();
 

@@ -84,7 +84,7 @@ class User
         $db = Db::getConnection();
 
         // Получение и возврат результатов
-        $result = $db->query('SELECT * FROM user');
+        $result = $db->query('SELECT * FROM user order by user.name');
 
         $usersList = array();
 
