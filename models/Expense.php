@@ -12,7 +12,7 @@ class Expense
 									INNER JOIN realty
 										ON expense.realty_id=realty.id 
 											WHERE exp_type.name='owner' and 
-												    expense.realty_id IN (select realty.id from realty where realty.user_id=$userId)");
+												    expense.realty_id IN (select realty.id from realty where realty.user_id=$userId) order by expense.date");
 
 				$expenseList = array();
 
@@ -45,7 +45,7 @@ class Expense
 				                inner join realty
 				                    ON expense.realty_id=realty.id 
 				                        where exp_type.name='owner' and 
-				                            expense.realty_id IN (select realty.id from realty where realty.user_id=$userId and realty.id=$realtyId)");
+				                            expense.realty_id IN (select realty.id from realty where realty.user_id=$userId and realty.id=$realtyId) order by expense.date");
 												
 				$expenseList = array();
 
@@ -78,7 +78,7 @@ class Expense
 													INNER JOIN realty
 															ON expense.realty_id=realty.id 
 																	WHERE exp_type.name='general' and 
-												    expense.realty_id IN (select realty.id from realty where realty.user_id=$userId)");
+												    expense.realty_id IN (select realty.id from realty where realty.user_id=$userId) order by expense.date");
 
 				$expenseList = array();
 
@@ -111,7 +111,7 @@ class Expense
 				                inner join realty
 				                    ON expense.realty_id=realty.id 
 				                        where exp_type.name='general' and 
-				                            expense.realty_id IN (select realty.id from realty where realty.user_id=$userId and realty.id=$realtyId)");
+				                            expense.realty_id IN (select realty.id from realty where realty.user_id=$userId and realty.id=$realtyId) order by expense.date");
 												
 				$expenseList = array();
 

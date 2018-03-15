@@ -6,7 +6,7 @@ class Money
     {
 				$db = Db::getConnection();
 
-				$result = $db->query('SELECT * FROM money WHERE money.user_id=' . $userId);		
+				$result = $db->query('SELECT * FROM money WHERE money.user_id=' . $userId . ' order by money.date');		
 				
 				$transList = array();
 

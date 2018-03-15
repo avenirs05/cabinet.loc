@@ -9,7 +9,7 @@ class Income
 								FROM income i 
 									INNER JOIN realty r 
 										ON i.realty_id=r.id 
-											WHERE r.user_id=' . $userId);		
+											WHERE r.user_id=' . $userId . ' order by i.date_arr');		
 		
 		$incomeList = array();
 
@@ -37,7 +37,7 @@ class Income
 											FROM income i 
 												INNER JOIN realty r 
 													ON i.realty_id=r.id 
-														WHERE r.user_id=' . $userId . ' and r.id=' . $realtyId);
+														WHERE r.user_id=' . $userId . ' and r.id=' . $realtyId . ' order by i.date_arr');
 												
 				$incomeList = array();
 

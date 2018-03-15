@@ -20,7 +20,7 @@
 		  	  <tr>	
 		  	  	<td><?php echo $item['id']; ?></td>
 		  		  <td nowrap><?php echo $item['date']; ?></td>
-		  		  <td><?php echo $item['realty_name']; ?></td>
+		  		  <td nowrap><?php echo $item['realty_name']; ?></td>
 		  		  <td><?php echo $item['name']; ?></td>
 		  		  <td><?php echo $item['quantity']; ?></td>
 		  		  <td><?php echo $item['price']; ?></td>
@@ -31,11 +31,11 @@
 		  	  </tr>					
 			  <?php endforeach; ?>
 		    	<tr class="final-row">	
-		    		<td colspan="5" class="final-text text-right text-itogo">Итого, €:</td>
+		    		<td colspan="6" class="final-text text-right text-itogo">Итого, €:</td>
 		    		<td class="final-text text-danger"><?php echo $finals['sum_sum']; ?></td>
 		    		<td></td>
 		    		<td></td>
-		    		<td></td>
+		    		<td></td>		    		
 	    	  </tr>
 		  </tbody>
 		</table>

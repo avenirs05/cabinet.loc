@@ -17,7 +17,7 @@
 		    <?php foreach ($incomes as $item): ?>
 			  	  <tr>	
 			  	  	<td><?php echo $item['id']; ?></td>
-			  		  <td><?php echo $item['name']; ?></td>
+			  		  <td nowrap><?php echo $item['name']; ?></td>
 			  		  <td nowrap><?php echo $item['date_arr']; ?></td>
 			  		  <td nowrap><?php echo $item['date_dep']; ?></td>
 			  		  <td><?php echo $item['price']; ?></td>
@@ -27,11 +27,11 @@
 			  	  </tr>					
 		    <?php endforeach; ?>
 	    	    	<tr class="final-row">	
-	    	    		<td colspan="3" class="final-text text-right text-itogo">Итого, €:</td>
+	    	    		<td colspan="4" class="final-text text-right text-itogo">Итого, €:</td>
 	    	    		<td id="avg-price" class="final-text"></td>
 	    	    		<td id="income-sum-days" class="final-text"><?php echo $finals['sum_days']; ?></td>
 	    	    		<td id="income-sum-amount" class="final-text text-success"><?php echo $finals['sum_sum']; ?></td>
-	    	    		<td></td>
+	    	    		<td></td>	    	    		
 	        	  </tr>
 		  </tbody>
 		</table>
