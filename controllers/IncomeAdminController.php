@@ -12,8 +12,6 @@ class IncomeAdminController
 				$comment = $_POST['comment'];
 				$realtyName = $_POST['realtyName'];
 				
-				//d($_POST);
-
 				$realty = RealtyAdmin::getRealtyByName($realtyName);				
 
 				IncomeAdmin::addIncome($dateArr, $dateDep, $price, $sum, $comment, $realty['id']);

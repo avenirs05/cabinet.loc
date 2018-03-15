@@ -11,11 +11,21 @@ function ifAddBtnsClicked () {
 
     $('#add-income').click(function() {
         $('#add-income-wrap').show();
+        $('#add-income-wrap .select-realties-content').remove();
+
         $('#add-expense-owner-wrap').hide();
         $('#add-expense-gen-wrap').hide();
         $('#add-balance-wrap').hide();
         $('#add-realty-wrap').hide();
         $('#add-owner-wrap').hide();
+
+        $.ajax({
+            url: '/get-realties-for-select',
+            type: 'post',
+            success: function(data) {
+                $('#add-income-wrap form').prepend(data);
+            }
+        });
 
     });
 
