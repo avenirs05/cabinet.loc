@@ -79,4 +79,22 @@ class IncomeAdmin
 		}
 
 
+    public static function addIncome($dateArr, $dateDep, $price, $sum, $comment, $realtyId) {
+    		$db = Db::getConnection();
+
+    		$sql = 'INSERT INTO income (date_arr, date_dep, price, days, sum, comment, realty_id) '
+    		        . 'VALUES (:date_arr, :date_dep, :price, TO_DAYS(date_dep) - TO_DAYS(date_arr), :sum, :comment, :realty_id)';    	
+
+    		$result = $db->prepare($sql);
+    		$result->bindParam(':date_arr', $dateArr, PDO::PARAM_STR);
+    		$result->bindParam(':date_dep', $dateDep, PDO::PARAM_STR);
+    		$result->bindParam(':price', $price, PDO::PARAM_STR);
+   	  	$result->bindParam(':comment', $comment, PDO::PARAM_STR);
+    		$result->bindParam(':sum', $sum, PDO::PARAM_STR);    		
+    		$result->bindParam(':realty_id', $realtyId, PDO::PARAM_STR);
+
+    		return $result->execute();
+		}
+
+
 }

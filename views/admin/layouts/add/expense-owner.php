@@ -45,7 +45,7 @@
 				  <label>Комментарий</label>
 				  <input id="comment-exp-owner" type="text" class="form-control" placeholder="" required>
 				</div>
-			  <button type="button" id="add-expense-owner-send" class="btn btn-dark">Добавить общий расход</button>
+			  <button type="button" id="add-expense-owner-send" class="btn btn-dark">Добавить расход собственника</button>
 			  <button type="button" class="btn btn-outline-secondary btn-cancel">Отмена</button>		
 			</form>
 		</div>

@@ -168,4 +168,27 @@ jQuery(document).ready(function () {
 				});
 		});
 
+
+		$('#add-income-send').click(function(e) {	
+				e.preventDefault();			
+
+				$.ajax({
+					  url: '/add-income',
+					  data: 'date-arr=' + $('#date-arr-income').val().trim() + '&' +
+					  			'date-dep=' + $('#date-dep-income').val().trim() + '&' +
+					  			'price=' + $('#price-income').val().trim() + '&' +
+					  			'sum=' + $('#sum-income').val().trim() + '&' +
+					  			'comment=' + $('#comment-income').val().trim() + '&' +
+					  			'realtyName=' + $('#add-income-wrap .select-realties option:selected').text().trim(),
+					  type: 'post',
+					  success: function(data) {
+					  		console.log(data);
+					  		$('#price-income').val('');
+					  		$('#sum-income').val('');
+					  		$('#comment-income').val('');
+					  		$('#incomes-admin').click();
+					  }
+				});
+		});
+
 });
