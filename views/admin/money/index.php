@@ -1,8 +1,9 @@
-<div class="row table-wrap">
+<div class="row table-wrap money-table-wrap">
 	<div class="col">
 		<table class="table table-bordered table-striped">
 		  <thead>
 		    <tr>
+		    	<th scope="col">Id</th>
 			    <th scope="col">Дата</th>
 		      <th scope="col">Получил(а), €</th>
 		      <th scope="col">Отдал(а), €</th>
@@ -14,12 +15,13 @@
 		  <tbody>
 			  <?php foreach ($money as $transaction): ?>
 		  	  <tr id="<?php echo $transaction['id']; ?>">	
+		  	  	<td nowrap><?php echo $transaction['id']; ?></td>
 		  		  <td nowrap><?php echo $transaction['date']; ?></td>
 		  		  <td class="text-success gave-money"><?php echo $transaction['sum_minus']; ?></td>
 		  		  <td class="text-danger got-money">-<?php echo $transaction['sum_plus']; ?></td>
 		  		  <td><?php echo $transaction['comment']; ?></td>
-		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/edit.png" width="20" alt="" class="close"></td>
-		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/close.png" width="20" alt="" class="close"></td>
+		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/edit.png" width="20" alt="" class="close edit"></td>
+		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/close.png" width="20" alt="" class="close delete"></td>
 		  	  </tr>					
 			  <?php endforeach; ?>
 			    	<tr class="final-row">	

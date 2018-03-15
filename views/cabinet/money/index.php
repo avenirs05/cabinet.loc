@@ -3,15 +3,17 @@
 		<table class="table table-bordered table-striped">
 		  <thead>
 		    <tr>
+		    	<th scope="col">Id</th>
 			    <th scope="col">Дата</th>
-		      <th scope="col">Отдал(а), €</th>
-		      <th scope="col">Получил(а), €</th>
+		      <th nowrap scope="col">Отдал(а), €</th>
+		      <th nowrap scope="col">Получил(а), €</th>
 		      <th scope="col">Комментарий</th>
 		    </tr>
 		  </thead>
 		  <tbody>
 			  <?php foreach ($money as $transaction): ?>
 		  	  <tr>	
+		  	  	<td nowrap><?php echo $transaction['id']; ?></td>
 		  		  <td nowrap><?php echo $transaction['date']; ?></td>
 		  		  <td class="text-danger gave-money">-<?php echo $transaction['sum_minus']; ?></td>
 		  		  <td class="text-success got-money"><?php echo $transaction['sum_plus']; ?></td>
