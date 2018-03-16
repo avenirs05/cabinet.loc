@@ -22,4 +22,14 @@ class RealtyAdminController
 				return true;
 		}
 
+
+		public function actionDelRealty() 
+		{		   
+				$realtyId = $_POST['realtyId']; 
+				
+				$result = Realty::delRealtyById($realtyId);	
+
+				return true;
+		}
+
 }

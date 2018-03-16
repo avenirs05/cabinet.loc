@@ -10,7 +10,7 @@ class ExpenseAdmin
 		public static function getExpensesOwnerAllRealtiesAllUsers() {
 				$db = Db::getConnection();
 
-				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
+				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, expense.exp_type_id, realty.name as realty_name
 						FROM expense
 							INNER JOIN exp_type 
 								ON expense.exp_type_id=exp_type.id 
@@ -32,6 +32,7 @@ class ExpenseAdmin
 						$expenseList[$i]['report'] = $row['report'];
 						$expenseList[$i]['comment'] = $row['comment'];
 						$expenseList[$i]['id'] = $row['id'];
+						$expenseList[$i]['exp_type_id'] = $row['exp_type_id'];
 						$i++;
 				}
 
@@ -42,7 +43,7 @@ class ExpenseAdmin
 		public static function getExpensesOwnerOneRealtyAllUsers($realtyId) {
 				$db = Db::getConnection();
 
-				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
+				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, expense.exp_type_id, realty.name as realty_name
 						FROM expense
 							INNER JOIN exp_type 
 								ON expense.exp_type_id=exp_type.id 
@@ -64,6 +65,7 @@ class ExpenseAdmin
 						$expenseList[$i]['report'] = $row['report'];
 						$expenseList[$i]['comment'] = $row['comment'];
 						$expenseList[$i]['id'] = $row['id'];
+						$expenseList[$i]['exp_type_id'] = $row['exp_type_id'];
 						$i++;
 				}
 
@@ -92,7 +94,7 @@ class ExpenseAdmin
 		public static function getExpensesGenAllRealtiesAllUsers() {
 				$db = Db::getConnection();
 
-				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
+				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, expense.exp_type_id, realty.name as realty_name
 						FROM expense
 							INNER JOIN exp_type 
 								ON expense.exp_type_id=exp_type.id 
@@ -114,6 +116,7 @@ class ExpenseAdmin
 						$expenseList[$i]['report'] = $row['report'];
 						$expenseList[$i]['comment'] = $row['comment'];
 						$expenseList[$i]['id'] = $row['id'];
+						$expenseList[$i]['exp_type_id'] = $row['exp_type_id'];
 						$i++;
 				}
 
@@ -133,7 +136,7 @@ class ExpenseAdmin
 		public static function getExpensesGenOneRealtyAllUsers($realtyId) {
 				$db = Db::getConnection();
 
-				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, realty.name as realty_name
+				$result = $db->query("SELECT expense.id, expense.date, expense.name, expense.quantity, expense.price, expense.source, expense.sum, expense.comment, expense.report, expense.exp_type_id, realty.name as realty_name
 						FROM expense
 							INNER JOIN exp_type 
 								ON expense.exp_type_id=exp_type.id 
@@ -155,6 +158,7 @@ class ExpenseAdmin
 						$expenseList[$i]['report'] = $row['report'];
 						$expenseList[$i]['comment'] = $row['comment'];
 						$expenseList[$i]['id'] = $row['id'];
+						$expenseList[$i]['exp_type_id'] = $row['exp_type_id'];
 						$i++;
 				}
 
@@ -216,5 +220,18 @@ class ExpenseAdmin
     		$result->bindParam(':exp_type_id', $exp_type_id, PDO::PARAM_STR);
 
     		return $result->execute();
+		}
+
+
+		public static function delExpenseById($expenseId) 
+		{
+				$db = Db::getConnection();
+
+				$sql = 'DELETE FROM expense WHERE id = :id';
+
+				$result = $db->prepare($sql);
+				$result->bindParam(':id', $expenseId, PDO::PARAM_STR);
+
+				return $result->execute();
 		}
 }

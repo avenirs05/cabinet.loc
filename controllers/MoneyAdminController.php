@@ -16,4 +16,14 @@ class MoneyAdminController
 
 				return true;
 		}
+
+
+		public function actionDelMoney() 
+		{		   
+				$balanceId = $_POST['balanceId']; 
+				
+				$result = MoneyAdmin::delBalanceById($balanceId);	
+
+				return true;
+		}
 }

@@ -15,7 +15,7 @@
 				</div>
 				<div class="form-group">
 				  <label>Дата <small>(YYYY-MM-DD)</small></label>
-				  <input id="date-exp-gen" type="text" class="form-control" placeholder="" value="2018-" required>
+				  <input id="date-exp-gen" type="text" class="date-field form-control" placeholder="" value="" required>
 				</div>
 				<div class="form-group">
 				  <label>Товар (услуга)</label>
@@ -39,7 +39,7 @@
 				</div>
 				<div class="form-group">
 				  <label>Отчет на email <small>(YYYY-MM-DD)</small></label>
-				  <input id="rep-email-exp-gen" type="text" class="form-control" placeholder="" required>
+				  <input id="rep-email-exp-gen" type="text" class="date-field form-control" placeholder="" value="" required>
 				</div>
 				<div class="form-group">
 				  <label>Комментарий</label>

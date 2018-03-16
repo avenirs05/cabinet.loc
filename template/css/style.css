@@ -111,6 +111,10 @@ a:hover {
 	  font-weight: 600;
 }
 
+.table-wrap .table tr:hover {
+	  background-color: rgb(204, 255, 204);
+}
+
 .report-menu-wrap .nav-item a.nav-link {
 		font-weight: 600;	
 		color: #000;
@@ -148,6 +152,7 @@ a:hover {
 .smartfox:hover {
 		color: #FFFF66;
 }
+
 
 @media screen and (max-device-width: 991px) {
 	.report-menu-wrap .nav-item a:hover {

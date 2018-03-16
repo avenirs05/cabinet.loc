@@ -20,7 +20,7 @@
 		  <tbody>
 			  <?php foreach ($expenses as $item): ?>
 		  	  <tr id="<?php echo $item['id']; ?>">	
-		  	  	<td nowrap><?php echo $item['id']; ?></td>
+		  	  	<td class="id-of-expense" nowrap><?php echo $item['id']; ?></td>
 		  		  <td nowrap><?php echo $item['date']; ?></td>
 		  		  <td nowrap><?php echo $item['realty_name']; ?></td>
 		  		  <td><?php echo $item['name']; ?></td>
@@ -32,6 +32,7 @@
 		  		  <td><?php echo $item['comment']; ?></td>
 		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/edit.png" width="20" alt="" class="close edit"></td>
 		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/close.png" width="20" alt="" class="close delete"></td>
+		  		  <td class="exp-type" style="display: none"><?php echo $item['exp_type_id']; ?></td>
 		  	  </tr>					
 			  <?php endforeach; ?>
 		    	<tr class="final-row">	

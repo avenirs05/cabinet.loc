@@ -41,4 +41,15 @@ class ExpenseAdminController
 
 				return true;
 		}
+
+
+		public function actionDelExpense() 
+		{		   
+				$expenseId = $_POST['expenseId']; 
+				
+				$result = ExpenseAdmin::delExpenseById($expenseId);	
+
+				return true;
+		}
+
 }

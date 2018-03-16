@@ -15,11 +15,11 @@
 				</div>
 				<div class="form-group">
 				  <label>Дата заезда <small>(YYYY-MM-DD)</small></label>
-				  <input id="date-arr-income" type="text" class="form-control" placeholder="" value="2018-" required>
+				  <input id="date-arr-income" type="text" class="date-field form-control" placeholder="" value="" required>
 				</div>
 				<div class="form-group">
 				  <label>Дата выезда <small>(YYYY-MM-DD)</small></label>
-				  <input id="date-dep-income" type="text" class="form-control" placeholder="" value="2018-" required>
+				  <input id="date-dep-income" type="text" class="date-field form-control" placeholder="" value="" required>
 				</div>
 				<div class="form-group">
 				  <label>Цена в сутки, €</label>

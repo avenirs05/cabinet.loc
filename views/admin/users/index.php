@@ -1,5 +1,5 @@
 <div class="row table-wrap users-table-wrap">
-	<div class="col">
+	<div class="col" id="header">
 		<table class="table table-bordered table-striped">
 		  <thead>
 		    <tr>

@@ -48,10 +48,9 @@ return array(
 
     // Удаление записей
     'del-owner' => 'user/delUser',
-    // 'add-realty' => 'realtyAdmin/addRealty',
-    // 'add-balance' => 'moneyAdmin/addMoney',
-    // 'add-expense-gen' => 'expenseAdmin/addExpenseGen',
-    // 'add-expense-owner' => 'expenseAdmin/addExpenseOwner',
+    'del-realty' => 'realtyAdmin/delRealty',
+    'del-balance' => 'moneyAdmin/delMoney',
+    'del-expense' => 'expenseAdmin/delExpense',
     // 'add-income' => 'incomeAdmin/addIncome',
 
     'get-users-for-select' => 'user/getUsersForSelect', 

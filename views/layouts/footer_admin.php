@@ -6,6 +6,7 @@
 
 
 <!-- My Own Js-scripts -->
+<script src="/template/js/jquery.maskedinput.js"></script>
 <script src="/template/js/func.js"></script>
 <script src="/template/js/cabinet.js"></script>
 <script src="/template/js/admin.js"></script>

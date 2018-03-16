@@ -15,7 +15,7 @@
 		  <tbody>
 			  <?php foreach ($money as $transaction): ?>
 		  	  <tr id="<?php echo $transaction['id']; ?>">	
-		  	  	<td nowrap><?php echo $transaction['id']; ?></td>
+		  	  	<td class="id-of-trans" nowrap><?php echo $transaction['id']; ?></td>
 		  		  <td nowrap><?php echo $transaction['date']; ?></td>
 		  		  <td class="text-success gave-money"><?php echo $transaction['sum_minus']; ?></td>
 		  		  <td class="text-danger got-money">-<?php echo $transaction['sum_plus']; ?></td>

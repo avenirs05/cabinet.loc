@@ -1,3 +1,7 @@
+<?php include ROOT . '/views/admin/layouts/del/income.php'; ?>
+<?php include ROOT . '/views/admin/layouts/del/expense.php'; ?>
+<?php include ROOT . '/views/admin/layouts/del/balance.php'; ?>
+<?php include ROOT . '/views/admin/layouts/del/realty.php'; ?>
 <?php include ROOT . '/views/admin/layouts/del/user.php'; ?>
 
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>

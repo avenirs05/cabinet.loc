@@ -50,4 +50,17 @@ class MoneyAdmin
 
 		  	return $result->execute();
 		}
+
+
+		public static function delBalanceById($balanceId) 
+		{
+				$db = Db::getConnection();
+
+				$sql = 'DELETE FROM money WHERE id = :id';
+
+				$result = $db->prepare($sql);
+				$result->bindParam(':id', $balanceId, PDO::PARAM_STR);
+
+				return $result->execute();
+		}
 }

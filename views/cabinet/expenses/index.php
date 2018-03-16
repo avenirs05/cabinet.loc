@@ -27,7 +27,7 @@
 		  		  <td><?php echo $item['sum']; ?></td>
 		  		  <td><?php echo $item['source']; ?></td>
 		  		  <td nowrap class="report-email"><?php echo $item['report']; ?></td>
-		  		  <td><?php echo $item['comment']; ?></td>
+		  		  <td><?php echo $item['comment']; ?></td>		  		  
 		  	  </tr>					
 			  <?php endforeach; ?>
 		    	<tr class="final-row">	

@@ -21,4 +21,17 @@ class Realty
         return $realtiesList;
     }
 
+
+    public static function delRealtyById($realtyId) 
+    {
+            $db = Db::getConnection();
+
+            $sql = 'DELETE FROM realty WHERE id = :id';
+
+            $result = $db->prepare($sql);
+            $result->bindParam(':id', $realtyId, PDO::PARAM_STR);
+
+            return $result->execute();
+    }
+
 }

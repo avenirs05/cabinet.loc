@@ -1,5 +1,8 @@
 jQuery(document).ready(function () {  
 
+		// Маска ввода
+		$(".date-field").mask("2018-99-99");
+
 		// Удаление записей
 		ifDelBtnsClicked();
 
