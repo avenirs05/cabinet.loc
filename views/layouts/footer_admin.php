@@ -10,6 +10,7 @@
 <script src="/template/js/func.js"></script>
 <script src="/template/js/cabinet.js"></script>
 <script src="/template/js/admin.js"></script>
+<script src="/template/js/admin-read.js"></script>
 <script src="/template/js/admin-del.js"></script>
 <script src="/template/js/admin-add.js"></script>
 
