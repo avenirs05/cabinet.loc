@@ -51,4 +51,18 @@ class UserController
 
 				return true;
 		}
+
+
+		public function actionEditUser() 
+		{		   
+				$userId = $_POST['userId']; 
+				$userName = $_POST['userName'];
+				$userEmail = $_POST['userEmail'];
+				$userPass = $_POST['userPass'];
+				$userPhone = $_POST['userPhone'];
+				
+				$result = User::updateUserById($userId, $userName, $userEmail, $userPass, $userPhone);	
+				//d($_POST);
+				return true;
+		}
 }

@@ -153,6 +153,14 @@ a:hover {
 		color: #FFFF66;
 }
 
+.modal-body .form-group {
+		font-weight: 600;
+}
+
+#user-modal-edit .form-group:last-child {
+		margin-bottom: 20px;
+}
+
 
 @media screen and (max-device-width: 991px) {
 	.report-menu-wrap .nav-item a:hover {

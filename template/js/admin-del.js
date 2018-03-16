@@ -94,4 +94,25 @@ function ifDelBtnsClicked () {
 				});
 		});
 
+
+		// Удаление дохода		
+		// Попап 
+		$(document).on('click', '.income-table-wrap .delete', function() {
+				$('#income-modal-del').modal('show');
+				$('#income-modal-del').data( 'incomeId', $(this).parent().parent().attr('id') );
+				$('#income-modal-del h5 span').text( $('#income-modal-del').data('incomeId') );
+		});
+		// Кнопка "удалить" в попапе
+		$(document).on('click', '#income-modal-del .btn-del-final', function() {		
+				$.ajax({
+				    url: '/del-income',
+				    data: 'incomeId=' + $('#income-modal-del').data('incomeId'),
+				    type: 'post',
+				    success: function(data) {				    		
+				    		$('#income-modal-del .close').click();
+				    		$('#incomes-admin').click();
+				    }
+				});
+		});
+
 }

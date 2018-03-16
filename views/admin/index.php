@@ -4,6 +4,12 @@
 <?php include ROOT . '/views/admin/layouts/del/realty.php'; ?>
 <?php include ROOT . '/views/admin/layouts/del/user.php'; ?>
 
+<?php include ROOT . '/views/admin/layouts/edit/income.php'; ?>
+<?php include ROOT . '/views/admin/layouts/edit/expense.php'; ?>
+<?php include ROOT . '/views/admin/layouts/edit/balance.php'; ?>
+<?php include ROOT . '/views/admin/layouts/edit/realty.php'; ?>
+<?php include ROOT . '/views/admin/layouts/edit/user.php'; ?>
+
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">

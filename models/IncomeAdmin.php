@@ -97,4 +97,17 @@ class IncomeAdmin
 		}
 
 
+		public static function delIncomeById($incomeId) 
+		{
+				$db = Db::getConnection();
+
+				$sql = 'DELETE FROM income WHERE id = :id';
+
+				$result = $db->prepare($sql);
+				$result->bindParam(':id', $incomeId, PDO::PARAM_STR);
+
+				return $result->execute();
+		}
+
+
 }

@@ -51,7 +51,14 @@ return array(
     'del-realty' => 'realtyAdmin/delRealty',
     'del-balance' => 'moneyAdmin/delMoney',
     'del-expense' => 'expenseAdmin/delExpense',
-    // 'add-income' => 'incomeAdmin/addIncome',
+    'del-income' => 'incomeAdmin/delIncome',
+
+    // Редактирование записей
+    'edit-owner' => 'user/editUser',
+    'edit-realty' => 'realtyAdmin/editRealty',
+    'edit-balance' => 'moneyAdmin/editMoney',
+    'edit-expense' => 'expenseAdmin/editExpense',
+    'edit-income' => 'incomeAdmin/editIncome',
 
     'get-users-for-select' => 'user/getUsersForSelect', 
     'get-realties-for-select' => 'realtyAdmin/getRealtiesForSelect',

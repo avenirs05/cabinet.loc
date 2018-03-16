@@ -9,8 +9,11 @@ jQuery(document).ready(function () {
 		// Удаление записей
 		ifDelBtnsClicked();
 
-		// Удаление записей
+		// Чтение записей
 		ifReadBtnsClicked();
+
+		// Редактирование записей
+		ifEditBtnsClicked();
 
 		// Нужные цвета у ссылок (кнопок) в навигационном меню
 		colorClickedHoverEl('.navbar-brand', 'rgb(255, 255, 255)', 'rgb(204, 255, 204)', 'rgb(255, 255, 0)', '#incomes-admin');

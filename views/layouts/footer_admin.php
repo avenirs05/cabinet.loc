@@ -13,6 +13,7 @@
 <script src="/template/js/admin-read.js"></script>
 <script src="/template/js/admin-del.js"></script>
 <script src="/template/js/admin-add.js"></script>
+<script src="/template/js/admin-edit.js"></script>
 
 </body> 
 </html>

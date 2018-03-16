@@ -18,4 +18,14 @@ class IncomeAdminController
 
 				return true;
 		}
+
+
+		public function actionDelIncome() 
+		{		   
+				$incomeId = $_POST['incomeId']; 
+				
+				$result = IncomeAdmin::delIncomeById($incomeId);	
+
+				return true;
+		}
 }

@@ -170,5 +170,25 @@ class User
 
 				return $result->execute();
 		}
+
+
+		public static function updateUserById($userId, $userName, $userEmail, $userPass, $userPhone)
+		{
+				
+		    $db = Db::getConnection();
+
+		    $sql = "UPDATE user SET name = :user_name, email = :user_email, password = :user_pass, phone = :user_phone WHERE id = :id";
+
+		    $result = $db->prepare($sql);
+		    $result->bindParam(':id', $userId, PDO::PARAM_INT);
+		    $result->bindParam(':user_name', $userName, PDO::PARAM_STR);
+		    $result->bindParam(':user_email', $userEmail, PDO::PARAM_STR);
+		    $result->bindParam(':user_pass', $userPass, PDO::PARAM_STR);		    
+		    $result->bindParam(':user_phone', $userPhone, PDO::PARAM_STR);		  
+
+		    var_dump( $result->execute() );
+		    //d($userName);
+		    //return $result->execute();
+		}
 	
 }
