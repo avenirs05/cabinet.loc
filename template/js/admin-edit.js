@@ -27,8 +27,7 @@ function ifEditBtnsClicked () {
 				    			'userPass=' + $('#user-pass-edit').val() + '&' +
 				    			'userPhone=' + $('#user-phone-edit').val(),
 				    type: 'post',
-				    success: function(data) {			
-				    		console.log(data);	    		
+				    success: function(data) {			   		
 				    		$('#user-modal-edit .close').click();
 				    		$('#owners-admin').click();
 				    }
