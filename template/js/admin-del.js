@@ -70,22 +70,23 @@ function ifDelBtnsClicked () {
 		// Удаление расхода общего		
 		// Попап 
 		$(document).on('click', '.expenses-table-wrap .delete', function() {
-				$('#expense-gen-modal-del').modal('show');				
-				$('#expense-gen-modal-del').data( 'expenseId', $(this).parent().parent().attr('id') );
-				$('#expense-gen-modal-del h5 span').text( $('#expense-gen-modal-del').data('expenseId') );
+				$('#expense-modal-del').modal('show');				
+				$('#expense-modal-del').data( 'expenseId', $(this).parent().parent().attr('id') );
+				$('#expense-modal-del').data( 'expenseType', $(this).parent().parent().children('.exp-type').text() );
+				$('#expense-modal-del h5 span').text( $('#expense-modal-del').data('expenseId') );
 		});
 		// Кнопка "удалить" в попапе
-		$(document).on('click', '#expense-gen-modal-del .btn-del-final', function() {		
+		$(document).on('click', '#expense-modal-del .btn-del-final', function() {		
 				$.ajax({
 				    url: '/del-expense',
 				    data: 'expenseId=' + $('#expense-modal-del').data('expenseId'),
 				    type: 'post',
 				    success: function(data) {		  		
 				    		$('#expense-modal-del .close').click();
-				    		if ( data == 'gen') {
+				    		if ( $('#expense-modal-del').data('expenseType') == '1') {
 				    					$('#expenses-gen-admin').click();
 				    		}
-				    		if ( data == 'owner') {
+				    		if ( $('#expense-modal-del').data('expenseType') == '2') {
 				    					$('#expenses-owner-admin').click();
 				    		}
 				    		
