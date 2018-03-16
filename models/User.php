@@ -118,44 +118,57 @@ class User
 	  }
 	
 	
-	public static function enterAsUser($userId) 
-	{
-				if (!isset($_SESSION['role'])) {
-					  header('Location: /');
-				} elseif ($_SESSION['role'] != 'user') {
-					  header('Location: /');		  
-				} elseif ($_SESSION['userId'] != $userId) {
-					  header('Location: /');		  
-				}
-	}
+		public static function enterAsUser($userId) 
+		{
+					if (!isset($_SESSION['role'])) {
+						  header('Location: /');
+					} elseif ($_SESSION['role'] != 'user') {
+						  header('Location: /');		  
+					} elseif ($_SESSION['userId'] != $userId) {
+						  header('Location: /');		  
+					}
+		}
 	
 	  
-	public static function enterAsAdmin($adminId) 
-	{
-				if (!isset($_SESSION['role'])) {
-					  header('Location: /');
-				} elseif ($_SESSION['role'] != 'admin') {
-					  header('Location: /');		  
-				} elseif ($_SESSION['adminId'] != $adminId) {
-					  header('Location: /');		  
-				}
-	}
+		public static function enterAsAdmin($adminId) 
+		{
+					if (!isset($_SESSION['role'])) {
+						  header('Location: /');
+					} elseif ($_SESSION['role'] != 'admin') {
+						  header('Location: /');		  
+					} elseif ($_SESSION['adminId'] != $adminId) {
+						  header('Location: /');		  
+					}
+		}
 
 
-	public static function addUser($userName, $userEmail, $userPass, $userPhone) 
-	{
-			$db = Db::getConnection();
+		public static function addUser($userName, $userEmail, $userPass, $userPhone) 
+		{
+				$db = Db::getConnection();
 
-			$sql = 'INSERT INTO user (name, email, password, phone) '
-			        . 'VALUES (:user_name, :user_email, :user_pass, :user_phone)';
+				$sql = 'INSERT INTO user (name, email, password, phone) '
+				        . 'VALUES (:user_name, :user_email, :user_pass, :user_phone)';
 
-			$result = $db->prepare($sql);
-			$result->bindParam(':user_name', $userName, PDO::PARAM_STR);
-			$result->bindParam(':user_email', $userEmail, PDO::PARAM_STR);
-			$result->bindParam(':user_pass', $userPass, PDO::PARAM_STR);
-			$result->bindParam(':user_phone', $userPhone, PDO::PARAM_STR);
+				$result = $db->prepare($sql);
+				$result->bindParam(':user_name', $userName, PDO::PARAM_STR);
+				$result->bindParam(':user_email', $userEmail, PDO::PARAM_STR);
+				$result->bindParam(':user_pass', $userPass, PDO::PARAM_STR);
+				$result->bindParam(':user_phone', $userPhone, PDO::PARAM_STR);
 
-			return $result->execute();
-	}
+				return $result->execute();
+		}
+
+
+		public static function delUserById($userId) 
+		{
+				$db = Db::getConnection();
+
+				$sql = 'DELETE FROM user WHERE id = :id';
+
+				$result = $db->prepare($sql);
+				$result->bindParam(':id', $userId, PDO::PARAM_STR);
+
+				return $result->execute();
+		}
 	
 }

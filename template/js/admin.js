@@ -1,12 +1,12 @@
 jQuery(document).ready(function () {  
 
-		$(document).on('click', '.users-table-wrap .delete', function() {
-				//console.log('jjj');
-				$('#user-modal-del').modal('show');
-		});
+		// Удаление записей
+		ifDelBtnsClicked();
 
+		// Нужные цвета у ссылок (кнопок) в навигационном меню
 		colorClickedHoverEl('.navbar-brand', 'rgb(255, 255, 255)', 'rgb(204, 255, 204)', 'rgb(255, 255, 0)', '#incomes-admin');
 
+		// Добавление записей
 		ifAddBtnsClicked();
 
 		// Основные отчеты. Операция read из бд
@@ -174,6 +174,7 @@ jQuery(document).ready(function () {
 		});
 
 
+		// Добавление дохода
 		$('#add-income-send').click(function(e) {	
 				e.preventDefault();			
 

@@ -41,4 +41,14 @@ class UserController
 				require_once(ROOT . '/views/admin/users/for-select.php');
 				return true;
 		}
+
+
+		public function actionDelUser() 
+		{		   
+				$userId = $_POST['userId']; 
+				
+				$result = User::delUserById($userId);	
+
+				return true;
+		}
 }

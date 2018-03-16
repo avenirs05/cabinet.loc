@@ -16,7 +16,7 @@
 		    <?php foreach ($users as $user): ?>
 			  	  <tr id="<?php echo $user['id']; ?>">	
 			  	  	<td><?php echo $user['id']; ?></td>
-			  		  <td><?php echo $user['name']; ?></td>
+			  		  <td class="name-of-owner"><?php echo $user['name']; ?></td>
 			  		  <td><?php echo $user['email']; ?></td>
 			  		  <td><?php echo $user['password']; ?></td>
 			  		  <td><?php echo $user['phone']; ?></td>
