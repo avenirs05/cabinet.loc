@@ -26,4 +26,29 @@ class MoneyAdminController
 
 				return true;
 		}
+
+
+		public function actionEditMoney() 
+		{   
+				$date = $_POST['date']; 
+				$got = $_POST['got'];
+				$gave = $_POST['gave'];
+				$comment = $_POST['comment'];
+				$userId = $_POST['userId'];
+				$id = $_POST['id'];
+
+				if (!$got) {
+							$got = 0;
+				}
+
+				if (!$gave) {
+							$gave = 0;
+				}
+
+				d($_POST);
+				
+				$result = MoneyAdmin::updateBalanceById($date, $got, $gave, $comment, $userId, $id);	
+
+				return true;
+		}
 }

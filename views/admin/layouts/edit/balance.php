@@ -15,16 +15,16 @@
           </div>
           <div class="form-group">
             <label>Получил, €</label>
-            <input id="balance-got-edit" type="number" class="form-control" placeholder="" required>
+            <input id="balance-got-edit" type="number" class="form-control" placeholder="" value="0" required>
           </div>
           <div class="form-group">
             <label>Отдал, €</label>
-            <input id="balance-gave-edit" type="number" class="form-control" placeholder="" required>
+            <input id="balance-gave-edit" type="number" class="form-control" placeholder="" value="0" required>
           </div>
           <div class="form-group select-user-content">
             <label>Собственник</label>
             <select class="custom-select select-user">
-              <option value="">Выберите собственника</option>
+              <option class="current-user" value="">Выберите собственника</option>
               <?php foreach ($users as $user): ?>
                 <option value="<?php echo $user['id']; ?>">
                   <?php echo $user['name']; ?>

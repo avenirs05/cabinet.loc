@@ -65,8 +65,25 @@ function ifEditBtnsClicked () {
 
 		// Редактирование строки баланса		
 		// Попап 
+		function getCurrUserVal () {
+				$('#balance-modal-edit .select-user option').each(function(indx, el) {
+						if (indx != 0) {
+								if ( $(el).text().trim() == $('#balance-modal-edit .current-user').text() ) {
+											$('.current-user').val( $(el).val() );
+											return false;
+								}
+						}
+				})
+		}
+
+		// $(document).on('change','#balance-modal-edit .select-user' , function() {
+		// 		console.log( $('#balance-modal-edit .select-user option:selected').val() );
+		// });
+
+
 		$(document).on('click', '.money-table-wrap .edit', function() {
 				$('#balance-modal-edit').modal('show');
+				$('#balance-modal-edit').data( 'currUser', $(this).parent().parent().children('.money-owner-name').text() );
 				$('#balance-modal-edit').data( 'date', $(this).parent().parent().children('.trans-date').text() );
 				$('#balance-modal-edit').data( 'got', $(this).parent().parent().children('.gave-money').text() );
 				$('#balance-modal-edit').data( 'gave', $(this).parent().parent().children('.got-money').text() );
@@ -75,30 +92,30 @@ function ifEditBtnsClicked () {
 				$('#balance-modal-edit h5 span').text( $('#balance-modal-edit').data('transId') );
 
 				$('#balance-date-edit').val( $('#balance-modal-edit').data('date') );
-				$('#balance-got-edit').val( $('#balance-modal-edit').data('got') );
-				$('#balance-gave-edit').val( $('#balance-modal-edit').data('gave') );
+				$('#balance-got-edit').val( Math.abs( $('#balance-modal-edit').data('got') ) );
+				$('#balance-gave-edit').val( Math.abs( $('#balance-modal-edit').data('gave') ) );
 				$('#balance-comment-edit').val( $('#balance-modal-edit').data('comment') );
+
+				$('#balance-modal-edit .current-user').text( $('#balance-modal-edit').data('currUser') );
+				getCurrUserVal();
 		});
 		// Кнопка "сохранить" в попапе
-		$(document).on('click', '#user-modal-edit .btn-edit-final', function() {		
+		$(document).on('click', '#balance-modal-edit .btn-edit-final', function() {			
 				$.ajax({
-				    url: '/edit-owner',
-				    data: 'userId=' + $('#user-modal-edit').data('userId') + '&' +
-				    			'userName=' + $('#user-name-edit').val() + '&' +
-				    			'userEmail=' + $('#user-email-edit').val() + '&' +
-				    			'userPass=' + $('#user-pass-edit').val() + '&' +
-				    			'userPhone=' + $('#user-phone-edit').val(),
+				    url: '/edit-balance',
+				    data: 'date=' + $('#balance-date-edit').val() + '&' +
+				    			'got=' + $('#balance-got-edit').val() + '&' +
+				    			'gave=' + $('#balance-gave-edit').val() + '&' +
+				    			'comment=' + $('#balance-comment-edit').val() + '&' +
+				    			'id=' + $('#balance-modal-edit').data('transId') + '&' +
+				    			'userId=' + $('#balance-modal-edit .select-user option:selected').val(),
 				    type: 'post',
-				    success: function(data) {			   		
-				    		$('#user-modal-edit .close').click();
-				    		$('#owners-admin').click();
+				    success: function(data) {	
+				    		console.log(data);		   		
+				    		$('#balance-modal-edit .close').click();
+				    		$('#balance-admin').click();
 				    }
 				});
 		});
-
-
-
-
-
 
 }

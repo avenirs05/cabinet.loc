@@ -90,4 +90,21 @@ class MoneyAdmin
 
 				return $result->execute();
 		}
+
+
+		public static function updateBalanceById($date, $got, $gave, $comment, $userId, $id)
+		{				
+		    $db = Db::getConnection();
+		    
+		    $result = $db->query("UPDATE money 
+			    												SET 
+			    												date='$date', 
+			    												sum_minus=$got, 
+			    												sum_plus=$gave, 
+																	comment='$comment',
+																	user_id=$userId
+			    														WHERE id=$id");
+		    var_dump($result);
+
+		}
 }
