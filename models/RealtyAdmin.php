@@ -71,4 +71,19 @@ class RealtyAdmin
 
 				return $result->fetch();
 		}
+
+
+		public static function updateRealtyById($realtyId, $realtyName, $userId)
+		{
+		    $db = Db::getConnection();
+
+		    $sql = "UPDATE realty SET name = :realty_name, user_id = :user_id WHERE id = :realty_id";
+
+		    $result = $db->prepare($sql);
+		    $result->bindParam(':id', $realtyId, PDO::PARAM_INT);
+		    $result->bindParam(':realty_name', $realtyName, PDO::PARAM_STR);
+		    $result->bindParam(':user_id', $userId, PDO::PARAM_STR);  
+
+		    $result->execute();
+		}
 }
