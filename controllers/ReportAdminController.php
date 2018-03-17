@@ -152,7 +152,7 @@ class ReportAdminController {
 
 
 		public function actionMoneyOneUser($userId) {			
-				$money = Money::getTransactions($userId);
+				$money = MoneyAdmin::getTransactionsByUserId($userId);
 				$finals = Money::getFinals($userId);
 				
 				// Подключаем вид

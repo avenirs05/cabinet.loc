@@ -6,7 +6,7 @@ class MoneyAdmin
 		{
 				$db = Db::getConnection();
 
-				$result = $db->query('SELECT * FROM money order by money.date');		
+				$result = $db->query('SELECT m.id, m.date, m.sum_minus, m.sum_plus, m.comment, u.name as user_name FROM money m INNER JOIN user u ON m.user_id=u.id order by m.date');		
 				
 				$transList = array();
 
@@ -17,11 +17,38 @@ class MoneyAdmin
 				  $transList[$i]['sum_plus'] = $row['sum_plus'];
 				  $transList[$i]['comment'] = $row['comment'];
 				  $transList[$i]['id'] = $row['id'];
+				  $transList[$i]['user_name'] = $row['user_name'];
 				  $i++;
 				}
 				
 				return $transList;
 		}
+
+
+    public static function getTransactionsByUserId($userId) 
+    {
+				$db = Db::getConnection();
+
+				//$result = $db->query('SELECT * FROM money WHERE money.user_id=' . $userId . ' order by money.date');	
+
+				$result = $db->query("SELECT m.id, m.date, m.sum_minus, m.sum_plus, m.comment, u.name as user_name FROM money m INNER JOIN user u ON m.user_id=u.id WHERE m.user_id=$userId order by m.date");	
+				
+				$transList = array();
+
+				$i = 0;
+				while ($row = $result->fetch()) {
+				  $transList[$i]['date'] = $row['date'];
+				  $transList[$i]['sum_minus'] = $row['sum_minus'];
+				  $transList[$i]['sum_plus'] = $row['sum_plus'];
+				  $transList[$i]['comment'] = $row['comment'];
+				  $transList[$i]['id'] = $row['id'];
+				  $transList[$i]['user_name'] = $row['user_name'];
+				  $i++;
+				}
+				
+				return $transList;
+		}
+
 
 
 		public static function getAllFinals() 

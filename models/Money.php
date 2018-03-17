@@ -21,8 +21,9 @@ class Money
 				}
 				
 				return $transList;
-	}
-	
+		}
+
+			
 
     public static function getFinals($userId) 
     {

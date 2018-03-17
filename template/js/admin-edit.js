@@ -63,6 +63,39 @@ function ifEditBtnsClicked () {
 				});
 		});
 
+		// Редактирование строки баланса		
+		// Попап 
+		$(document).on('click', '.money-table-wrap .edit', function() {
+				$('#balance-modal-edit').modal('show');
+				$('#balance-modal-edit').data( 'date', $(this).parent().parent().children('.trans-date').text() );
+				$('#balance-modal-edit').data( 'got', $(this).parent().parent().children('.gave-money').text() );
+				$('#balance-modal-edit').data( 'gave', $(this).parent().parent().children('.got-money').text() );
+				$('#balance-modal-edit').data( 'comment', $(this).parent().parent().children('.money-comment').text() );
+				$('#balance-modal-edit').data( 'transId', $(this).parent().parent().attr('id') );
+				$('#balance-modal-edit h5 span').text( $('#balance-modal-edit').data('transId') );
+
+				$('#balance-date-edit').val( $('#balance-modal-edit').data('date') );
+				$('#balance-got-edit').val( $('#balance-modal-edit').data('got') );
+				$('#balance-gave-edit').val( $('#balance-modal-edit').data('gave') );
+				$('#balance-comment-edit').val( $('#balance-modal-edit').data('comment') );
+		});
+		// Кнопка "сохранить" в попапе
+		$(document).on('click', '#user-modal-edit .btn-edit-final', function() {		
+				$.ajax({
+				    url: '/edit-owner',
+				    data: 'userId=' + $('#user-modal-edit').data('userId') + '&' +
+				    			'userName=' + $('#user-name-edit').val() + '&' +
+				    			'userEmail=' + $('#user-email-edit').val() + '&' +
+				    			'userPass=' + $('#user-pass-edit').val() + '&' +
+				    			'userPhone=' + $('#user-phone-edit').val(),
+				    type: 'post',
+				    success: function(data) {			   		
+				    		$('#user-modal-edit .close').click();
+				    		$('#owners-admin').click();
+				    }
+				});
+		});
+
 
 
 
