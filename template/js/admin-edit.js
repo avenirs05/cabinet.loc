@@ -50,28 +50,13 @@ function ifEditBtnsClicked () {
 
 		});
 		// Кнопка "сохранить" в попапе
-		function findUserSelectedId () {
-				var res = null;
-				$('#realty-modal-edit .select-user option').each(function(indx, el) {
-						if (indx != 0) {
-								if ( $(el).text().trim() == $('.current-owner').text().trim() ) {
-											res = $(el).val();
-								}
-						}	
-				}); 
-				
-				return res;
-		}
- 
 		$(document).on('click', '#realty-modal-edit .btn-edit-final', function() {		
 				$.ajax({
 				    url: '/edit-realty',
 				    data: 'realtyId=' + $('#realty-modal-edit').data('realtyId') + '&' +
-				    			'userId=' + findUserSelectedId() + '&' +
 				    			'realtyName=' + $('#realty-name-edit').val(),
 				    type: 'post',
 				    success: function(data) {		
-				    		console.log(data);	 
 				    		$('#realty-modal-edit .close').click();
 				    		$('#realties-admin').click();
 				    }

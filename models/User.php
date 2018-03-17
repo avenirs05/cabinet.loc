@@ -187,5 +187,21 @@ class User
 
 		    $result->execute();
 		}
+
+
+    public static function getUserIdByRealtyName($realtyName) 
+    {
+				$db = Db::getConnection();
+
+				$sql = 'SELECT realty.user_id FROM realty WHERE realty.name = :name';
+
+				$result = $db->prepare($sql);
+				$result->bindParam(':name', $realtyName, PDO::PARAM_STR);
+
+				$result->setFetchMode(PDO::FETCH_ASSOC);
+				$result->execute();
+
+				return $result->fetch();
+    }
 	
 }

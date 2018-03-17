@@ -73,17 +73,9 @@ class RealtyAdmin
 		}
 
 
-		public static function updateRealtyById($realtyId, $realtyName, $userId)
+		public static function updateRealtyById($realtyId, $realtyName)
 		{
 		    $db = Db::getConnection();
-
-		    $sql = "UPDATE realty SET name = :realty_name, user_id = :user_id WHERE id = :id";
-		   
-		    $result = $db->prepare($sql);
-		    $result->bindParam(':id', $realtyId, PDO::PARAM_INT);
-		    $result->bindParam(':user_id', $userId, PDO::PARAM_INT);
-		    $result->bindParam(':realty_name', $realtyName, PDO::PARAM_STR);  
-
-		    $result->execute();
+		    $result = $db->query("UPDATE realty SET name='$realtyName' WHERE id=$realtyId");
 		}
 }
