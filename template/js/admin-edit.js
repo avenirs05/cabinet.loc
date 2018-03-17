@@ -57,9 +57,9 @@ function ifEditBtnsClicked () {
 								if ( $(el).text().trim() == $('.current-owner').text().trim() ) {
 											res = $(el).val();
 								}
-						}			
-
-				}) 
+						}	
+				}); 
+				
 				return res;
 		}
  
@@ -71,8 +71,8 @@ function ifEditBtnsClicked () {
 				    			'realtyName=' + $('#realty-name-edit').val(),
 				    type: 'post',
 				    success: function(data) {		
-				    		console.log(data);	   		
-				    		$('#user-modal-edit .close').click();
+				    		console.log(data);	 
+				    		$('#realty-modal-edit .close').click();
 				    		$('#realties-admin').click();
 				    }
 				});

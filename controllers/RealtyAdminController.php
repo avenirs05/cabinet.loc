@@ -35,10 +35,12 @@ class RealtyAdminController
 
 		public function actionEditRealty() 
 		{		   
-				//$realtyId = $_POST['realtyId']; 
-				d($_POST);
+				$realtyId = $_POST['realtyId']; 			  
+			  $realtyName = $_POST['realtyName']; 
+			  $userId = $_POST['userId']; 
 
-				//$result = RealtyAdmin::updateRealtyById($realtyId, $realtyName, $userId);	
+				$result = RealtyAdmin::updateRealtyById($realtyId, $realtyName, $userId);	
+				$result = RealtyAdmin::updateRealtyById($realtyId, $realtyName, 2);	
 
 				return true;
 		}

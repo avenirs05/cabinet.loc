@@ -77,12 +77,12 @@ class RealtyAdmin
 		{
 		    $db = Db::getConnection();
 
-		    $sql = "UPDATE realty SET name = :realty_name, user_id = :user_id WHERE id = :realty_id";
-
+		    $sql = "UPDATE realty SET name = :realty_name, user_id = :user_id WHERE id = :id";
+		   
 		    $result = $db->prepare($sql);
 		    $result->bindParam(':id', $realtyId, PDO::PARAM_INT);
-		    $result->bindParam(':realty_name', $realtyName, PDO::PARAM_STR);
-		    $result->bindParam(':user_id', $userId, PDO::PARAM_STR);  
+		    $result->bindParam(':user_id', $userId, PDO::PARAM_INT);
+		    $result->bindParam(':realty_name', $realtyName, PDO::PARAM_STR);  
 
 		    $result->execute();
 		}
