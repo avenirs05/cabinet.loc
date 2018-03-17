@@ -13,6 +13,17 @@
             <label>Название объекта</label>
             <input id="realty-name-edit" type="text" class="form-control" placeholder="Введите название объекта недвижимости" required>
           </div>
+          <div class="form-group select-user-content">
+            <label>Собственник</label>
+            <select class="custom-select select-user">
+              <option class="current-user" value="">Выберите собственника</option>
+              <?php foreach ($users as $user): ?>
+                <option value="<?php echo $user['id']; ?>">
+                  <?php echo $user['name']; ?>
+                </option>
+              <?php endforeach; ?>
+            </select>
+          </div>
         </form>
       </div>
       <div class="modal-footer">

@@ -44,9 +44,7 @@ class MoneyAdminController
 				if (!$gave) {
 							$gave = 0;
 				}
-
-				d($_POST);
-				
+		
 				$result = MoneyAdmin::updateBalanceById($date, $got, $gave, $comment, $userId, $id);	
 
 				return true;

@@ -37,8 +37,20 @@ function ifEditBtnsClicked () {
 
 		// Редактирование объекта	
 		// Попап 
+		function getCurrUserValRealty () {
+				$('#realty-modal-edit .select-user option').each(function(indx, el) {
+						if (indx != 0) {
+								if ( $(el).text().trim() == $('#realty-modal-edit .current-user').text() ) {
+											$('.current-user').val( $(el).val() );
+											return false;
+								}
+						}
+				});
+		}
+
 		$(document).on('click', '.realties-table-wrap .edit', function() {
 				$('#realty-modal-edit').modal('show');
+				$('#realty-modal-edit').data( 'currUser', $(this).parent().parent().children('.name-of-owner').text() );
 				$('#realty-modal-edit').data( 'realtyName', $(this).parent().parent().children('.name-of-realty').text() );
 				$('#realty-modal-edit').data( 'ownerName', $(this).parent().parent().children('.name-of-owner').text() );
 				$('#realty-modal-edit').data( 'realtyId', $(this).parent().parent().attr('id') );
@@ -48,15 +60,20 @@ function ifEditBtnsClicked () {
 				$('#realty-name-edit').val( $('#realty-modal-edit').data('realtyName') );
 				$('#realty-modal-edit .current-owner').text( $('#realty-modal-edit').data('ownerName') );
 
+				$('#realty-modal-edit .current-user').text( $('#realty-modal-edit').data('currUser') );
+				getCurrUserValRealty();
+
 		});
 		// Кнопка "сохранить" в попапе
 		$(document).on('click', '#realty-modal-edit .btn-edit-final', function() {		
 				$.ajax({
 				    url: '/edit-realty',
 				    data: 'realtyId=' + $('#realty-modal-edit').data('realtyId') + '&' +
+				    			'userId=' + $('#realty-modal-edit .select-user option:selected').val() + '&' +
 				    			'realtyName=' + $('#realty-name-edit').val(),
 				    type: 'post',
 				    success: function(data) {		
+				    		console.log(data);
 				    		$('#realty-modal-edit .close').click();
 				    		$('#realties-admin').click();
 				    }
@@ -65,7 +82,7 @@ function ifEditBtnsClicked () {
 
 		// Редактирование строки баланса		
 		// Попап 
-		function getCurrUserVal () {
+		function getCurrUserValBalance () {
 				$('#balance-modal-edit .select-user option').each(function(indx, el) {
 						if (indx != 0) {
 								if ( $(el).text().trim() == $('#balance-modal-edit .current-user').text() ) {
@@ -75,11 +92,6 @@ function ifEditBtnsClicked () {
 						}
 				})
 		}
-
-		// $(document).on('change','#balance-modal-edit .select-user' , function() {
-		// 		console.log( $('#balance-modal-edit .select-user option:selected').val() );
-		// });
-
 
 		$(document).on('click', '.money-table-wrap .edit', function() {
 				$('#balance-modal-edit').modal('show');
@@ -97,7 +109,7 @@ function ifEditBtnsClicked () {
 				$('#balance-comment-edit').val( $('#balance-modal-edit').data('comment') );
 
 				$('#balance-modal-edit .current-user').text( $('#balance-modal-edit').data('currUser') );
-				getCurrUserVal();
+				getCurrUserValBalance();
 		});
 		// Кнопка "сохранить" в попапе
 		$(document).on('click', '#balance-modal-edit .btn-edit-final', function() {			
@@ -110,8 +122,7 @@ function ifEditBtnsClicked () {
 				    			'id=' + $('#balance-modal-edit').data('transId') + '&' +
 				    			'userId=' + $('#balance-modal-edit .select-user option:selected').val(),
 				    type: 'post',
-				    success: function(data) {	
-				    		console.log(data);		   		
+				    success: function(data) {		   		
 				    		$('#balance-modal-edit .close').click();
 				    		$('#balance-admin').click();
 				    }

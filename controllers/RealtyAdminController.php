@@ -37,8 +37,9 @@ class RealtyAdminController
 		{		   
 				$realtyId = $_POST['realtyId']; 			  
 			  $realtyName = $_POST['realtyName']; 
-			 	
-				$result = RealtyAdmin::updateRealtyById($realtyId, $realtyName);	
+			  $userId = $_POST['userId'];
+
+				$result = RealtyAdmin::updateRealtyById($realtyId, $realtyName, $userId);	
 				
 				return true;
 		}

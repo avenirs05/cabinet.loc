@@ -73,9 +73,9 @@ class RealtyAdmin
 		}
 
 
-		public static function updateRealtyById($realtyId, $realtyName)
+		public static function updateRealtyById($realtyId, $realtyName, $userId)
 		{
 		    $db = Db::getConnection();
-		    $result = $db->query("UPDATE realty SET name='$realtyName' WHERE id=$realtyId");
+		    $result = $db->query("UPDATE realty SET name='$realtyName', user_id=$userId WHERE id=$realtyId");
 		}
 }
