@@ -62,7 +62,7 @@ class UserController
 				$userPhone = $_POST['userPhone'];
 				
 				$result = User::updateUserById($userId, $userName, $userEmail, $userPass, $userPhone);	
-				//d($_POST);
+				
 				return true;
 		}
 }

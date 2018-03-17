@@ -35,6 +35,37 @@ function ifEditBtnsClicked () {
 		});
 
 
+		// Редактирование объекта	
+		// Попап 
+		$(document).on('click', '.realties-table-wrap .edit', function() {
+				$('#realty-modal-edit').modal('show');
+				$('#realty-modal-edit').data( 'realtyName', $(this).parent().parent().children('.name-of-realty').text() );
+				$('#realty-modal-edit').data( 'ownerName', $(this).parent().parent().children('.name-of-owner').text() );
+				$('#realty-modal-edit').data( 'realtyId', $(this).parent().parent().attr('id') );
+				
+				$('#realty-modal-edit h5 span').text( $('#realty-modal-edit').data('realtyName') );
+
+				$('#realty-name-edit').val( $('#realty-modal-edit').data('realtyName') );
+				$('#realty-modal-edit .current-owner').text( $('#realty-modal-edit').data('ownerName') );
+
+		});
+		// Кнопка "сохранить" в попапе
+		$(document).on('click', '#realty-modal-edit .btn-edit-final', function() {		
+				$.ajax({
+				    url: '/edit-realty',
+				    data: 'userId=' + $('#realty-modal-edit').data('realtyId') + '&' +
+				    			'userName=' + $('#realty-name-edit').val(),
+				    type: 'post',
+				    success: function(data) {			   		
+				    		$('#user-modal-edit .close').click();
+				    		$('#realties-admin').click();
+				    }
+				});
+		});
+
+		//$('#add-realty-wrap .select-user option:selected').text()
+
+
 
 
 }

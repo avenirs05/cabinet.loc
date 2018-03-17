@@ -174,7 +174,6 @@ class User
 
 		public static function updateUserById($userId, $userName, $userEmail, $userPass, $userPhone)
 		{
-				
 		    $db = Db::getConnection();
 
 		    $sql = "UPDATE user SET name = :user_name, email = :user_email, password = :user_pass, phone = :user_phone WHERE id = :id";
@@ -186,9 +185,7 @@ class User
 		    $result->bindParam(':user_pass', $userPass, PDO::PARAM_STR);		    
 		    $result->bindParam(':user_phone', $userPhone, PDO::PARAM_STR);		  
 
-		    var_dump( $result->execute() );
-		    //d($userName);
-		    //return $result->execute();
+		    $result->execute();
 		}
 	
 }
