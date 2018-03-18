@@ -28,4 +28,22 @@ class IncomeAdminController
 
 				return true;
 		}
+
+
+		public static function actionEditIncome() 
+		{
+				$incomeId = $_POST['incomeId']; 
+				$dateArr = $_POST['dateArr']; 
+				$dateDep = $_POST['dateDep']; 
+				$price = $_POST['price']; 
+				$sum = $_POST['sum']; 
+				$comment = $_POST['comment']; 
+				$realtyId = $_POST['realtyId']; 
+
+				//d($_POST);
+			
+				$result = IncomeAdmin::updateIncomeById($incomeId, $dateArr, $dateDep, $price, $sum, $comment, $realtyId);	
+
+				return true;
+		}
 }

@@ -110,4 +110,24 @@ class IncomeAdmin
 		}
 
 
+		public static function updateIncomeById($incomeId, $dateArr, $dateDep, $price, $sum, $comment, $realtyId) {				
+				//d('test2');
+
+		    $db = Db::getConnection();
+		    
+		    $result = $db->query("UPDATE income 
+			    												SET 
+			    												date_arr='$dateArr', 
+			    												date_dep='$dateDep', 
+			    												price=$price, 
+																	sum=$sum,
+																	comment='$comment',
+																	days=TO_DAYS(date_dep) - TO_DAYS(date_arr),
+																	realty_id=$realtyId
+			    														WHERE id=$incomeId");
+		    var_dump($result);
+
+		}
+
+
 }

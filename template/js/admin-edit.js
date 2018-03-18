@@ -129,4 +129,60 @@ function ifEditBtnsClicked () {
 				});
 		});
 
+
+		// Редактирование строки дохода		
+		// Попап 
+		function getCurrUserValIncome () {
+				$('#income-modal-edit .select-realties option').each(function(indx, el) {
+						if (indx != 0) {
+								if ( $(el).text().trim() == $('#income-modal-edit .current-realty').text() ) {
+											$('.current-realty').val( $(el).val() );
+											return false;
+								}
+						}
+				})
+		}
+
+		$(document).on('click', '.income-table-wrap .edit', function() {
+				$('#income-modal-edit').modal('show');
+				
+				
+				$('#income-modal-edit').data( 'incomeId', $(this).parent().parent().attr('id') );		
+				$('#income-modal-edit').data( 'dateArr', $(this).parent().parent().children('.income-date-arr').text() );
+				$('#income-modal-edit').data( 'dateDep', $(this).parent().parent().children('.income-date-dep').text() );
+				$('#income-modal-edit').data( 'price', $(this).parent().parent().children('.income-price').text() );
+				$('#income-modal-edit').data( 'sum', $(this).parent().parent().children('.income-sum').text() );
+				$('#income-modal-edit').data( 'comment', $(this).parent().parent().children('.income-comment').text() );						
+				$('#income-modal-edit').data( 'currRealty', $(this).parent().parent().children('.income-realty-name').text() );
+
+				$('#income-modal-edit h5 span').text( $('#income-modal-edit').data('incomeId') );
+				$('#income-edit-date-arr').val( $('#income-modal-edit').data('dateArr') );	
+				$('#income-edit-date-dep').val( $('#income-modal-edit').data('dateDep') );
+				$('#income-edit-price').val( $('#income-modal-edit').data('price') );
+				$('#income-edit-sum').val( $('#income-modal-edit').data('sum') );
+				$('#income-edit-comment').val( $('#income-modal-edit').data('comment') );				
+		
+				$('#income-modal-edit .current-realty').text( $('#income-modal-edit').data('currRealty') );
+				getCurrUserValIncome();
+		});
+		// Кнопка "сохранить" в попапе
+		$(document).on('click', '#income-modal-edit .btn-edit-final', function() {			
+				$.ajax({
+				    url: '/edit-income',
+				    data: 'incomeId=' + $('#income-modal-edit').data( 'incomeId' ) + '&' +
+				    			'dateArr=' + $('#income-edit-date-arr').val() + '&' +
+				    			'dateDep=' + $('#income-edit-date-dep').val() + '&' +
+				    			'price=' + $('#income-edit-price').val() + '&' +
+				    			'sum=' + $('#income-edit-sum').val() + '&' +
+				    			'comment=' + $('#income-edit-comment').val() + '&' +
+				    			'realtyId=' + $('#income-modal-edit .select-realties option:selected').val(),
+				    type: 'post',
+				    success: function(data) {		   
+				    		console.log(data);		
+				    		$('#income-modal-edit .close').click();
+				    		$('#incomes-admin').click();
+				    }
+				});
+		});
+
 }

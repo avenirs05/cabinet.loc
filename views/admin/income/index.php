@@ -18,14 +18,14 @@
 		  <tbody>
 		    <?php foreach ($incomes as $item): ?>
 			  	  <tr id="<?php echo $item['id']; ?>">	
-			  	  	<td><?php echo $item['id']; ?></td>
-			  		  <td><?php echo $item['name']; ?></td>
-			  		  <td nowrap><?php echo $item['date_arr']; ?></td>
-			  		  <td nowrap><?php echo $item['date_dep']; ?></td>
-			  		  <td><?php echo $item['price']; ?></td>
-			  		  <td><?php echo $item['days']; ?></td>
-			  		  <td><?php echo $item['sum']; ?></td>
-			  		  <td><?php echo $item['comment']; ?></td>
+			  	  	<td class="income-id"><?php echo $item['id']; ?></td>
+			  		  <td class="income-realty-name"><?php echo $item['name']; ?></td>
+			  		  <td class="income-date-arr" nowrap><?php echo $item['date_arr']; ?></td>
+			  		  <td class="income-date-dep" nowrap><?php echo $item['date_dep']; ?></td>
+			  		  <td class="income-price"><?php echo $item['price']; ?></td>
+			  		  <td class="income-days"><?php echo $item['days']; ?></td>
+			  		  <td class="income-sum"><?php echo $item['sum']; ?></td>
+			  		  <td class="income-comment"><?php echo $item['comment']; ?></td>
 			  		  <td class="img-del-edit-wrap"><img src="/template/imgs/edit.png" width="20" alt="" class="close edit"></td>
 			  		  <td class="img-del-edit-wrap"><img src="/template/imgs/close.png" width="20" alt="" class="close delete"></td>
 			  	  </tr>					
