@@ -241,7 +241,8 @@ class ExpenseAdmin
 		    $db = Db::getConnection();
 		    
 		    $result = $db->query("UPDATE expense 
-			    												SET																			
+			    												SET		
+			    														date='$date',																	
 																			name='$good',
 																			quantity=$quantity,
 																			price=$price,

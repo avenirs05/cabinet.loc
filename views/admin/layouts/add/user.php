@@ -16,7 +16,7 @@
 			  </div>
 			  <div class="form-group">
 			    <label>Телефон</label>
-			    <input id="user-phone" type="password" class="form-control" placeholder="Телефон собственника" required>
+			    <input id="user-phone" type="text" class="form-control" placeholder="Телефон собственника" required>
 			  </div>
 			  <button type="button" id="add-owner-send" class="btn btn-secondary">Добавить собственника</button>
 			  <button type="button" class="btn btn-outline-secondary btn-cancel">Отмена</button>		
