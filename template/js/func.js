@@ -118,25 +118,25 @@ function whichColorForBalance () {
 // Удаляет -0 и 0 в таблице взаиморасчетов (баланс)
 function delZeroInTable () {
     $('.gave-money').each(function(indx, el) {
-        if ( $(el).text() === '-0' ) {
+        if ( $(el).text() === '-0' || $(el).text() === '-0.00' ) {
                 $(el).text('');
         }
     });
 
     $('.gave-money').each(function(indx, el) {
-        if ( $(el).text() === '0' ) {
+        if ( $(el).text() === '0' || $(el).text() === '0.00' ) {
                 $(el).text('');
         }
     });
 
     $('.got-money').each(function(indx, el) {
-        if ( $(el).text() === '0' ) {
+        if ( $(el).text() === '0' || $(el).text() === '0.00' ) {
                 $(el).text('');
         }
     });
 
     $('.got-money').each(function(indx, el) {
-        if ( $(el).text() === '-0' ) {
+        if ( $(el).text() === '-0' || $(el).text() === '-0.00' ) {
                 $(el).text('');
         }
     });
@@ -145,7 +145,19 @@ function delZeroInTable () {
         if ( $(el).text() === '0000-00-00' ) {
                 $(el).text('');
         }
-    });   
+    });  
+
+    $('#final-sum-minus').each(function(indx, el) {
+        if ( $(el).text() === '-0' || $(el).text() === '-0.00' ) {
+                $(el).text('');
+        }
+    });
+
+    $('#final-sum-plus').each(function(indx, el) {
+        if ( $(el).text() === '0' || $(el).text() === '0.00' ) {
+                $(el).text('');
+        }
+    }); 
 }
 
 

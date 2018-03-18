@@ -29,7 +29,7 @@ class Money
     {
 				$db = Db::getConnection();
 
-				$result = $db->query("SELECT ROUND(SUM(sum_minus)) as sum_minus, ROUND(SUM(sum_plus)) as sum_plus from money where money.user_id=$userId");				
+				$result = $db->query("SELECT SUM(sum_minus) as sum_minus, SUM(sum_plus) as sum_plus from money where money.user_id=$userId");				
 			
 				return $result->fetch();
 		}

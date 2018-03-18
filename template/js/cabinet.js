@@ -187,7 +187,7 @@ jQuery(document).ready(function () {
 				  success: function(data) {				  	  
 				  		$('.report-wrap').append(data);
 
-				  		var saldo =  Number( $('#final-sum-minus').text() ) + Number($('#final-sum-plus').text() );
+				  		var saldo =  parseFloat( $('#final-sum-minus').text() ) + parseFloat($('#final-sum-plus').text() );
 				  		if (saldo >= 0) {
 				  					$('#saldo-plus').text(saldo);
 				  		} else $('#saldo-minus').text(saldo);
