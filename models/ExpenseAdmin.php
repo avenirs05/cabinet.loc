@@ -236,19 +236,20 @@ class ExpenseAdmin
 		}
 
 
-		public static function updateExpenseById() 
+		public static function updateExpenseById($expId, $date, $good, $quantity, $price, $sum, $source, $report, $comment, $realtyId) 
 		{
-		    // $db = Db::getConnection();
+		    $db = Db::getConnection();
 		    
-		    // $result = $db->query("UPDATE income 
-			   //  												SET 
-					 //    												date_arr='$dateArr', 
-					 //    												date_dep='$dateDep', 
-					 //    												price=$price, 
-						// 													sum=$sum,
-						// 													comment='$comment',
-						// 													days=TO_DAYS(date_dep) - TO_DAYS(date_arr),
-						// 													realty_id=$realtyId
-			   //  																WHERE id=$incomeId");
+		    $result = $db->query("UPDATE expense 
+			    												SET																			
+																			name='$good',
+																			quantity=$quantity,
+																			price=$price,
+																			sum=$sum,
+																			source='$source',
+																			comment='$comment',
+																			report='$report',
+																			realty_id=$realtyId
+			    																WHERE id=$expId");
 		}
 }

@@ -238,7 +238,7 @@ function ifEditBtnsClicked () {
 				    			'quantity=' + $('#expense-edit-quantity').val() + '&' +
 				    			'price=' + $('#expense-edit-price').val() + '&' +
 				    			'sum=' + $('#expense-edit-sum').val() + '&' +
-				    			'soure=' + $('#expense-edit-source').val() + '&' +
+				    			'source=' + $('#expense-edit-source').val() + '&' +
 				    			'report=' + $('#expense-edit-report').val() + '&' +
 				    			'comment=' + $('#expense-edit-comment').val() + '&' +
 				    			'expType=' + $('#expense-modal-edit').data('expType') + '&' +
@@ -247,10 +247,10 @@ function ifEditBtnsClicked () {
 				    success: function(data) {		   
 				    		console.log(data);		
 				    		$('#expense-modal-edit .close').click();
-				    		if ( $('#expense-modal-edit').data('expenseType') == '1') {
+				    		if ( $('#expense-modal-edit').data('expType') == '1') {
 				    					$('#expenses-gen-admin').click();
 				    		}
-				    		if ( $('#expense-modal-edit').data('expenseType') == '2') {
+				    		if ( $('#expense-modal-edit').data('expType') == '2') {
 				    					$('#expenses-owner-admin').click();
 				    		}
 				    		

@@ -55,16 +55,18 @@ class ExpenseAdminController
 
 		public static function actionEditExpense() 
 		{
-				d($_POST);
-				// $incomeId = $_POST['incomeId']; 
-				// $dateArr = $_POST['dateArr']; 
-				// $dateDep = $_POST['dateDep']; 
-				// $price = $_POST['price']; 
-				// $sum = $_POST['sum']; 
-				// $comment = $_POST['comment']; 
-				// $realtyId = $_POST['realtyId']; 
+				$expId = $_POST['expId']; 
+				$date = $_POST['date'];
+				$good = $_POST['good'];	
+				$quantity = $_POST['quantity'];			
+				$price = $_POST['price'];
+				$sum = $_POST['sum'];
+				$source = $_POST['source'];
+				$report = $_POST['report'];
+				$comment = $_POST['comment'];
+				$realtyId = $_POST['realtyId'];
 		
-				$result = ExpenseAdmin::updateExpenseById();	
+				$result = ExpenseAdmin::updateExpenseById($expId, $date, $good, $quantity, $price, $sum, $source, $report, $comment, $realtyId);	
 
 				return true;
 		}

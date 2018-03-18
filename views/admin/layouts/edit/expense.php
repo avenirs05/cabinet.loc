@@ -26,7 +26,7 @@
           </div>
           <div class="form-group">
             <label>Товар (услуга)</label>
-            <input id="expense-edit-good" type="text" class="date-field form-control" placeholder="" required>
+            <input id="expense-edit-good" type="text" class="form-control" placeholder="" required>
           </div>
           <div class="form-group">
             <label>Количество</label>
