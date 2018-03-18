@@ -21,15 +21,15 @@
 			  <?php foreach ($expenses as $item): ?>
 		  	  <tr id="<?php echo $item['id']; ?>">	
 		  	  	<td class="id-of-expense" nowrap><?php echo $item['id']; ?></td>
-		  		  <td nowrap><?php echo $item['date']; ?></td>
-		  		  <td nowrap><?php echo $item['realty_name']; ?></td>
-		  		  <td><?php echo $item['name']; ?></td>
-		  		  <td><?php echo $item['quantity']; ?></td>
-		  		  <td><?php echo $item['price']; ?></td>
-		  		  <td><?php echo $item['sum']; ?></td>
-		  		  <td><?php echo $item['source']; ?></td>
-		  		  <td nowrap class="report-email"><?php echo $item['report']; ?></td>
-		  		  <td><?php echo $item['comment']; ?></td>
+		  		  <td class="exp-date" nowrap><?php echo $item['date']; ?></td>
+		  		  <td class="exp-realty-name" nowrap><?php echo $item['realty_name']; ?></td>
+		  		  <td class="exp-good"><?php echo $item['name']; ?></td>
+		  		  <td class="exp-quantity"><?php echo $item['quantity']; ?></td>
+		  		  <td class="exp-price"><?php echo $item['price']; ?></td>
+		  		  <td class="exp-sum"><?php echo $item['sum']; ?></td>
+		  		  <td class="exp-source"><?php echo $item['source']; ?></td>
+		  		  <td nowrap class="exp-report report-email"><?php echo $item['report']; ?></td>
+		  		  <td class="exp-comment"><?php echo $item['comment']; ?></td>
 		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/edit.png" width="20" alt="" class="close edit"></td>
 		  		  <td class="img-del-edit-wrap"><img src="/template/imgs/close.png" width="20" alt="" class="close delete"></td>
 		  		  <td class="exp-type" style="display: none"><?php echo $item['exp_type_id']; ?></td>

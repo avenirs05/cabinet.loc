@@ -234,4 +234,21 @@ class ExpenseAdmin
 
 				return $result->execute();
 		}
+
+
+		public static function updateExpenseById() 
+		{
+		    // $db = Db::getConnection();
+		    
+		    // $result = $db->query("UPDATE income 
+			   //  												SET 
+					 //    												date_arr='$dateArr', 
+					 //    												date_dep='$dateDep', 
+					 //    												price=$price, 
+						// 													sum=$sum,
+						// 													comment='$comment',
+						// 													days=TO_DAYS(date_dep) - TO_DAYS(date_arr),
+						// 													realty_id=$realtyId
+			   //  																WHERE id=$incomeId");
+		}
 }

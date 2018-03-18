@@ -132,7 +132,7 @@ function ifEditBtnsClicked () {
 
 		// Редактирование строки дохода		
 		// Попап 
-		function getCurrUserValIncome () {
+		function getCurrRealtyValIncome () {
 				$('#income-modal-edit .select-realties option').each(function(indx, el) {
 						if (indx != 0) {
 								if ( $(el).text().trim() == $('#income-modal-edit .current-realty').text() ) {
@@ -144,8 +144,7 @@ function ifEditBtnsClicked () {
 		}
 
 		$(document).on('click', '.income-table-wrap .edit', function() {
-				$('#income-modal-edit').modal('show');
-				
+				$('#income-modal-edit').modal('show');				
 				
 				$('#income-modal-edit').data( 'incomeId', $(this).parent().parent().attr('id') );		
 				$('#income-modal-edit').data( 'dateArr', $(this).parent().parent().children('.income-date-arr').text() );
@@ -163,8 +162,9 @@ function ifEditBtnsClicked () {
 				$('#income-edit-comment').val( $('#income-modal-edit').data('comment') );				
 		
 				$('#income-modal-edit .current-realty').text( $('#income-modal-edit').data('currRealty') );
-				getCurrUserValIncome();
+				getCurrRealtyValIncome();
 		});
+
 		// Кнопка "сохранить" в попапе
 		$(document).on('click', '#income-modal-edit .btn-edit-final', function() {			
 				$.ajax({
@@ -177,10 +177,83 @@ function ifEditBtnsClicked () {
 				    			'comment=' + $('#income-edit-comment').val() + '&' +
 				    			'realtyId=' + $('#income-modal-edit .select-realties option:selected').val(),
 				    type: 'post',
-				    success: function(data) {		   
-				    		console.log(data);		
+				    success: function(data) {		 
 				    		$('#income-modal-edit .close').click();
 				    		$('#incomes-admin').click();
+				    }
+				});
+		});
+
+
+		// Редактирование строки расхода		
+		// Попап 
+		function getCurrRealtyValExpense () {
+				$('#expense-modal-edit .select-realties option').each(function(indx, el) {
+						if (indx != 0) {							
+								if ( $(el).text().trim() == $('#expense-modal-edit .current-realty').text().trim() ) {
+											$('.current-realty').val( $(el).val() );
+											return false;
+								}
+						}
+				})
+		}
+
+		$(document).on('click', '.expenses-table-wrap .edit', function() {
+				$('#expense-modal-edit').modal('show');				
+				
+				$('#expense-modal-edit').data( 'expId', $(this).parent().parent().attr('id') );		
+				$('#expense-modal-edit').data( 'date', $(this).parent().parent().children('.exp-date').text() );
+				$('#expense-modal-edit').data( 'good', $(this).parent().parent().children('.exp-good').text() );
+				$('#expense-modal-edit').data( 'quantity', $(this).parent().parent().children('.exp-quantity').text() );
+				$('#expense-modal-edit').data( 'price', $(this).parent().parent().children('.exp-price').text() );						
+				$('#expense-modal-edit').data( 'sum', $(this).parent().parent().children('.exp-sum').text() );
+				$('#expense-modal-edit').data( 'source', $(this).parent().parent().children('.exp-source').text() );
+				$('#expense-modal-edit').data( 'report', $(this).parent().parent().children('.exp-report').text() );
+				$('#expense-modal-edit').data( 'comment', $(this).parent().parent().children('.exp-comment').text() );
+				$('#expense-modal-edit').data( 'expType', $(this).parent().parent().children('.exp-type').text() );
+
+				$('#expense-modal-edit').data( 'currRealty', $(this).parent().parent().children('.exp-realty-name').text() );
+
+				$('#expense-modal-edit h5 span').text( $('#expense-modal-edit').data('expId') );
+				$('#expense-edit-date').val( $('#expense-modal-edit').data('date') );	
+				$('#expense-edit-good').val( $('#expense-modal-edit').data('good') );
+				$('#expense-edit-quantity').val( $('#expense-modal-edit').data('quantity') );
+				$('#expense-edit-price').val( $('#expense-modal-edit').data('price') );
+				$('#expense-edit-sum').val( $('#expense-modal-edit').data('sum') );
+				$('#expense-edit-source').val( $('#expense-modal-edit').data('source') );
+				$('#expense-edit-report').val( $('#expense-modal-edit').data('report') );
+				$('#expense-edit-comment').val( $('#expense-modal-edit').data('comment') );			
+		
+				$('#expense-modal-edit .current-realty').text( $('#expense-modal-edit').data('currRealty') );				
+				getCurrRealtyValExpense();
+		});
+
+		// Кнопка "сохранить" в попапе
+		$(document).on('click', '#expense-modal-edit .btn-edit-final', function() {			
+				$.ajax({
+				    url: '/edit-expense',
+				    data: 'expId=' + $('#expense-modal-edit').data('expId') + '&' +
+				    			'date=' + $('#expense-edit-date').val() + '&' +
+				    			'good=' + $('#expense-edit-good').val() + '&' +
+				    			'quantity=' + $('#expense-edit-quantity').val() + '&' +
+				    			'price=' + $('#expense-edit-price').val() + '&' +
+				    			'sum=' + $('#expense-edit-sum').val() + '&' +
+				    			'soure=' + $('#expense-edit-source').val() + '&' +
+				    			'report=' + $('#expense-edit-report').val() + '&' +
+				    			'comment=' + $('#expense-edit-comment').val() + '&' +
+				    			'expType=' + $('#expense-modal-edit').data('expType') + '&' +
+				    			'realtyId=' + $('#expense-modal-edit .select-realties option:selected').val(),
+				    type: 'post',
+				    success: function(data) {		   
+				    		console.log(data);		
+				    		$('#expense-modal-edit .close').click();
+				    		if ( $('#expense-modal-edit').data('expenseType') == '1') {
+				    					$('#expenses-gen-admin').click();
+				    		}
+				    		if ( $('#expense-modal-edit').data('expenseType') == '2') {
+				    					$('#expenses-owner-admin').click();
+				    		}
+				    		
 				    }
 				});
 		});

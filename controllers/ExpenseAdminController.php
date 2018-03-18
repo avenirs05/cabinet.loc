@@ -52,4 +52,21 @@ class ExpenseAdminController
 				return true;
 		}
 
+
+		public static function actionEditExpense() 
+		{
+				d($_POST);
+				// $incomeId = $_POST['incomeId']; 
+				// $dateArr = $_POST['dateArr']; 
+				// $dateDep = $_POST['dateDep']; 
+				// $price = $_POST['price']; 
+				// $sum = $_POST['sum']; 
+				// $comment = $_POST['comment']; 
+				// $realtyId = $_POST['realtyId']; 
+		
+				$result = ExpenseAdmin::updateExpenseById();	
+
+				return true;
+		}
+
 }

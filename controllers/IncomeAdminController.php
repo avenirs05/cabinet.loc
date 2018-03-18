@@ -39,9 +39,7 @@ class IncomeAdminController
 				$sum = $_POST['sum']; 
 				$comment = $_POST['comment']; 
 				$realtyId = $_POST['realtyId']; 
-
-				//d($_POST);
-			
+		
 				$result = IncomeAdmin::updateIncomeById($incomeId, $dateArr, $dateDep, $price, $sum, $comment, $realtyId);	
 
 				return true;
