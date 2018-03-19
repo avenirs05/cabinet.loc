@@ -1,7 +1,7 @@
 jQuery(document).ready(function () {  
 
 		// Маска ввода
-		$(".date-field").mask("2018-99-99");
+		$(".date-field").mask("99.99.2018");
 
 		// Добавление записей
 		ifAddBtnsClicked();
