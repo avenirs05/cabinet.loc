@@ -5,8 +5,8 @@ class IncomeAdminController
 {
 		public function actionAddIncome() 
 		{		   
-				$dateArr = $_POST['date-arr'];
-				$dateDep = $_POST['date-dep'];
+				$dateArr = convertDateToSqlFormat($_POST['date-arr']);
+				$dateDep = convertDateToSqlFormat($_POST['date-dep']);
 				$price = $_POST['price'];
 				$sum = $_POST['sum'];
 				$comment = $_POST['comment'];
@@ -33,8 +33,8 @@ class IncomeAdminController
 		public static function actionEditIncome() 
 		{
 				$incomeId = $_POST['incomeId']; 
-				$dateArr = $_POST['dateArr']; 
-				$dateDep = $_POST['dateDep']; 
+				$dateArr = convertDateToSqlFormat($_POST['dateArr']); 
+				$dateDep = convertDateToSqlFormat($_POST['dateDep']); 
 				$price = $_POST['price']; 
 				$sum = $_POST['sum']; 
 				$comment = $_POST['comment']; 

@@ -176,6 +176,7 @@ class ExpenseAdmin
 
 
     public static function addExpenseGen($date, $good, $quantity, $price, $sum, $source, $repEmail, $comment, $realtyId) {
+    		
     		$db = Db::getConnection();
 
     		$exp_type_id = 1;

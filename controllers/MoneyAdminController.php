@@ -4,7 +4,7 @@ class MoneyAdminController
 {
 		public function actionAddMoney() 
 		{		   
-				$date = $_POST['date']; 
+				$date = convertDateToSqlFormat($_POST['date']); 
 				$gotMoneyAdmin = $_POST['gotMoneyAdmin']; 
 				$gaveMoneyAdmin = $_POST['gaveMoneyAdmin']; 
 				$userName = $_POST['userName'];
@@ -30,7 +30,7 @@ class MoneyAdminController
 
 		public function actionEditMoney() 
 		{   
-				$date = $_POST['date']; 
+				$date = convertDateToSqlFormat($_POST['date']); 
 				$got = $_POST['got'];
 				$gave = $_POST['gave'];
 				$comment = $_POST['comment'];

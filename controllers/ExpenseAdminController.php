@@ -5,15 +5,16 @@ class ExpenseAdminController
 {
 		public function actionAddExpenseGen() 
 		{		   
-				$date = $_POST['date'];
+				$date = convertDateToSqlFormat($_POST['date']);
 				$good = $_POST['good'];
 				$quantity = $_POST['quantity'];
 				$price = $_POST['price'];
 				$sum = $_POST['sum'];
 				$source = $_POST['source'];
-				$repEmail = $_POST['repEmail'];
+				$repEmail =  convertDateToSqlFormat($_POST['repEmail']);
 				$comment = $_POST['comment'];
 				$realtyName = $_POST['realtyName'];
+				echo $date;
 				
 				$realty = RealtyAdmin::getRealtyByName($realtyName);				
 
@@ -25,13 +26,13 @@ class ExpenseAdminController
 
 		public function actionAddExpenseOwner() 
 		{		   
-				$date = $_POST['date'];
+				$date = convertDateToSqlFormat($_POST['date']);
 				$good = $_POST['good'];
 				$quantity = $_POST['quantity'];
 				$price = $_POST['price'];
 				$sum = $_POST['sum'];
 				$source = $_POST['source'];
-				$repEmail = $_POST['repEmail'];
+				$repEmail = convertDateToSqlFormat($_POST['repEmail']);
 				$comment = $_POST['comment'];
 				$realtyName = $_POST['realtyName'];
 				
@@ -56,13 +57,13 @@ class ExpenseAdminController
 		public static function actionEditExpense() 
 		{
 				$expId = $_POST['expId']; 
-				$date = $_POST['date'];
+				$date = convertDateToSqlFormat($_POST['date']);
 				$good = $_POST['good'];	
 				$quantity = $_POST['quantity'];			
 				$price = $_POST['price'];
 				$sum = $_POST['sum'];
 				$source = $_POST['source'];
-				$report = $_POST['report'];
+				$report = convertDateToSqlFormat($_POST['report']);
 				$comment = $_POST['comment'];
 				$realtyId = $_POST['realtyId'];
 		

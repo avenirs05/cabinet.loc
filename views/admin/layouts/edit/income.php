@@ -22,11 +22,11 @@
           </div>
           <div class="form-group">
             <label>Дата заезда</label>
-            <input id="income-edit-date-arr" type="text" class="date-field form-control" placeholder="" required>
+            <input id="income-edit-date-arr" type="text" class="form-control" placeholder="" required>
           </div>
           <div class="form-group">
             <label>Дата выезда</label>
-            <input id="income-edit-date-dep" type="text" class="date-field form-control" placeholder="" required>
+            <input id="income-edit-date-dep" type="text" class="form-control" placeholder="" required>
           </div>
           <div class="form-group">
             <label>Цена</label>

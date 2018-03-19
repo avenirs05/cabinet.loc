@@ -11,7 +11,7 @@
         <form class="fields-content">
           <div class="form-group">
             <label>Дата</label>
-            <input id="balance-date-edit" type="text" class="date-field form-control" placeholder="" required>
+            <input id="balance-date-edit" type="text" class="form-control" placeholder="" required>
           </div>
           <div class="form-group">
             <label>Получил, €</label>
